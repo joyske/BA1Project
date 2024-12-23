@@ -34,12 +34,12 @@ public class ShipMovement : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.W))
         {
-            rigidBodyRef.AddForce(transform.forward * Time.fixedDeltaTime * forwardSpeed, ForceMode.VelocityChange);
+            rigidBodyRef.AddForce(-transform.right * Time.fixedDeltaTime * forwardSpeed, ForceMode.VelocityChange);
         }
 
         if (Input.GetKey(KeyCode.S))
         {
-            rigidBodyRef.AddForce(transform.forward * Time.fixedDeltaTime * backwardSpeed, ForceMode.VelocityChange);
+            rigidBodyRef.AddForce(-transform.right * Time.fixedDeltaTime * backwardSpeed, ForceMode.VelocityChange);
         }
 
         if (Input.GetKey(KeyCode.A))
