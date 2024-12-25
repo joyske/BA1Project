@@ -17,15 +17,16 @@ public class Floater : MonoBehaviour
 
     private void Start()
     {
+        //Get water ref
         water = GameObject.FindGameObjectWithTag("Ocean").GetComponent<WaterSurface>();
+        rigidBodyRef.WakeUp();
     }
 
     private void FixedUpdate()
     {
+        //Apply proportional gravity to each floater point
         rigidBodyRef.AddForceAtPosition(Physics.gravity / floaters, transform.position, ForceMode.Acceleration);
-
         Search.startPositionWS = transform.position;
-
         water.ProjectPointOnWaterSurface(Search, out SearchResult);
 
         if(transform.position.y < SearchResult.projectedPositionWS.y)
