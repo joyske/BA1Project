@@ -11,29 +11,31 @@ public class CameraController : MonoBehaviour
     Vector3 Offset;
     float BlendValueX;
     float BlendValueZ;
+    Vector3 DesiredPosition;
+    public float CameraPositionBlendTime;
+    private Vector3 velocity = Vector3.zero;
 
     private void Start()
     {
+        //Initialize default camera offset and default DesiredPosition
         BaseOffset = transform.position;
+        DesiredPosition = transform.position;
     }
 
     void Update()
     {
+        //Move Camera rotation and position position with player character
         transform.eulerAngles = new Vector3( transform.eulerAngles.x, PlayerRef.transform.eulerAngles.y - 90, transform.eulerAngles.z);
-
         CalculatePositionWithRotation();
-        transform.position = PlayerRef.transform.position + Offset;
+        DesiredPosition = PlayerRef.transform.position + Offset;
+        transform.position = Vector3.SmoothDamp(transform.position, DesiredPosition, ref velocity, CameraPositionBlendTime);
     }
 
     private void CalculatePositionWithRotation()
     {
-        
-
-        BlendValueX = ((Mathf.Abs((-(PlayerRef.transform.eulerAngles.y - 180))/180)-0.5f)*2);
+        //Calculate camera position around player char based on rotation
+        BlendValueX = Mathf.Cos(-(PlayerRef.transform.eulerAngles.y * Mathf.Deg2Rad));
         BlendValueZ = Mathf.Sin(-(PlayerRef.transform.eulerAngles.y * Mathf.Deg2Rad));
-
-
-        Debug.Log("X" + BlendValueX + "Z" + BlendValueZ);
         Offset.Set((BaseOffset.x * BlendValueX), (BaseOffset.y), (BaseOffset.x * BlendValueZ));
     }
 }
