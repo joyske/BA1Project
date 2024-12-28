@@ -15,6 +15,13 @@ public class ShipMovement : MonoBehaviour
 
     public Vector2 movementInput;
 
+    private Vector3 DesiredRotation;
+    private Vector3 ActualRotation;
+
+    public float turnDelay;
+
+    private Vector3 velocity = Vector3.zero;
+
     /*private void OnEnable()
     {
         if(shipControls == null)
@@ -44,12 +51,23 @@ public class ShipMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Rotate(0, -turningSpeed * Time.fixedDeltaTime, 0);
+            DesiredRotation = new Vector3(0, -turningSpeed * Time.fixedDeltaTime, 0);
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            transform.Rotate(0, turningSpeed * Time.fixedDeltaTime, 0);
+            DesiredRotation = new Vector3(0, turningSpeed * Time.fixedDeltaTime, 0);
         }
+
+        if (!(Input.GetKey(KeyCode.A)) && !(Input.GetKey(KeyCode.D)))
+        {
+            DesiredRotation = new Vector3(0, 0, 0);
+        }
+
+        //Interpolate desired and actual rotation vector
+        ActualRotation = Vector3.SmoothDamp(ActualRotation, DesiredRotation, ref velocity, turnDelay * Time.fixedDeltaTime);
+        transform.Rotate(ActualRotation);
+
+
     }
 }
