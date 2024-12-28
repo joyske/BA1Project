@@ -9,9 +9,9 @@ public class ShipMovement : MonoBehaviour
     //ShipControls shipControls;
     public Rigidbody rigidBodyRef;
 
-    public float forwardSpeed = 30f;
-    public float backwardSpeed = -10f;
-    public float turningSpeed = 20f;
+    public float forwardSpeed;
+    public float backwardSpeed;
+    public float turningSpeed;
 
     public Vector2 movementInput;
 
@@ -34,12 +34,12 @@ public class ShipMovement : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.W))
         {
-            rigidBodyRef.AddForce(-transform.right * Time.fixedDeltaTime * forwardSpeed, ForceMode.VelocityChange);
+            rigidBodyRef.AddForce(-transform.right * Time.fixedDeltaTime * forwardSpeed, ForceMode.Acceleration);
         }
 
         if (Input.GetKey(KeyCode.S))
         {
-            rigidBodyRef.AddForce(-transform.right * Time.fixedDeltaTime * backwardSpeed, ForceMode.VelocityChange);
+            rigidBodyRef.AddForce(-transform.right * Time.fixedDeltaTime * backwardSpeed, ForceMode.Acceleration);
         }
 
         if (Input.GetKey(KeyCode.A))

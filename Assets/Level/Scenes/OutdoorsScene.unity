@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 4318.682, g: 4527.4497, b: 6574.5557, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -145,12 +145,12 @@ PrefabInstance:
     - target: {fileID: 255650226949900341, guid: 262e54e9ee8a4d8448b441470af7a7f3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.82
       objectReference: {fileID: 0}
     - target: {fileID: 255650226949900341, guid: 262e54e9ee8a4d8448b441470af7a7f3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.2
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 255650226949900341, guid: 262e54e9ee8a4d8448b441470af7a7f3,
         type: 3}
@@ -204,8 +204,13 @@ PrefabInstance:
       objectReference: {fileID: 1433627000}
     - target: {fileID: 1989830630391115040, guid: 262e54e9ee8a4d8448b441470af7a7f3,
         type: 3}
+      propertyPath: floaters
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989830630391115040, guid: 262e54e9ee8a4d8448b441470af7a7f3,
+        type: 3}
       propertyPath: waterDrag
-      value: 1.5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1989830630391115040, guid: 262e54e9ee8a4d8448b441470af7a7f3,
         type: 3}
@@ -215,12 +220,17 @@ PrefabInstance:
     - target: {fileID: 1989830630391115040, guid: 262e54e9ee8a4d8448b441470af7a7f3,
         type: 3}
       propertyPath: displacementAmount
-      value: 1
+      value: 0.85
       objectReference: {fileID: 0}
     - target: {fileID: 9179469202346868103, guid: 262e54e9ee8a4d8448b441470af7a7f3,
         type: 3}
       propertyPath: m_Name
-      value: FloaterObject (2)
+      value: FloaterObject_FrontRight
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179469202346868103, guid: 262e54e9ee8a4d8448b441470af7a7f3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -636,7 +646,7 @@ PrefabInstance:
     - target: {fileID: 255650226949900341, guid: 262e54e9ee8a4d8448b441470af7a7f3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.2
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 255650226949900341, guid: 262e54e9ee8a4d8448b441470af7a7f3,
         type: 3}
@@ -690,8 +700,13 @@ PrefabInstance:
       objectReference: {fileID: 1433627000}
     - target: {fileID: 1989830630391115040, guid: 262e54e9ee8a4d8448b441470af7a7f3,
         type: 3}
+      propertyPath: floaters
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989830630391115040, guid: 262e54e9ee8a4d8448b441470af7a7f3,
+        type: 3}
       propertyPath: waterDrag
-      value: 1.5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1989830630391115040, guid: 262e54e9ee8a4d8448b441470af7a7f3,
         type: 3}
@@ -701,12 +716,17 @@ PrefabInstance:
     - target: {fileID: 1989830630391115040, guid: 262e54e9ee8a4d8448b441470af7a7f3,
         type: 3}
       propertyPath: displacementAmount
-      value: 1
+      value: 0.85
       objectReference: {fileID: 0}
     - target: {fileID: 9179469202346868103, guid: 262e54e9ee8a4d8448b441470af7a7f3,
         type: 3}
       propertyPath: m_Name
-      value: FloaterObject (1)
+      value: FloaterObject_BackCenter
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179469202346868103, guid: 262e54e9ee8a4d8448b441470af7a7f3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -918,9 +938,11 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4986010868227126074}
-  - {fileID: 601097960}
-  - {fileID: 85933474}
   - {fileID: 1737825646}
+  - {fileID: 85933474}
+  - {fileID: 601097960}
+  - {fileID: 1336068198}
+  - {fileID: 1683776559}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &762294824
@@ -963,8 +985,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidBodyRef: {fileID: 762294824}
-  forwardSpeed: 50
-  backwardSpeed: -30
+  forwardSpeed: 1250
+  backwardSpeed: -500
   turningSpeed: 25
   movementInput: {x: 0, y: 0}
 --- !u!65 &762294826
@@ -1267,6 +1289,130 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1336068197
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 762294822}
+    m_Modifications:
+    - target: {fileID: 255650226949900341, guid: 262e54e9ee8a4d8448b441470af7a7f3,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 255650226949900341, guid: 262e54e9ee8a4d8448b441470af7a7f3,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 255650226949900341, guid: 262e54e9ee8a4d8448b441470af7a7f3,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 255650226949900341, guid: 262e54e9ee8a4d8448b441470af7a7f3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 255650226949900341, guid: 262e54e9ee8a4d8448b441470af7a7f3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 255650226949900341, guid: 262e54e9ee8a4d8448b441470af7a7f3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 255650226949900341, guid: 262e54e9ee8a4d8448b441470af7a7f3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 255650226949900341, guid: 262e54e9ee8a4d8448b441470af7a7f3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 255650226949900341, guid: 262e54e9ee8a4d8448b441470af7a7f3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 255650226949900341, guid: 262e54e9ee8a4d8448b441470af7a7f3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 255650226949900341, guid: 262e54e9ee8a4d8448b441470af7a7f3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 255650226949900341, guid: 262e54e9ee8a4d8448b441470af7a7f3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 255650226949900341, guid: 262e54e9ee8a4d8448b441470af7a7f3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 255650226949900341, guid: 262e54e9ee8a4d8448b441470af7a7f3,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989830630391115040, guid: 262e54e9ee8a4d8448b441470af7a7f3,
+        type: 3}
+      propertyPath: water
+      value: 
+      objectReference: {fileID: 1433627000}
+    - target: {fileID: 1989830630391115040, guid: 262e54e9ee8a4d8448b441470af7a7f3,
+        type: 3}
+      propertyPath: floaters
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989830630391115040, guid: 262e54e9ee8a4d8448b441470af7a7f3,
+        type: 3}
+      propertyPath: waterDrag
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989830630391115040, guid: 262e54e9ee8a4d8448b441470af7a7f3,
+        type: 3}
+      propertyPath: rigidBodyRef
+      value: 
+      objectReference: {fileID: 762294824}
+    - target: {fileID: 1989830630391115040, guid: 262e54e9ee8a4d8448b441470af7a7f3,
+        type: 3}
+      propertyPath: displacementAmount
+      value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179469202346868103, guid: 262e54e9ee8a4d8448b441470af7a7f3,
+        type: 3}
+      propertyPath: m_Name
+      value: FloaterObject_BackRight
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179469202346868103, guid: 262e54e9ee8a4d8448b441470af7a7f3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 262e54e9ee8a4d8448b441470af7a7f3, type: 3}
+--- !u!4 &1336068198 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 255650226949900341, guid: 262e54e9ee8a4d8448b441470af7a7f3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1336068197}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1383351059
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1705,6 +1851,130 @@ MonoBehaviour:
   floaters: 1
   waterDrag: 2
   waterAngularDrag: 2
+--- !u!1001 &1683776558
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 762294822}
+    m_Modifications:
+    - target: {fileID: 255650226949900341, guid: 262e54e9ee8a4d8448b441470af7a7f3,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 255650226949900341, guid: 262e54e9ee8a4d8448b441470af7a7f3,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 255650226949900341, guid: 262e54e9ee8a4d8448b441470af7a7f3,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 255650226949900341, guid: 262e54e9ee8a4d8448b441470af7a7f3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 255650226949900341, guid: 262e54e9ee8a4d8448b441470af7a7f3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 255650226949900341, guid: 262e54e9ee8a4d8448b441470af7a7f3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 255650226949900341, guid: 262e54e9ee8a4d8448b441470af7a7f3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 255650226949900341, guid: 262e54e9ee8a4d8448b441470af7a7f3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 255650226949900341, guid: 262e54e9ee8a4d8448b441470af7a7f3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 255650226949900341, guid: 262e54e9ee8a4d8448b441470af7a7f3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 255650226949900341, guid: 262e54e9ee8a4d8448b441470af7a7f3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 255650226949900341, guid: 262e54e9ee8a4d8448b441470af7a7f3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 255650226949900341, guid: 262e54e9ee8a4d8448b441470af7a7f3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 255650226949900341, guid: 262e54e9ee8a4d8448b441470af7a7f3,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989830630391115040, guid: 262e54e9ee8a4d8448b441470af7a7f3,
+        type: 3}
+      propertyPath: water
+      value: 
+      objectReference: {fileID: 1433627000}
+    - target: {fileID: 1989830630391115040, guid: 262e54e9ee8a4d8448b441470af7a7f3,
+        type: 3}
+      propertyPath: floaters
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989830630391115040, guid: 262e54e9ee8a4d8448b441470af7a7f3,
+        type: 3}
+      propertyPath: waterDrag
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989830630391115040, guid: 262e54e9ee8a4d8448b441470af7a7f3,
+        type: 3}
+      propertyPath: rigidBodyRef
+      value: 
+      objectReference: {fileID: 762294824}
+    - target: {fileID: 1989830630391115040, guid: 262e54e9ee8a4d8448b441470af7a7f3,
+        type: 3}
+      propertyPath: displacementAmount
+      value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179469202346868103, guid: 262e54e9ee8a4d8448b441470af7a7f3,
+        type: 3}
+      propertyPath: m_Name
+      value: FloaterObject_BackLeft
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179469202346868103, guid: 262e54e9ee8a4d8448b441470af7a7f3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 262e54e9ee8a4d8448b441470af7a7f3, type: 3}
+--- !u!4 &1683776559 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 255650226949900341, guid: 262e54e9ee8a4d8448b441470af7a7f3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1683776558}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1689220410
 GameObject:
   m_ObjectHideFlags: 0
@@ -1885,12 +2155,12 @@ PrefabInstance:
     - target: {fileID: 255650226949900341, guid: 262e54e9ee8a4d8448b441470af7a7f3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.82
       objectReference: {fileID: 0}
     - target: {fileID: 255650226949900341, guid: 262e54e9ee8a4d8448b441470af7a7f3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.2
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 255650226949900341, guid: 262e54e9ee8a4d8448b441470af7a7f3,
         type: 3}
@@ -1944,8 +2214,13 @@ PrefabInstance:
       objectReference: {fileID: 1433627000}
     - target: {fileID: 1989830630391115040, guid: 262e54e9ee8a4d8448b441470af7a7f3,
         type: 3}
+      propertyPath: floaters
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989830630391115040, guid: 262e54e9ee8a4d8448b441470af7a7f3,
+        type: 3}
       propertyPath: waterDrag
-      value: 1.5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1989830630391115040, guid: 262e54e9ee8a4d8448b441470af7a7f3,
         type: 3}
@@ -1955,12 +2230,17 @@ PrefabInstance:
     - target: {fileID: 1989830630391115040, guid: 262e54e9ee8a4d8448b441470af7a7f3,
         type: 3}
       propertyPath: displacementAmount
-      value: 1
+      value: 0.85
       objectReference: {fileID: 0}
     - target: {fileID: 9179469202346868103, guid: 262e54e9ee8a4d8448b441470af7a7f3,
         type: 3}
       propertyPath: m_Name
-      value: FloaterObject (3)
+      value: FloaterObject_FrontLeft
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179469202346868103, guid: 262e54e9ee8a4d8448b441470af7a7f3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2375,7 +2655,7 @@ PrefabInstance:
     - target: {fileID: 255650226949900341, guid: 262e54e9ee8a4d8448b441470af7a7f3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.2
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 255650226949900341, guid: 262e54e9ee8a4d8448b441470af7a7f3,
         type: 3}
@@ -2429,8 +2709,13 @@ PrefabInstance:
       objectReference: {fileID: 1433627000}
     - target: {fileID: 1989830630391115040, guid: 262e54e9ee8a4d8448b441470af7a7f3,
         type: 3}
+      propertyPath: floaters
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989830630391115040, guid: 262e54e9ee8a4d8448b441470af7a7f3,
+        type: 3}
       propertyPath: waterDrag
-      value: 1.5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1989830630391115040, guid: 262e54e9ee8a4d8448b441470af7a7f3,
         type: 3}
@@ -2440,12 +2725,17 @@ PrefabInstance:
     - target: {fileID: 1989830630391115040, guid: 262e54e9ee8a4d8448b441470af7a7f3,
         type: 3}
       propertyPath: displacementAmount
-      value: 1
+      value: 0.85
       objectReference: {fileID: 0}
     - target: {fileID: 9179469202346868103, guid: 262e54e9ee8a4d8448b441470af7a7f3,
         type: 3}
       propertyPath: m_Name
-      value: FloaterObject
+      value: FloaterObject_FrontCenter
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179469202346868103, guid: 262e54e9ee8a4d8448b441470af7a7f3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
