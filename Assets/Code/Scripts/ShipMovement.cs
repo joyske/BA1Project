@@ -9,6 +9,7 @@ public class ShipMovement : MonoBehaviour
     //ShipControls shipControls;
     public Rigidbody rigidBodyRef;
 
+    private float currentSpeed;
     public float forwardSpeed;
     public float backwardSpeed;
     public float turningSpeed;
@@ -18,6 +19,10 @@ public class ShipMovement : MonoBehaviour
     private Vector3 DesiredRotation;
     private Vector3 ActualRotation;
 
+    private Vector3 DesiredVelocity;
+    private Vector3 ActualVelocity;
+
+    public float accelerateDelay;
     public float turnDelay;
 
     private Vector3 velocity = Vector3.zero;
@@ -39,35 +44,43 @@ public class ShipMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(Input.GetKey(KeyCode.W))
+        if ((Input.GetKey(KeyCode.W)) && !(Input.GetKey(KeyCode.S)))
         {
-            rigidBodyRef.AddForce(-transform.right * Time.fixedDeltaTime * forwardSpeed, ForceMode.Acceleration);
+            currentSpeed = Mathf.Lerp(currentSpeed, forwardSpeed, accelerateDelay * Time.fixedDeltaTime);
         }
 
-        if (Input.GetKey(KeyCode.S))
+        if ((Input.GetKey(KeyCode.S)) && !(Input.GetKey(KeyCode.W)))
         {
-            rigidBodyRef.AddForce(-transform.right * Time.fixedDeltaTime * backwardSpeed, ForceMode.Acceleration);
+            currentSpeed = Mathf.Lerp(currentSpeed, backwardSpeed, accelerateDelay * Time.fixedDeltaTime);
         }
 
-        if (Input.GetKey(KeyCode.A))
+        if ((!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S)) || (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.S)))
         {
-            DesiredRotation = new Vector3(0, -turningSpeed * Time.fixedDeltaTime, 0);
+            currentSpeed = Mathf.Lerp(currentSpeed, 0f, accelerateDelay * Time.fixedDeltaTime);
         }
 
-        if (Input.GetKey(KeyCode.D))
+
+
+
+        if ((Input.GetKey(KeyCode.A)) && !(Input.GetKey(KeyCode.D)))
         {
-            DesiredRotation = new Vector3(0, turningSpeed * Time.fixedDeltaTime, 0);
+            DesiredRotation = Vector3.SmoothDamp(DesiredRotation, new Vector3 (0, -turningSpeed, 0), ref velocity, turnDelay * Time.fixedDeltaTime);
         }
 
-        if (!(Input.GetKey(KeyCode.A)) && !(Input.GetKey(KeyCode.D)))
+        if ((Input.GetKey(KeyCode.D)) && !(Input.GetKey(KeyCode.A)))
         {
-            DesiredRotation = new Vector3(0, 0, 0);
+            DesiredRotation = Vector3.SmoothDamp(DesiredRotation, new Vector3(0, turningSpeed, 0), ref velocity, turnDelay * Time.fixedDeltaTime);
         }
 
-        //Interpolate desired and actual rotation vector
-        ActualRotation = Vector3.SmoothDamp(ActualRotation, DesiredRotation, ref velocity, turnDelay * Time.fixedDeltaTime);
-        transform.Rotate(ActualRotation);
+        if ((!(Input.GetKey(KeyCode.A)) && !(Input.GetKey(KeyCode.D))) || (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D)))
+        {
+            DesiredRotation = Vector3.SmoothDamp(DesiredRotation, new Vector3(0, 0, 0), ref velocity, turnDelay * Time.fixedDeltaTime);
+        }
 
 
+
+        //Add force/torque based on user inputs
+        rigidBodyRef.AddTorque(DesiredRotation * Time.fixedDeltaTime, ForceMode.Acceleration);
+        rigidBodyRef.AddForce(-transform.right * currentSpeed * Time.fixedDeltaTime, ForceMode.Acceleration);
     }
 }
