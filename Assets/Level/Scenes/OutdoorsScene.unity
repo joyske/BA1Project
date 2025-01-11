@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 4320.7153, g: 4528.102, b: 6573.2354, a: 1}
+  m_IndirectSpecularColor: {r: 4323.612, g: 4531.4614, b: 6577.751, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1661,15 +1661,18 @@ GameObject:
   - component: {fileID: 762294824}
   - component: {fileID: 762294825}
   - component: {fileID: 762294826}
-  - component: {fileID: 762294830}
-  - component: {fileID: 762294829}
-  - component: {fileID: 762294828}
-  - component: {fileID: 762294827}
+  - component: {fileID: 762294838}
+  - component: {fileID: 762294837}
+  - component: {fileID: 762294836}
   - component: {fileID: 762294835}
   - component: {fileID: 762294834}
   - component: {fileID: 762294833}
   - component: {fileID: 762294832}
   - component: {fileID: 762294831}
+  - component: {fileID: 762294830}
+  - component: {fileID: 762294829}
+  - component: {fileID: 762294828}
+  - component: {fileID: 762294827}
   m_Layer: 0
   m_Name: Raft
   m_TagString: Untagged
@@ -1815,8 +1818,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 7.9, y: 1.92, z: 4.08}
-  m_Center: {x: 7.02, y: 1.27, z: 0}
+  m_Size: {x: 900, y: 40, z: 408}
+  m_Center: {x: 90, y: 65, z: 0}
 --- !u!65 &762294827
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1836,8 +1839,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 6, y: 3.2, z: 5}
-  m_Center: {x: 0, y: 2, z: 0}
+  m_Size: {x: 600, y: 100, z: 100}
+  m_Center: {x: 200, y: -24.5, z: -150}
 --- !u!65 &762294828
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1857,8 +1860,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.45, y: 0.5, z: 4.3}
-  m_Center: {x: 11.2, y: 2.5, z: 0}
+  m_Size: {x: 600, y: 100, z: 100}
+  m_Center: {x: 200, y: -24.5, z: 150}
 --- !u!65 &762294829
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1878,8 +1881,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 7.9, y: 0.5, z: 0.69}
-  m_Center: {x: 7.02, y: 2.5, z: 2.35}
+  m_Size: {x: 200, y: 40, z: 229.1}
+  m_Center: {x: -270, y: 340.1, z: 0}
 --- !u!65 &762294830
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1899,8 +1902,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 7.9, y: 0.5, z: 0.69}
-  m_Center: {x: 7.02, y: 2.5, z: -2.35}
+  m_Size: {x: 250, y: 225, z: 300}
+  m_Center: {x: -500, y: 240, z: 0}
 --- !u!65 &762294831
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1920,8 +1923,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.7, y: 1.65, z: 3}
-  m_Center: {x: 12.4, y: 2.1, z: 0}
+  m_Size: {x: 100, y: 65, z: 300}
+  m_Center: {x: -319, y: 115, z: 0}
 --- !u!65 &762294832
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1941,8 +1944,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 2.5, z: 3}
-  m_Center: {x: -4, y: 2.5, z: 0}
+  m_Size: {x: 500, y: 250, z: 104.7}
+  m_Center: {x: -438.4, y: 110.9, z: 205}
 --- !u!65 &762294833
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1962,8 +1965,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 5, y: 4.5, z: 1.5}
-  m_Center: {x: 0, y: 2.8, z: -3.25}
+  m_Size: {x: 500, y: 250, z: 104.7}
+  m_Center: {x: -438.4, y: 110.9, z: -205}
 --- !u!65 &762294834
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1983,8 +1986,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 5, y: 4.5, z: 1.5}
-  m_Center: {x: 0, y: 2.8, z: 3.25}
+  m_Size: {x: 45, y: 50, z: 390}
+  m_Center: {x: 559.4, y: 110.9, z: 0}
 --- !u!65 &762294835
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2004,8 +2007,71 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 4.1, y: 1.7, z: 2.6}
-  m_Center: {x: -0.28, y: 4.5, z: 0}
+  m_Size: {x: 243.5, y: 50, z: 45}
+  m_Center: {x: 441.4, y: 110.9, z: -215}
+--- !u!65 &762294836
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762294818}
+  m_Material: {fileID: 13400000, guid: 2a326a308dbd9e24aac3b6354d035486, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 243.5, y: 50, z: 45}
+  m_Center: {x: 441.4, y: 110.9, z: 215}
+--- !u!65 &762294837
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762294818}
+  m_Material: {fileID: 13400000, guid: 2a326a308dbd9e24aac3b6354d035486, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 500, y: 20, z: 45}
+  m_Center: {x: 70, y: 95.6, z: -215}
+--- !u!65 &762294838
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762294818}
+  m_Material: {fileID: 13400000, guid: 2a326a308dbd9e24aac3b6354d035486, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 500, y: 20, z: 45}
+  m_Center: {x: 70, y: 95.6, z: 215}
 --- !u!1 &809586987
 GameObject:
   m_ObjectHideFlags: 0
@@ -4918,7 +4984,7 @@ Transform:
   m_GameObject: {fileID: 1793218475}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.47, z: 0}
+  m_LocalPosition: {x: 0, y: 1.395, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
