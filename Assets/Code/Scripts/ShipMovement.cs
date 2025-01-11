@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 //using UnityEngine.InputSystem;
 
@@ -25,7 +26,12 @@ public class ShipMovement : MonoBehaviour
     public float accelerateDelay;
     public float turnDelay;
 
+    public Floater[] Floaters;
+
     private Vector3 velocity = Vector3.zero;
+    private int CollidingElements = 0;
+    private float CurrentCollidedMultiplier = 1;
+    public float CollidedMultiplier = 0.7f;
 
     /*private void OnEnable()
     {
@@ -41,6 +47,16 @@ public class ShipMovement : MonoBehaviour
     {
         shipControls.Disable();
     }*/
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        CollidingElements++;
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        CollidingElements--;
+    }
 
     private void FixedUpdate()
     {
@@ -79,8 +95,32 @@ public class ShipMovement : MonoBehaviour
 
 
 
+
+
+        if (CollidingElements > 0) { CurrentCollidedMultiplier = CollidedMultiplier; }
+        else { CurrentCollidedMultiplier = .5f; }
+
+
         //Add force/torque based on user inputs
-        rigidBodyRef.AddTorque(DesiredRotation * Time.fixedDeltaTime, ForceMode.Acceleration);
-        rigidBodyRef.AddForce(-transform.right * currentSpeed * Time.fixedDeltaTime, ForceMode.Acceleration);
+        rigidBodyRef.AddTorque(DesiredRotation * CollidedMultiplier * Time.fixedDeltaTime, ForceMode.Acceleration);
+
+        foreach (var Floater in Floaters)
+        {
+
+            if(Floater.isSubmerged || CollidingElements > 0)
+            {
+                rigidBodyRef.AddForce((-transform.right * currentSpeed * CurrentCollidedMultiplier * Time.fixedDeltaTime) / Floaters.Length, ForceMode.Acceleration);
+
+
+                Debug.Log((-transform.right * currentSpeed * CurrentCollidedMultiplier * Time.fixedDeltaTime) / Floaters.Length);
+                //rigidBodyRef.AddForceAtPosition((-transform.right * currentSpeed * Time.fixedDeltaTime) / Floaters.Length, Floater.transform.position, ForceMode.Acceleration);
+            }
+
+
+            //rigidBodyRef.AddForceAtPosition(new Vector3(0f, Mathf.Abs(Physics.gravity.y) * displacementMulti, 0f), transform.position, ForceMode.Acceleration);
+        }
+
+        //rigidBodyRef.AddForce(-transform.right * currentSpeed * Time.fixedDeltaTime, ForceMode.Acceleration);
     }
 }
+

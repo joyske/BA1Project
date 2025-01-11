@@ -77,8 +77,6 @@ public class CameraController : MonoBehaviour
         CameraMoveRotationOffsetX = DesiredCameraMoveRotationOffsetX;
         CameraMoveRotationOffsetY = DesiredCameraMoveRotationOffsetY;
 
-
-        UnityEngine.Debug.Log(Mathf.Clamp(PlayerRef.transform.eulerAngles.x, 0, 360) + CameraMoveRotationOffsetY);
         RotationEulerAngles = new Vector3(Mathf.Clamp(PlayerRef.transform.eulerAngles.x, 0, 360) + CameraMoveRotationOffsetY, PlayerRef.transform.eulerAngles.y - 90 + CameraMoveRotationOffsetX, 0);
 
         transform.eulerAngles = RotationEulerAngles;
