@@ -6,9 +6,16 @@ using UnityEngine.UIElements;
 
 
 // Save positions of objects and checking for valid placement
-public class GridData
+public class GridData : MonoBehaviour
 {
     public Dictionary<Vector3Int, PlacementData> placedObjects = new();
+
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
 
     /// <summary>
     ///  Check if Object can be placed on cell

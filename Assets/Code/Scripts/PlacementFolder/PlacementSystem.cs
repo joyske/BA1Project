@@ -21,7 +21,8 @@ public class PlacementSystem : MonoBehaviour
     [SerializeField]
     private GameObject gridVisualization;
 
-    private GridData GridData;
+    [SerializeField]
+    GridData GridData;
 
     private List<GameObject> placedGameObjects = new();
 
@@ -35,7 +36,7 @@ public class PlacementSystem : MonoBehaviour
     private void Start()
     {
        StopPlacement();
-        GridData = new(); // item == object TODO name entscheiden 
+       //GridData = new(); // item == object TODO name entscheiden 
     }
 
 
@@ -104,9 +105,6 @@ public class PlacementSystem : MonoBehaviour
     private void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Q)) { StartPlacement(0); }
-        if (Input.GetKeyDown(KeyCode.W)) { StartPlacement(1); }
-        if (Input.GetKeyDown(KeyCode.E)) { StartPlacement(2); }
         if (Input.GetKeyDown(KeyCode.Space)) 
         {
             Debug.Log(placedGameObjects.Count);
@@ -190,8 +188,6 @@ public class PlacementSystem : MonoBehaviour
             placedGameObjects.Add(newObject);
         }
     }
-
-
 
 }
 

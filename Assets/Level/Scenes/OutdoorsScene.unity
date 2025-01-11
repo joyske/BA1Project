@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 4321.0024, g: 4529.094, b: 6575.0635, a: 1}
+  m_IndirectSpecularColor: {r: 4320.7466, g: 4528.102, b: 6573.204, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1852,7 +1852,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 762294818}
-  m_Mesh: {fileID: -7136392352264245827, guid: 7f8cf0cf5947c864f86c7d7cbf465a79, type: 3}
+  m_Mesh: {fileID: 5115435254867088342, guid: 03cfafd3daa7d8f40affcf14390b90a7, type: 3}
 --- !u!4 &762294822
 Transform:
   m_ObjectHideFlags: 0
@@ -1862,8 +1862,8 @@ Transform:
   m_GameObject: {fileID: 762294818}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 5.6, y: 0.33, z: 0}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4986010868227126074}
@@ -3481,8 +3481,12 @@ MonoBehaviour:
   largeBand1FadeToggle: 1
   ripplesFadeToggle: 1
   surfaceType: 0
-  geometryType: 3
-  meshRenderers: []
+  geometryType: 0
+  meshRenderers:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   timeMultiplier: 1
   cpuSimulation: 1
   cpuLowLatency: 0
@@ -3606,11 +3610,11 @@ MonoBehaviour:
   largeOrientationValue: 0
   largeWindSpeed: 60
   largeChaos: 0.7
-  largeBand0Multiplier: 0.5
+  largeBand0Multiplier: 0
   largeBand0FadeMode: 1
   largeBand0FadeStart: 1500
   largeBand0FadeDistance: 3000
-  largeBand1Multiplier: 0.5
+  largeBand1Multiplier: 0
   largeBand1FadeMode: 1
   largeBand1FadeStart: 300
   largeBand1FadeDistance: 800
@@ -3636,8 +3640,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 500, y: 500, z: 500}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5030,7 +5034,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1793218476
 Transform:
   m_ObjectHideFlags: 0
@@ -5040,7 +5044,7 @@ Transform:
   m_GameObject: {fileID: 1793218475}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.47, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5968,8 +5972,8 @@ SceneRoots:
   - {fileID: 1823688467}
   - {fileID: 157207114}
   - {fileID: 432432461}
-  - {fileID: 2013410475}
   - {fileID: 1433627001}
+  - {fileID: 2013410475}
   - {fileID: 692584107}
   - {fileID: 1753402629509835677}
   - {fileID: 1383351059}
