@@ -395,7 +395,7 @@ GameObject:
   - component: {fileID: 1681121817468859135}
   m_Layer: 0
   m_Name: Boat_Null 1
-  m_TagString: Untagged
+  m_TagString: Boat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

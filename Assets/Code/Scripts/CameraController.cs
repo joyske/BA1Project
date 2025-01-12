@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public GameObject PlayerRef;
+    private GameObject PlayerRef;
     Vector3 BaseOffset;
     Vector3 Offset;
     float BlendValueX;
@@ -30,6 +30,8 @@ public class CameraController : MonoBehaviour
 
     private void Start()
     {
+        PlayerRef = GameObject.FindGameObjectWithTag("Boat");
+
         //Initialize default camera offset and default DesiredPosition
         BaseOffset = transform.position;
         DesiredPosition = transform.position;

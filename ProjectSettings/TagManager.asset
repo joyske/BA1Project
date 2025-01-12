@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ocean
+  - Boat
   layers:
   - Default
   - TransparentFX
