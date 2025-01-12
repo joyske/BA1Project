@@ -31,11 +31,17 @@ public class PlacementSystem : MonoBehaviour
 
     private Vector3Int lastDetectedPos = Vector3Int.zero;
 
+    [SerializeField]
+    Transform boatTransform;
+
 
 
     private void Start()
     {
-       StopPlacement();
+        Vector3 gridPosition = grid.transform.position;
+        gridPosition.y = boatTransform.position.y;  
+        grid.transform.position = gridPosition;
+        StopPlacement();
        //GridData = new(); // item == object TODO name entscheiden 
     }
 
@@ -52,6 +58,8 @@ public class PlacementSystem : MonoBehaviour
         {
             Debug.LogError($"NO ID FOUND {ID}");
         }
+        //Renderer renderer = gridVisualization.GetComponent<Renderer>();
+        //renderer.enabled = true;
         gridVisualization.SetActive(true);
         previewSystem.StartShowingPlacementPreview(inventory.objectsData[selectedObjectIndex].Prefab);
         inputManager.OnClicked += PlaceItem;
@@ -69,16 +77,29 @@ public class PlacementSystem : MonoBehaviour
             return;
         }
         Vector3 mousePos = inputManager.GetSelectedMapPosition();
+        Debug.Log(mousePos);
         Vector3Int gridPos = grid.WorldToCell(mousePos);
+
+        //gridPos.y = Mathf.RoundToInt(boatTransform.position.y);
 
         bool placementValid = CheckPlacementValidity(gridPos, selectedObjectIndex);
         if (!placementValid) return;
 
         GameObject newObject = Instantiate(inventory.objectsData[selectedObjectIndex].Prefab);
+
+
+        //Vector3 placementPosition = grid.CellToWorld(gridPos);
+        //placementPosition.y = boatTransform.position.y;
+        //newObject.transform.position = placementPosition;
+
         newObject.transform.position = grid.CellToWorld(gridPos);
+
+
         placedGameObjects.Add(newObject);
+        Debug.Log(gridPos);
         GridData.AddObjectAt(gridPos, inventory.objectsData[selectedObjectIndex].Size, inventory.objectsData[selectedObjectIndex].ID, placedGameObjects.Count -1);
         previewSystem.UpdatePosition(grid.CellToWorld(gridPos), false);
+
     }
 
     /// <summary>
@@ -95,6 +116,8 @@ public class PlacementSystem : MonoBehaviour
     private void StopPlacement()
     {
         selectedObjectIndex--;
+        //Renderer renderer = gridVisualization.GetComponent<Renderer>();
+        //renderer.enabled = false;
         gridVisualization.SetActive(false);
         previewSystem.StopShowingPreview();
         inputManager.OnClicked -= PlaceItem;
@@ -107,12 +130,13 @@ public class PlacementSystem : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space)) 
         {
+            StopPlacement();
             Debug.Log(placedGameObjects.Count);
             foreach (GameObject obj in placedGameObjects)
             {
                 // enable physics simulation
                Rigidbody rb=  obj.GetComponentInChildren<Rigidbody>();
-                rb.isKinematic = false;
+               rb.isKinematic = false;
                 // toggle colliders for physics simulation TODO cylinderC
                 SphereCollider sphereCollider = obj.GetComponentInChildren<SphereCollider>();
                 if (sphereCollider != null)
@@ -188,6 +212,7 @@ public class PlacementSystem : MonoBehaviour
             placedGameObjects.Add(newObject);
         }
     }
+
 
 }
 
