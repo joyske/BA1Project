@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 4327.1646, g: 4542.071, b: 6611.407, a: 1}
+  m_IndirectSpecularColor: {r: 4327.196, g: 4542.0864, b: 6611.415, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1684,12 +1684,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 809586987}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &829755399 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2951539792559086268, guid: 035b3bc8d7cf54f499994000f5b6d95d,
-    type: 3}
-  m_PrefabInstance: {fileID: 6160427632655915541}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &884423786 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4145524027894214413, guid: 291bf43bf56a09e4b855dad62352df8a,
@@ -3838,7 +3832,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1793218476
 Transform:
   m_ObjectHideFlags: 0
@@ -4113,7 +4107,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a3cb71795707db4684fb399651bb21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerRef: {fileID: 829755399}
   CameraBlendTime: 0
   MouseSensitivity: 100
   CameraTurnsWithShip: 1

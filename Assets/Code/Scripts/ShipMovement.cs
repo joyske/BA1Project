@@ -10,12 +10,18 @@ public class ShipMovement : MonoBehaviour
     //ShipControls shipControls;
     public Rigidbody rigidBodyRef;
 
-    private float currentSpeed;
-    public float forwardSpeed;
-    public float backwardSpeed;
+    //private float currentSpeed;
+    //public float forwardSpeed 1100;
+    //public float backwardSpeed -550;
+    
     public float turningSpeed;
 
-    public Vector2 movementInput;
+    public float maxForwardSpeed;
+    public float maxBackwardSpeed;
+    public float desiredSpeedChangeMultiplier;
+    private float currentDesiredSpeed;
+
+    //public Vector2 movementInput;
 
     private Vector3 DesiredRotation;
     private Vector3 ActualRotation;
@@ -58,23 +64,38 @@ public class ShipMovement : MonoBehaviour
         CollidingElements--;
     }
 
+
+    //public float maxForwardSpeed;
+    //public float maxBackwardSpeed;
+    //public float desiredSpeedChangeMultiplier;
+    //public float currentDesiredSpeed;
+
     private void FixedUpdate()
     {
         if ((Input.GetKey(KeyCode.W)) && !(Input.GetKey(KeyCode.S)))
         {
-            currentSpeed = Mathf.Lerp(currentSpeed, forwardSpeed, accelerateDelay * Time.fixedDeltaTime);
+            currentDesiredSpeed += (desiredSpeedChangeMultiplier * Time.fixedDeltaTime);
+            if (currentDesiredSpeed > maxForwardSpeed) { currentDesiredSpeed = maxForwardSpeed; }
+
+            //currentSpeed = Mathf.Lerp(currentSpeed, forwardSpeed, accelerateDelay * Time.fixedDeltaTime);
         }
 
         if ((Input.GetKey(KeyCode.S)) && !(Input.GetKey(KeyCode.W)))
         {
-            currentSpeed = Mathf.Lerp(currentSpeed, backwardSpeed, accelerateDelay * Time.fixedDeltaTime);
+            currentDesiredSpeed -= (desiredSpeedChangeMultiplier * Time.fixedDeltaTime);
+            if (currentDesiredSpeed < maxBackwardSpeed) { currentDesiredSpeed = maxBackwardSpeed; }
+
+            //currentSpeed = Mathf.Lerp(currentSpeed, backwardSpeed, accelerateDelay * Time.fixedDeltaTime);
         }
 
         if ((!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S)) || (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.S)))
         {
-            currentSpeed = Mathf.Lerp(currentSpeed, 0f, accelerateDelay * Time.fixedDeltaTime);
+            
+            
+            //currentSpeed = Mathf.Lerp(currentSpeed, 0f, accelerateDelay * Time.fixedDeltaTime);
         }
 
+        Debug.Log("CurrentDesiredSpeed: " + currentDesiredSpeed);
 
 
 
@@ -109,10 +130,8 @@ public class ShipMovement : MonoBehaviour
 
             if(Floater.isSubmerged || CollidingElements > 0)
             {
-                rigidBodyRef.AddForce((-transform.right * currentSpeed * CurrentCollidedMultiplier * Time.fixedDeltaTime) / Floaters.Length, ForceMode.Acceleration);
+                rigidBodyRef.AddForce((-transform.right * currentDesiredSpeed * CurrentCollidedMultiplier * Time.fixedDeltaTime) / Floaters.Length, ForceMode.Acceleration);
 
-
-                Debug.Log((-transform.right * currentSpeed * CurrentCollidedMultiplier * Time.fixedDeltaTime) / Floaters.Length);
                 //rigidBodyRef.AddForceAtPosition((-transform.right * currentSpeed * Time.fixedDeltaTime) / Floaters.Length, Floater.transform.position, ForceMode.Acceleration);
             }
 

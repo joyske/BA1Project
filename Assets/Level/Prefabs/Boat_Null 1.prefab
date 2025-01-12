@@ -467,6 +467,9 @@ MonoBehaviour:
   forwardSpeed: 1100
   backwardSpeed: -550
   turningSpeed: 100
+  maxForwardSpeed: 2000
+  maxBackwardSpeed: -1000
+  desiredSpeedChangeMultiplier: 400
   movementInput: {x: 0, y: 0}
   accelerateDelay: 1
   turnDelay: 25
