@@ -18,7 +18,7 @@ public class ReloadCargo : MonoBehaviour
 
     private void Start()
     {
-        Vector3 targetPos = new Vector3(1, 1,1);
+        Vector3 targetPos = new Vector3(0, 0.5f, 0);
         GameObject newObject = Instantiate(boat, targetPos, Quaternion.identity);
 
         grid = newObject.GetComponentInChildren<Grid>();
