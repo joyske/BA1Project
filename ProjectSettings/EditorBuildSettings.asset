@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Level/Scenes/Placement.unity
     guid: 9f481f84785878743bcb77bbd1603917
   - enabled: 1
-    path: Assets/Level/LevelDesign/FirstLevel.unity
+    path: Assets/Level/Scenes/FirstLevel.unity
     guid: 86351d6a6912c004ba13fb0539d545b3
   - enabled: 1
     path: Assets/Level/Scenes/OutdoorsScene.unity
