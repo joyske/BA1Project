@@ -34,10 +34,14 @@ public class PlacementSystem : MonoBehaviour
     [SerializeField]
     Transform boatTransform;
 
+    bool isSimulating;
+ 
+
 
 
     private void Start()
     {
+        isSimulating = false;
         Vector3 gridPosition = grid.transform.position;
         gridPosition.y = boatTransform.position.y;  
         grid.transform.position = gridPosition;
@@ -52,17 +56,20 @@ public class PlacementSystem : MonoBehaviour
     /// <param name="ID"></param>
     public void StartPlacement(int ID)
     {
-        StopPlacement();
-        selectedObjectIndex = inventory.objectsData.FindIndex(data => data.ID == ID);  // Get item with id from inventory
-        if (selectedObjectIndex < 0)
+        if (!isSimulating)
         {
-            Debug.LogError($"NO ID FOUND {ID}");
-        }
+            StopPlacement();
+            selectedObjectIndex = inventory.objectsData.FindIndex(data => data.ID == ID);  // Get item with id from inventory
+            if (selectedObjectIndex < 0)
+            {
+                Debug.LogError($"NO ID FOUND {ID}");
+            }
 
-        gridVisualization.SetActive(true);
-        previewSystem.StartShowingPlacementPreview(inventory.objectsData[selectedObjectIndex].Prefab);
-        inputManager.OnClicked += PlaceItem;
-        inputManager.OnExit += StopPlacement;
+            gridVisualization.SetActive(true);
+            previewSystem.StartShowingPlacementPreview(inventory.objectsData[selectedObjectIndex].Prefab);
+            inputManager.OnClicked += PlaceItem;
+            inputManager.OnExit += StopPlacement;
+        }
     }
 
 
@@ -149,6 +156,7 @@ public class PlacementSystem : MonoBehaviour
 
     public void StartSimulation()
     {
+        isSimulating = true;
         StopPlacement();
         Debug.Log(placedGameObjects.Count);
         foreach (GameObject obj in placedGameObjects)
@@ -178,6 +186,7 @@ public class PlacementSystem : MonoBehaviour
     /// </summary>
     public void ResetObjects()
     {
+        isSimulating = false;
         foreach (GameObject obj in placedGameObjects)
         {
             Destroy(obj);
