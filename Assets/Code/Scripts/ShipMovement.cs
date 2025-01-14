@@ -19,7 +19,7 @@ public class ShipMovement : MonoBehaviour
     public float maxForwardSpeed;
     public float maxBackwardSpeed;
     public float desiredSpeedChangeMultiplier;
-    private float currentDesiredSpeed;
+    public float currentDesiredSpeed;
 
     //public Vector2 movementInput;
 

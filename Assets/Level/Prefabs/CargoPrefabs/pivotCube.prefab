@@ -45,6 +45,8 @@ GameObject:
   - component: {fileID: 6719863065700691337}
   - component: {fileID: 6360751781938191941}
   - component: {fileID: 7249975189121447132}
+  - component: {fileID: 8567223391701312972}
+  - component: {fileID: 6946615270182770796}
   m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
@@ -148,7 +150,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4961534625892690043}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 150
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -162,8 +164,40 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8567223391701312972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4961534625892690043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 571789ebf8b52bb48a4db2a8badd33fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidBodyRef: {fileID: 0}
+  depthBeforeSub: 1
+  displacementAmount: 2
+  floaters: 1
+  waterDrag: 2
+  waterAngularDrag: 2
+  isSubmerged: 0
+  hitWater: 0
+--- !u!114 &6946615270182770796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4961534625892690043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c8ded1e75d3f584d9678aeef743129d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

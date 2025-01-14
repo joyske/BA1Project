@@ -130,26 +130,7 @@ public class PlacementSystem : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space)) 
         {
-            StopPlacement();
-            Debug.Log(placedGameObjects.Count);
-            foreach (GameObject obj in placedGameObjects)
-            {
-                // enable physics simulation
-               Rigidbody rb=  obj.GetComponentInChildren<Rigidbody>();
-               rb.isKinematic = false;
-                // toggle colliders for physics simulation TODO cylinderC
-                SphereCollider sphereCollider = obj.GetComponentInChildren<SphereCollider>();
-                if (sphereCollider != null)
-                {
-                    BoxCollider boxCollider = obj.GetComponentInChildren<BoxCollider>();
-                    if (boxCollider != null)
-                    {
-                        boxCollider.enabled = false;
-                    }
-                    sphereCollider.enabled = true;
-                
-                }
-            }
+            StartSimulation();
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -186,6 +167,30 @@ public class PlacementSystem : MonoBehaviour
         StopPlacement();
         placedGameObjects.Clear();
         PlaceSavedObjects();
+    }
+
+    public void StartSimulation()
+    {
+        StopPlacement();
+        Debug.Log(placedGameObjects.Count);
+        foreach (GameObject obj in placedGameObjects)
+        {
+            // enable physics simulation
+            Rigidbody rb = obj.GetComponentInChildren<Rigidbody>();
+            rb.isKinematic = false;
+            // toggle colliders for physics simulation TODO cylinderC
+            SphereCollider sphereCollider = obj.GetComponentInChildren<SphereCollider>();
+            if (sphereCollider != null)
+            {
+                BoxCollider boxCollider = obj.GetComponentInChildren<BoxCollider>();
+                if (boxCollider != null)
+                {
+                    boxCollider.enabled = false;
+                }
+                sphereCollider.enabled = true;
+
+            }
+        }
     }
 
 

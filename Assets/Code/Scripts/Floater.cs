@@ -14,6 +14,7 @@ public class Floater : MonoBehaviour
 
     [HideInInspector]
     public bool isSubmerged;
+    public bool hitWater = false;
 
     private WaterSurface water;
     WaterSearchParameters Search;
@@ -21,6 +22,11 @@ public class Floater : MonoBehaviour
 
     private void Start()
     {
+        if(rigidBodyRef == null)
+        {
+            rigidBodyRef = GetComponent<Rigidbody>();
+        }
+        
         //Get water ref
         water = GameObject.FindGameObjectWithTag("Ocean").GetComponent<WaterSurface>();
     }
@@ -38,6 +44,7 @@ public class Floater : MonoBehaviour
         if (transform.position.y < SearchResult.projectedPositionWS.y)
         {
             isSubmerged = true;
+            hitWater = true;
 
             float displacementMulti = Mathf.Clamp01(SearchResult.projectedPositionWS.y - transform.position.y / depthBeforeSub) * displacementAmount;
 
