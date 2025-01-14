@@ -14,10 +14,11 @@ public class ReloadCargo : MonoBehaviour
     GameObject boat;
 
     [SerializeField]
-    float delayTime = 1.0f; 
+    float delayTime = 1.0f;
 
-    private void Start()
+    private void Awake()
     {
+
         StartCoroutine(InitializeBoatAndCargo());
     }
 
@@ -28,8 +29,6 @@ public class ReloadCargo : MonoBehaviour
     {
         Vector3 targetPos = new Vector3(0, 0.5f, 0);
         GameObject newObject = Instantiate(boat, targetPos, Quaternion.identity);
-      
-
         grid = newObject.GetComponentInChildren<Grid>();
 
         yield return new WaitForSeconds(delayTime);

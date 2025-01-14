@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 4317.4224, g: 4528.0747, b: 6581.3994, a: 1}
+  m_IndirectSpecularColor: {r: 4317.3853, g: 4526.739, b: 6573.618, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -374,7 +374,7 @@ PrefabInstance:
     - target: {fileID: 2794390668913423381, guid: 4ee614ec29c4bf4419bf3a7f87a4be95,
         type: 3}
       propertyPath: m_Name
-      value: Boat_Null 1
+      value: Boat_Null_Ghost
       objectReference: {fileID: 0}
     - target: {fileID: 2794390668913423381, guid: 4ee614ec29c4bf4419bf3a7f87a4be95,
         type: 3}
