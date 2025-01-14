@@ -32,6 +32,7 @@ public class Cargo : MonoBehaviour
             GetComponent<SphereCollider>().enabled = true;
         }
 
+
     }
 
     // Update is called once per frame

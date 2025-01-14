@@ -95,7 +95,7 @@ public class ShipMovement : MonoBehaviour
             //currentSpeed = Mathf.Lerp(currentSpeed, 0f, accelerateDelay * Time.fixedDeltaTime);
         }
 
-        Debug.Log("CurrentDesiredSpeed: " + currentDesiredSpeed);
+        //Debug.Log("CurrentDesiredSpeed: " + currentDesiredSpeed);
 
 
 

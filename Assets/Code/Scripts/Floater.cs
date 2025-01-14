@@ -22,6 +22,7 @@ public class Floater : MonoBehaviour
 
     private void Start()
     {
+        hitWater = false;
         if(rigidBodyRef == null)
         {
             rigidBodyRef = GetComponent<Rigidbody>();

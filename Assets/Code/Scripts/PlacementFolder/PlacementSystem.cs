@@ -58,8 +58,7 @@ public class PlacementSystem : MonoBehaviour
         {
             Debug.LogError($"NO ID FOUND {ID}");
         }
-        //Renderer renderer = gridVisualization.GetComponent<Renderer>();
-        //renderer.enabled = true;
+
         gridVisualization.SetActive(true);
         previewSystem.StartShowingPlacementPreview(inventory.objectsData[selectedObjectIndex].Prefab);
         inputManager.OnClicked += PlaceItem;
@@ -80,17 +79,10 @@ public class PlacementSystem : MonoBehaviour
         Debug.Log(mousePos);
         Vector3Int gridPos = grid.WorldToCell(mousePos);
 
-        //gridPos.y = Mathf.RoundToInt(boatTransform.position.y);
-
         bool placementValid = CheckPlacementValidity(gridPos, selectedObjectIndex);
         if (!placementValid) return;
 
         GameObject newObject = Instantiate(inventory.objectsData[selectedObjectIndex].Prefab);
-
-
-        //Vector3 placementPosition = grid.CellToWorld(gridPos);
-        //placementPosition.y = boatTransform.position.y;
-        //newObject.transform.position = placementPosition;
 
         newObject.transform.position = grid.CellToWorld(gridPos);
 
@@ -113,11 +105,12 @@ public class PlacementSystem : MonoBehaviour
         return GridData.CanPlaceObjectAt(gridPos, inventory.objectsData[selectedObjectIndex].Size);
     }
 
+
+
+
     private void StopPlacement()
     {
         selectedObjectIndex--;
-        //Renderer renderer = gridVisualization.GetComponent<Renderer>();
-        //renderer.enabled = false;
         gridVisualization.SetActive(false);
         previewSystem.StopShowingPreview();
         inputManager.OnClicked -= PlaceItem;
@@ -128,7 +121,7 @@ public class PlacementSystem : MonoBehaviour
     private void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Space)) 
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             StartSimulation();
         }
@@ -154,21 +147,6 @@ public class PlacementSystem : MonoBehaviour
         //mouseIndicator.transform.position = mousePos;
     }
 
-
-    /// <summary>
-    /// Destroys all objects and resets the positions from gridata 
-    /// </summary>
-    public void ResetObjects()
-    {
-        foreach (GameObject obj in placedGameObjects)
-        {
-            Destroy(obj);
-        }
-        StopPlacement();
-        placedGameObjects.Clear();
-        PlaceSavedObjects();
-    }
-
     public void StartSimulation()
     {
         StopPlacement();
@@ -178,6 +156,7 @@ public class PlacementSystem : MonoBehaviour
             // enable physics simulation
             Rigidbody rb = obj.GetComponentInChildren<Rigidbody>();
             rb.isKinematic = false;
+
             // toggle colliders for physics simulation TODO cylinderC
             SphereCollider sphereCollider = obj.GetComponentInChildren<SphereCollider>();
             if (sphereCollider != null)
@@ -191,6 +170,21 @@ public class PlacementSystem : MonoBehaviour
 
             }
         }
+    }
+
+
+    /// <summary>
+    /// Destroys all objects and resets the positions from gridata 
+    /// </summary>
+    public void ResetObjects()
+    {
+        foreach (GameObject obj in placedGameObjects)
+        {
+            Destroy(obj);
+        }
+        StopPlacement();
+        placedGameObjects.Clear();
+        PlaceSavedObjects();
     }
 
 

@@ -62,7 +62,7 @@ public class PreviewSystem : MonoBehaviour
 
     private void ApplyFeedback(bool validity)
     {
-        Color col = validity ? Color.white : Color.red;
+        Color col = validity ? Color.green : Color.red;
         col.a = 0.5f;
         previewMaterialInstance.color = col;
     }
