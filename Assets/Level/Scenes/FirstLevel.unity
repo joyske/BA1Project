@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 4317.3853, g: 4526.739, b: 6573.618, a: 1}
+  m_IndirectSpecularColor: {r: 4316.3813, g: 4526.516, b: 6576.9307, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5181,7 +5181,7 @@ MonoBehaviour:
   maxTessellationFactor: 0
   tessellationFactorFadeStart: 150
   tessellationFactorFadeRange: 1850
-  refractionColor: {r: 0.0397769, g: 0.34561616, b: 0.34561616, a: 1}
+  refractionColor: {r: 0.039546236, g: 0.3467041, b: 0.3467041, a: 1}
   maxRefractionDistance: 0.5
   absorptionDistance: 10
   scatteringColor: {r: 0.0036765083, g: 0.48023856, b: 0.5149178, a: 1}
@@ -5205,7 +5205,7 @@ MonoBehaviour:
   waterMaskDebugMode: 0
   waterCurrentDebugMode: 0
   currentDebugMultiplier: 1
-  waterFoamDebugMode: 0
+  waterFoamDebugMode: 1
   underWater: 0
   volumeBounds: {fileID: 0}
   volumeDepth: 50
@@ -5290,7 +5290,7 @@ MonoBehaviour:
   largeOrientationValue: 0
   largeWindSpeed: 60
   largeChaos: 0.7
-  largeBand0Multiplier: 0.5
+  largeBand0Multiplier: 0.3
   largeBand0FadeMode: 1
   largeBand0FadeStart: 1500
   largeBand0FadeDistance: 3000
@@ -5319,7 +5319,7 @@ Transform:
   m_GameObject: {fileID: 1433626999}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1708}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3000, y: 5000, z: 5000}
   m_ConstrainProportionsScale: 0
   m_Children: []

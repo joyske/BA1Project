@@ -39,6 +39,9 @@ public class ShipMovement : MonoBehaviour
     private float CurrentCollidedMultiplier = 1;
     public float CollidedMultiplier = 0.7f;
 
+    private GameObject TurningWheel;
+    public float WheelTurnSpeed;
+
     /*private void OnEnable()
     {
         if(shipControls == null)
@@ -64,6 +67,11 @@ public class ShipMovement : MonoBehaviour
         CollidingElements--;
     }
 
+
+    private void Start()
+    {
+        TurningWheel = GameObject.FindWithTag("TurningWheel");
+    }
 
     //public float maxForwardSpeed;
     //public float maxBackwardSpeed;
@@ -140,6 +148,9 @@ public class ShipMovement : MonoBehaviour
         }
 
         //rigidBodyRef.AddForce(-transform.right * currentSpeed * Time.fixedDeltaTime, ForceMode.Acceleration);
+
+        TurningWheel.transform.Rotate(-Vector3.up * Time.deltaTime * (currentDesiredSpeed * WheelTurnSpeed), Space.Self);
+
     }
 }
 
