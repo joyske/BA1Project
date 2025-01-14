@@ -18,11 +18,13 @@ public class Cargo : MonoBehaviour
         {
             floater.enabled = false;
             GetComponent<Rigidbody>().isKinematic = true;
+            GetComponent <Rigidbody>().useGravity = true;
             GetComponent<Rigidbody>().mass = 1f;
             return;
         }
         playerHUD = GameObject.FindWithTag("HUD").GetComponent<PlayerHUD>();
         floater.enabled = true;
+        GetComponent<Rigidbody>().useGravity = false;
 
         if (GetComponent<SphereCollider>())
         {
