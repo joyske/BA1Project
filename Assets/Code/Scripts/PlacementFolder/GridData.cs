@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -45,9 +46,12 @@ public class GridData : MonoBehaviour
     public bool CanPlaceObjectAt(Vector3Int gridPosition, Vector3Int objectSize)
     {
         List<Vector3Int> positionToOccupy = CalculatePositions(gridPosition, objectSize);
+        Debug.Log(positionToOccupy.Count);
         foreach (var position in positionToOccupy)
         {
-            if (placedObjects.ContainsKey(position))
+            Debug.Log(position);
+
+            if (placedObjects.ContainsKey(position) || position.x > 1 || position.y < -3)
             {
                 return false;
             }

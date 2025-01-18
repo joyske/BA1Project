@@ -70,7 +70,8 @@ public class PreviewSystem : MonoBehaviour
 
     private void MovePreview(Vector3 pos)
     {
-        if (previewObject != null)
+        if (pos.x < 2) { Debug.Log("here"); } else { Debug.Log("false"); }
+        if (previewObject != null && pos.x < 1)
         previewObject.transform.position = new Vector3(pos.x, pos.y + previewYOffset, pos.z);
     }
 }
