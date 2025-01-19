@@ -50,7 +50,7 @@ public partial class @ShipControls: IInputActionCollection2, IDisposable
                     ""type"": ""Value"",
                     ""id"": ""b903cfea-93df-48eb-80c4-091c96571760"",
                     ""expectedControlType"": ""Axis"",
-                    ""processors"": """",
+                    ""processors"": ""Invert,Clamp(min=-0.01,max=0.01)"",
                     ""interactions"": """",
                     ""initialStateCheck"": true
                 },

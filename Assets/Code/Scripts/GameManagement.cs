@@ -5,26 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class GameManagement : MonoBehaviour
 {
-    private GridData gridData;
-    void Awake()
-    {
-        gridData = GameObject.FindWithTag("CargoData").GetComponent<GridData>();
-        if (SceneManager.GetActiveScene().buildIndex == 0)
-        {
-            
-            gridData.placedObjects.Clear();
-        }
-        
-    }
-
+    public Transform PauseMenu;
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape)) 
         {
-            
-            Destroy(gridData.gameObject);
-            SceneManager.LoadScene(0);
+            PauseMenu.gameObject.SetActive(true);
+            Time.timeScale = 0.0f;
         }
     }
 }

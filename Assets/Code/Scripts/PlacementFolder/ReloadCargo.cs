@@ -16,6 +16,8 @@ public class ReloadCargo : MonoBehaviour
     [SerializeField]
     float delayTime = 1.0f;
 
+    [SerializeField] float yRotation = 0f;
+
     private void Awake()
     {
 
@@ -29,6 +31,7 @@ public class ReloadCargo : MonoBehaviour
     {
         Vector3 targetPos = new Vector3(0, 0.5f, 0);
         GameObject newObject = Instantiate(boat, targetPos, Quaternion.identity);
+        newObject.transform.eulerAngles = new Vector3(newObject.transform.eulerAngles.x, yRotation, newObject.transform.eulerAngles.z);
         grid = newObject.GetComponentInChildren<Grid>();
 
         yield return new WaitForSeconds(delayTime);
