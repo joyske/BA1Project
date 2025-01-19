@@ -9,6 +9,7 @@ using UnityEngine.UIElements;
 // Save positions of objects and checking for valid placement
 public class GridData : MonoBehaviour
 {
+    
     public Dictionary<Vector3Int, PlacementData> placedObjects = new();
 
 
@@ -46,11 +47,8 @@ public class GridData : MonoBehaviour
     public bool CanPlaceObjectAt(Vector3Int gridPosition, Vector3Int objectSize)
     {
         List<Vector3Int> positionToOccupy = CalculatePositions(gridPosition, objectSize);
-        Debug.Log(positionToOccupy.Count);
         foreach (var position in positionToOccupy)
         {
-            Debug.Log(position);
-
             if (placedObjects.ContainsKey(position) || position.x > 1 || position.y < -3)
             {
                 return false;
@@ -87,6 +85,25 @@ public class GridData : MonoBehaviour
         foreach (var entry in placedObjects)
         {
             pos = entry.Key;
+        }
+    }
+
+    public int GetIndex(Vector3Int gridPos)
+    {
+        if (placedObjects.ContainsKey(gridPos) == false) 
+        {
+            return -1;
+        } else
+        {
+            return placedObjects[gridPos].PlacedObjectIndex;
+        }
+    }
+
+    public void RemoveObjectAt(Vector3Int gridPos)
+    {
+        foreach (var pos in placedObjects[gridPos].occupiedPositions)
+        {
+            placedObjects.Remove(pos);
         }
     }
 

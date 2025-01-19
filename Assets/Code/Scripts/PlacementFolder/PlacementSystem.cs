@@ -17,15 +17,12 @@ public class PlacementSystem : MonoBehaviour
     [SerializeField]
     Inventory inventory;
 
-    private int selectedObjectIndex = -1;
 
     [SerializeField]
     private GameObject gridVisualization;
 
     [SerializeField]
-    GridData GridData;
-
-    private List<GameObject> placedGameObjects = new();
+    GridData gridData;
 
     [SerializeField]
     private PreviewSystem previewSystem;
@@ -36,9 +33,12 @@ public class PlacementSystem : MonoBehaviour
     Transform boatTransform;
 
     bool isSimulating;
- 
 
+    [SerializeField]
+    CargoPlacement cargoPlacement;
 
+    [SerializeField]
+    IPlacementState placementState;
 
     private void Start()
     {
@@ -60,17 +60,21 @@ public class PlacementSystem : MonoBehaviour
         if (!isSimulating)
         {
             StopPlacement();
-            selectedObjectIndex = inventory.objectsData.FindIndex(data => data.ID == ID);  // Get item with id from inventory
-            if (selectedObjectIndex < 0)
-            {
-                Debug.LogError($"NO ID FOUND {ID}");
-            }
-
             gridVisualization.SetActive(true);
-            previewSystem.StartShowingPlacementPreview(inventory.objectsData[selectedObjectIndex].Prefab);
+            placementState = new PlacementState(ID, grid, previewSystem, inventory, gridData, cargoPlacement);
             inputManager.OnClicked += PlaceItem;
             inputManager.OnExit += StopPlacement;
         }
+    }
+
+
+    public void StartRemoving()
+    {
+        StopPlacement();
+        gridVisualization.SetActive(true);
+        placementState = new RemovingState(grid, previewSystem, gridData, cargoPlacement);
+        inputManager.OnClicked += PlaceItem;
+        inputManager.OnExit += StopPlacement;
     }
 
 
@@ -84,46 +88,33 @@ public class PlacementSystem : MonoBehaviour
             return;
         }
         Vector3 mousePos = inputManager.GetSelectedMapPosition();
-        Debug.Log(mousePos);
         Vector3Int gridPos = grid.WorldToCell(mousePos);
 
-        bool placementValid = CheckPlacementValidity(gridPos, selectedObjectIndex);
-        if (!placementValid) return;
-
-        GameObject newObject = Instantiate(inventory.objectsData[selectedObjectIndex].Prefab);
-
-        newObject.transform.position = grid.CellToWorld(gridPos);
-
-
-        placedGameObjects.Add(newObject);
-        Debug.Log(gridPos);
-        GridData.AddObjectAt(gridPos, inventory.objectsData[selectedObjectIndex].Size, inventory.objectsData[selectedObjectIndex].ID, placedGameObjects.Count -1);
-        previewSystem.UpdatePosition(grid.CellToWorld(gridPos), false);
+       placementState.OnAction(gridPos);
 
     }
 
-    /// <summary>
-    /// Check if object can be placed on cell
-    /// </summary>
-    /// <param name="gridPos"></param>
-    /// <param name="selectedObjectIndex"></param>
-    /// <returns></returns>
-    private bool CheckPlacementValidity(Vector3Int gridPos, int selectedObjectIndex)
-    {
-        return GridData.CanPlaceObjectAt(gridPos, inventory.objectsData[selectedObjectIndex].Size);
-    }
-
-
+    ///// <summary>
+    ///// Check if object can be placed on cell
+    ///// </summary>
+    ///// <param name="gridPos"></param>
+    ///// <param name="selectedObjectIndex"></param>
+    ///// <returns></returns>
+    //private bool CheckPlacementValidity(Vector3Int gridPos, int selectedObjectIndex)
+    //{
+    //    return gridData.CanPlaceObjectAt(gridPos, inventory.objectsData[selectedObjectIndex].Size);
+    //}
 
 
     private void StopPlacement()
     {
-        selectedObjectIndex--;
+        if (placementState == null) return;
         gridVisualization.SetActive(false);
-        previewSystem.StopShowingPreview();
+        placementState.EndState();
         inputManager.OnClicked -= PlaceItem;
         inputManager.OnExit -= StopPlacement;
         lastDetectedPos = Vector3Int.zero;
+        placementState = null;
     }
 
     private void Update()
@@ -139,71 +130,59 @@ public class PlacementSystem : MonoBehaviour
             ResetObjects();
         }
 
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            StartRemoving();
+        }
 
-        if (selectedObjectIndex < 0) { return; }
+
+        if (placementState == null) { return; }
         // Get mouse postion and convert to grid position
         Vector3 mousePos = inputManager.GetSelectedMapPosition();
         Vector3Int gridPos = grid.WorldToCell(mousePos);
 
         if (lastDetectedPos != gridPos)
         {
-            bool placementValid = CheckPlacementValidity(gridPos, selectedObjectIndex);
-            previewSystem.UpdatePosition(grid.CellToWorld(gridPos), placementValid);
+            placementState.UpdateState(gridPos);
             lastDetectedPos = gridPos;
         }
      
         //mouseIndicator.transform.position = mousePos;
     }
 
+
+
+
+    //TODO Simulationsmethoden als State ?? Definitv PlaceSavedObjects
+
+    /// <summary>
+    /// Enables physics and starts simulation
+    /// </summary>
     public void StartSimulation()
     {
         isSimulating = true;
         StopPlacement();
-        Debug.Log(placedGameObjects.Count);
-        foreach (GameObject obj in placedGameObjects)
-        {
-            // enable physics simulation
-            Rigidbody rb = obj.GetComponentInChildren<Rigidbody>();
-            rb.isKinematic = false;
-
-            // toggle colliders for physics simulation TODO cylinderC
-            SphereCollider sphereCollider = obj.GetComponentInChildren<SphereCollider>();
-            if (sphereCollider != null)
-            {
-                BoxCollider boxCollider = obj.GetComponentInChildren<BoxCollider>();
-                if (boxCollider != null)
-                {
-                    boxCollider.enabled = false;
-                }
-                sphereCollider.enabled = true;
-
-            }
-        }
+        cargoPlacement.EnablePhysics();  
     }
 
-
-    /// <summary>
-    /// Destroys all objects and resets the positions from gridata 
-    /// </summary>
+    ///// <summary>
+    ///// Destroys all objects and resets the positions from gridata 
+    ///// </summary>
     public void ResetObjects()
     {
         isSimulating = false;
-        foreach (GameObject obj in placedGameObjects)
-        {
-            Destroy(obj);
-        }
         StopPlacement();
-        placedGameObjects.Clear();
+        cargoPlacement.DestroyAllCargo();
         PlaceSavedObjects();
     }
 
 
-    /// <summary>
-    /// Places all objects saved in Griddata
-    /// </summary>
+    ///// <summary>
+    ///// Places all objects saved in Griddata
+    ///// </summary>
     public void PlaceSavedObjects()
     {
-        foreach (var entry in GridData.placedObjects)
+        foreach (var entry in gridData.placedObjects)
         {
             Vector3Int position = entry.Key; // Grid position
             var data = entry.Value;
@@ -218,7 +197,7 @@ public class PlacementSystem : MonoBehaviour
 
             // Instantiate and position the object
             GameObject newObject = Instantiate(prefabData.Prefab, grid.CellToWorld(position), Quaternion.identity);
-            placedGameObjects.Add(newObject);
+            cargoPlacement.AddCargoToList( newObject );
         }
     }
 

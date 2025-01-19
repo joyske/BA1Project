@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectsData:
   - <Name>k__BackingField: Box
-    <ID>k__BackingField: 0
+    <ID>k__BackingField: 2
     <Size>k__BackingField: {x: 1, y: 1, z: 1}
     <Prefab>k__BackingField: {fileID: 4116288736278081604, guid: 0199dd938b3c4f54cbb499e535060ef7,
       type: 3}
@@ -24,7 +24,7 @@ MonoBehaviour:
     <Prefab>k__BackingField: {fileID: 5566791323414645081, guid: ee96a499e5a70b045ada6900e91e12d2,
       type: 3}
   - <Name>k__BackingField: WIDE
-    <ID>k__BackingField: 2
+    <ID>k__BackingField: 0
     <Size>k__BackingField: {x: 2, y: 1, z: 1}
     <Prefab>k__BackingField: {fileID: 4116288736278081604, guid: 0edb37b45c929ba4a863e848891be064,
       type: 3}
