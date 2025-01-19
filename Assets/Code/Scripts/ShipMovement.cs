@@ -82,7 +82,9 @@ public class ShipMovement : MonoBehaviour
     {
         if ((Input.GetKey(KeyCode.W)) && !(Input.GetKey(KeyCode.S)))
         {
-            currentDesiredSpeed += (desiredSpeedChangeMultiplier * Time.fixedDeltaTime);
+            if (currentDesiredSpeed <= 0) { currentDesiredSpeed += ((desiredSpeedChangeMultiplier * 1.5f) * Time.fixedDeltaTime); }
+            else { currentDesiredSpeed += (desiredSpeedChangeMultiplier * Time.fixedDeltaTime); }
+            
             if (currentDesiredSpeed > maxForwardSpeed) { currentDesiredSpeed = maxForwardSpeed; }
 
             //currentSpeed = Mathf.Lerp(currentSpeed, forwardSpeed, accelerateDelay * Time.fixedDeltaTime);
@@ -90,7 +92,10 @@ public class ShipMovement : MonoBehaviour
 
         if ((Input.GetKey(KeyCode.S)) && !(Input.GetKey(KeyCode.W)))
         {
-            currentDesiredSpeed -= (desiredSpeedChangeMultiplier * Time.fixedDeltaTime);
+            if (currentDesiredSpeed >= 0) { currentDesiredSpeed -= ((desiredSpeedChangeMultiplier * 1.5f) * Time.fixedDeltaTime); }
+            else { currentDesiredSpeed -= (desiredSpeedChangeMultiplier * Time.fixedDeltaTime); }
+
+            
             if (currentDesiredSpeed < maxBackwardSpeed) { currentDesiredSpeed = maxBackwardSpeed; }
 
             //currentSpeed = Mathf.Lerp(currentSpeed, backwardSpeed, accelerateDelay * Time.fixedDeltaTime);
