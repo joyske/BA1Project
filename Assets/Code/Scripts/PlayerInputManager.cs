@@ -14,8 +14,8 @@ public class PlayerInputManager : MonoBehaviour
             shipControls = new ShipControls();
             shipControls.Enable();
             shipControls.Ship.Move.performed += context => movementInput = context.ReadValue<Vector2>();
-            shipControls.Ship.Lock.started += context => rotateView = true;
-            shipControls.Ship.Lock.canceled += context => rotateView = false;
+            shipControls.Ship.RightClick.started += context => rotateView = true;
+            shipControls.Ship.RightClick.canceled += context => rotateView = false;
         }
     }
 

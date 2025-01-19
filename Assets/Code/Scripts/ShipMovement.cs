@@ -42,20 +42,7 @@ public class ShipMovement : MonoBehaviour
     private GameObject TurningWheel;
     public float WheelTurnSpeed;
 
-    /*private void OnEnable()
-    {
-        if(shipControls == null)
-        {
-            shipControls = new ShipControls();
-            shipControls.Enable();
-            shipControls.Ship.Move.performed += context => movementInput = context.ReadValue<Vector2>();
-        }
-    }
-
-    private void OnDisable()
-    {
-        shipControls.Disable();
-    }*/
+    private PlayerInputManager PlayerInputManager;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -71,6 +58,7 @@ public class ShipMovement : MonoBehaviour
     private void Start()
     {
         TurningWheel = GameObject.FindWithTag("TurningWheel");
+        PlayerInputManager = GetComponent<PlayerInputManager>();
     }
 
     //public float maxForwardSpeed;
@@ -80,6 +68,15 @@ public class ShipMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //W - S
+        Debug.Log("Forward:" + PlayerInputManager.movementInput.y);
+
+        //A - D
+        Debug.Log("Sideway:" + PlayerInputManager.movementInput.x);
+
+
+
+
         if ((Input.GetKey(KeyCode.W)) && !(Input.GetKey(KeyCode.S)))
         {
             if (currentDesiredSpeed <= 0) { currentDesiredSpeed += ((desiredSpeedChangeMultiplier * 1.5f) * Time.fixedDeltaTime); }

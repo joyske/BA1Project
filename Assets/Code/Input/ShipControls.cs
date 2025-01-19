@@ -55,9 +55,27 @@ public partial class @ShipControls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Lock"",
+                    ""name"": ""RightClick"",
                     ""type"": ""Button"",
                     ""id"": ""d50bce08-b31d-4a62-9776-05036514ca23"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""LeftClick"",
+                    ""type"": ""Button"",
+                    ""id"": ""87e78459-01dd-4913-91f0-16377d65edeb"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""4f2180ae-03f5-488c-98bc-868d143cc27c"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -215,7 +233,29 @@ public partial class @ShipControls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Lock"",
+                    ""action"": ""RightClick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5646f000-6065-40b6-b282-5f6e427b839c"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LeftClick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6a488c49-f267-441b-8507-980de8ae0783"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -229,7 +269,9 @@ public partial class @ShipControls: IInputActionCollection2, IDisposable
         m_Ship_Move = m_Ship.FindAction("Move", throwIfNotFound: true);
         m_Ship_Look = m_Ship.FindAction("Look", throwIfNotFound: true);
         m_Ship_Zoom = m_Ship.FindAction("Zoom", throwIfNotFound: true);
-        m_Ship_Lock = m_Ship.FindAction("Lock", throwIfNotFound: true);
+        m_Ship_RightClick = m_Ship.FindAction("RightClick", throwIfNotFound: true);
+        m_Ship_LeftClick = m_Ship.FindAction("LeftClick", throwIfNotFound: true);
+        m_Ship_Pause = m_Ship.FindAction("Pause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -294,7 +336,9 @@ public partial class @ShipControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Ship_Move;
     private readonly InputAction m_Ship_Look;
     private readonly InputAction m_Ship_Zoom;
-    private readonly InputAction m_Ship_Lock;
+    private readonly InputAction m_Ship_RightClick;
+    private readonly InputAction m_Ship_LeftClick;
+    private readonly InputAction m_Ship_Pause;
     public struct ShipActions
     {
         private @ShipControls m_Wrapper;
@@ -302,7 +346,9 @@ public partial class @ShipControls: IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_Ship_Move;
         public InputAction @Look => m_Wrapper.m_Ship_Look;
         public InputAction @Zoom => m_Wrapper.m_Ship_Zoom;
-        public InputAction @Lock => m_Wrapper.m_Ship_Lock;
+        public InputAction @RightClick => m_Wrapper.m_Ship_RightClick;
+        public InputAction @LeftClick => m_Wrapper.m_Ship_LeftClick;
+        public InputAction @Pause => m_Wrapper.m_Ship_Pause;
         public InputActionMap Get() { return m_Wrapper.m_Ship; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -321,9 +367,15 @@ public partial class @ShipControls: IInputActionCollection2, IDisposable
             @Zoom.started += instance.OnZoom;
             @Zoom.performed += instance.OnZoom;
             @Zoom.canceled += instance.OnZoom;
-            @Lock.started += instance.OnLock;
-            @Lock.performed += instance.OnLock;
-            @Lock.canceled += instance.OnLock;
+            @RightClick.started += instance.OnRightClick;
+            @RightClick.performed += instance.OnRightClick;
+            @RightClick.canceled += instance.OnRightClick;
+            @LeftClick.started += instance.OnLeftClick;
+            @LeftClick.performed += instance.OnLeftClick;
+            @LeftClick.canceled += instance.OnLeftClick;
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
         }
 
         private void UnregisterCallbacks(IShipActions instance)
@@ -337,9 +389,15 @@ public partial class @ShipControls: IInputActionCollection2, IDisposable
             @Zoom.started -= instance.OnZoom;
             @Zoom.performed -= instance.OnZoom;
             @Zoom.canceled -= instance.OnZoom;
-            @Lock.started -= instance.OnLock;
-            @Lock.performed -= instance.OnLock;
-            @Lock.canceled -= instance.OnLock;
+            @RightClick.started -= instance.OnRightClick;
+            @RightClick.performed -= instance.OnRightClick;
+            @RightClick.canceled -= instance.OnRightClick;
+            @LeftClick.started -= instance.OnLeftClick;
+            @LeftClick.performed -= instance.OnLeftClick;
+            @LeftClick.canceled -= instance.OnLeftClick;
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
         }
 
         public void RemoveCallbacks(IShipActions instance)
@@ -362,6 +420,8 @@ public partial class @ShipControls: IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
         void OnZoom(InputAction.CallbackContext context);
-        void OnLock(InputAction.CallbackContext context);
+        void OnRightClick(InputAction.CallbackContext context);
+        void OnLeftClick(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
     }
 }

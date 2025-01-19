@@ -393,6 +393,7 @@ GameObject:
   - component: {fileID: 5603983121398462974}
   - component: {fileID: 2903795655194539873}
   - component: {fileID: 1681121817468859135}
+  - component: {fileID: 8773474204839688171}
   m_Layer: 0
   m_Name: Boat_Null 1
   m_TagString: Boat
@@ -773,6 +774,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 11, y: 0.25, z: 4.08}
   m_Center: {x: 3, y: -0.2, z: 0}
+--- !u!114 &8773474204839688171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2794390668913423381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bea43ffbb46e48046b08a0f1c5a909c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementInput: {x: 0, y: 0}
+  rotateView: 0
 --- !u!1 &3701889134644932220
 GameObject:
   m_ObjectHideFlags: 0

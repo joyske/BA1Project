@@ -33,9 +33,27 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Lock",
+                    "name": "RightClick",
                     "type": "Button",
                     "id": "d50bce08-b31d-4a62-9776-05036514ca23",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "LeftClick",
+                    "type": "Button",
+                    "id": "87e78459-01dd-4913-91f0-16377d65edeb",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "4f2180ae-03f5-488c-98bc-868d143cc27c",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -193,7 +211,29 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Lock",
+                    "action": "RightClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5646f000-6065-40b6-b282-5f6e427b839c",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6a488c49-f267-441b-8507-980de8ae0783",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

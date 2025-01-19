@@ -17,6 +17,7 @@ public class PlayerHUD : MonoBehaviour
     private string maxCargoText;
 
     private float maxSpeed;
+    private float minSpeed;
     private float currentSpeed;
 
     [SerializeField] float maxTimeSeconds = 100f;
@@ -27,10 +28,11 @@ public class PlayerHUD : MonoBehaviour
         shipMovement = GameObject.FindWithTag("Boat").transform.GetComponent<ShipMovement>();
 
         maxSpeed = shipMovement.maxForwardSpeed;
+        minSpeed = shipMovement.maxBackwardSpeed;
         currentSpeed = 0f;
 
         speedSlider.maxValue = maxSpeed;
-        speedSlider.minValue = 0f;
+        speedSlider.minValue = minSpeed;
         Debug.Log(maxSpeed);
 
         timeLeft = maxTimeSeconds;
