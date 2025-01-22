@@ -5,14 +5,31 @@ using UnityEngine.SceneManagement;
 
 public class GameManagement : MonoBehaviour
 {
-    public Transform PauseMenu;
-    // Update is called once per frame
-    void Update()
+   
+
+    public int currentLevelIndex = 0;
+
+    public string[] levelScenes = { "FirstLevel", "SecondLevel"};
+    //public  string[] placementScenes = { "PlacementScene1", "PlacementScene2", "PlacementScene3" };
+
+
+    void Start()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) 
-        {
-            PauseMenu.gameObject.SetActive(true);
-            Time.timeScale = 0.0f;
-        }
+        DontDestroyOnLoad(gameObject);
     }
+
+
+    public void LoadLevelScene()
+    {
+        SceneManager.LoadScene(levelScenes[currentLevelIndex]);
+        //currentLevelIndex++;
+    }
+
+    public void LoadPlacementScene()
+    {
+        SceneManager.LoadScene("Placement");
+    }
+
+
+
 }

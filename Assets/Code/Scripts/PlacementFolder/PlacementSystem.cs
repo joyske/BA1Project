@@ -34,7 +34,7 @@ public class PlacementSystem : MonoBehaviour
     [SerializeField]
     Transform boatTransform;
 
-    bool isSimulating;
+    bool isSimulating, isRemoving;
 
     [SerializeField]
     CargoPlacement cargoPlacement;
@@ -42,9 +42,13 @@ public class PlacementSystem : MonoBehaviour
     [SerializeField]
     IPlacementState placementState;
 
+    [SerializeField]
+    InventorySceneData inventorySceneData;
+
     private void Start()
     {
         isSimulating = false;
+        isRemoving = false; 
         Vector3 gridPosition = grid.transform.position;
         //gridPosition.y = boatTransform.position.y;  
         grid.transform.position = gridPosition;
@@ -52,7 +56,6 @@ public class PlacementSystem : MonoBehaviour
         //GridData = new(); // item == object TODO name entscheiden 
 
         Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.Confined;
     }
 
 
@@ -62,7 +65,7 @@ public class PlacementSystem : MonoBehaviour
     /// <param name="ID"></param>
     public void StartPlacement(int ID)
     {
-        if (!isSimulating)
+        if (!isSimulating && !isRemoving)
         {
             lastUsedIndex = ID;
             StopPlacement();
@@ -76,11 +79,13 @@ public class PlacementSystem : MonoBehaviour
 
     public void StartRemoving()
     {
+        isRemoving = true;
         StopPlacement();
         gridVisualization.SetActive(true);
         placementState = new RemovingState(grid, previewSystem, gridData, cargoPlacement);
         inputManager.OnClicked += PlaceItem;
         inputManager.OnExit += StopPlacement;
+        isRemoving = false;
     }
 
 

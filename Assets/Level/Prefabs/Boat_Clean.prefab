@@ -390,6 +390,7 @@ GameObject:
   - component: {fileID: 8328431101311630223}
   - component: {fileID: 5783265518666155026}
   - component: {fileID: 3484462984378408599}
+  - component: {fileID: 9077844619533103078}
   m_Layer: 0
   m_Name: Boat_Clean
   m_TagString: Boat
@@ -709,6 +710,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 8.5, y: 0.4, z: 4}
   m_Center: {x: 5, y: 0.96, z: 0}
+--- !u!114 &9077844619533103078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2794390668913423381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03f718c39e026b44a88bb962a5b6c9f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3701889134644932220
 GameObject:
   m_ObjectHideFlags: 0

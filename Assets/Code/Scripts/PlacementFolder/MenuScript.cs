@@ -13,21 +13,24 @@ public class MenuScript : MonoBehaviour
     [SerializeField] RectTransform deleteSwitch;
     [SerializeField] Toggle simulateToggle;
     [SerializeField] RectTransform simulateSwitch;
+    private GameManagement gameManagement;
 
     public void Awake()
     {
-        
+        gameManagement = GameObject.FindWithTag("GameManager").GetComponent<GameManagement>();
         gridData = GameObject.FindWithTag("CargoData").GetComponent<GridData>();
         /*if (SceneManager.GetActiveScene().buildIndex == 0)
         {
             gridData.placedObjects.Clear();
         }*/
-       
+
     }
     public void LoadLevel()
     {
+
+        //SceneManager.LoadScene(1);
+        gameManagement.LoadLevelScene();
         Time.timeScale = 1.0f;
-        SceneManager.LoadScene(1);       
     }
 
     public void ToggleSimulation()
@@ -81,7 +84,8 @@ public class MenuScript : MonoBehaviour
     {
         Time.timeScale = 1.0f;
         Destroy(gridData.gameObject);
-        SceneManager.LoadScene(0);
+        gameManagement.LoadPlacementScene();
+        //gameManagement.currentLevelIndex--;
     }
 
     public void Unpause()

@@ -23,6 +23,9 @@ public class PlayerHUD : MonoBehaviour
     [SerializeField] float maxTimeSeconds = 100f;
     private float timeLeft = 0f;
 
+    public Transform PauseMenu;
+
+
     void Start()
     {
         shipMovement = GameObject.FindWithTag("Boat").transform.GetComponent<ShipMovement>();
@@ -33,7 +36,6 @@ public class PlayerHUD : MonoBehaviour
 
         speedSlider.maxValue = maxSpeed;
         speedSlider.minValue = minSpeed;
-        Debug.Log(maxSpeed);
 
         timeLeft = maxTimeSeconds;
 
@@ -68,7 +70,10 @@ public class PlayerHUD : MonoBehaviour
 
     void GameOver()
     {
-        Debug.Log("Game Over");
+        PauseMenu.gameObject.SetActive(true);
+        PauseMenu.GetChild(PauseMenu.childCount-1).GetComponent<Text>().text = "Game Over";
+        //Time.timeScale = 0.0f;
+        Cursor.visible = true;
     }
 
 }

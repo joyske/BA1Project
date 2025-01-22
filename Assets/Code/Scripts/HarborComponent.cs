@@ -48,7 +48,6 @@ public class HarborComponent : MonoBehaviour
             water.largeBand1Multiplier = defaultSecondBand * currentWaveHeightAlpha;
         }
 
-        Debug.Log("CurrentDistance: " + currentDistance);
-        Debug.Log("WaveHeightAlpha: " + currentWaveHeightAlpha);
+
     }
 }

@@ -2425,6 +2425,7 @@ MonoBehaviour:
   previewSystem: {fileID: 1952927559}
   boatTransform: {fileID: 412121283}
   cargoPlacement: {fileID: 220575476}
+  inventorySceneData: {fileID: 0}
 --- !u!1 &1393079302
 GameObject:
   m_ObjectHideFlags: 0
@@ -3244,11 +3245,11 @@ GameObject:
   - component: {fileID: 1677988337}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1677988337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3261,7 +3262,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d566e31a550d8024e89131ae040afce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PauseMenu: {fileID: 0}
+  currentLevelIndex: 0
+  levelScenes:
+  - FirstLevel
+  - SecondLevel
 --- !u!4 &1677988338
 Transform:
   m_ObjectHideFlags: 0
@@ -3818,7 +3822,7 @@ Transform:
   m_GameObject: {fileID: 2021903324}
   serializedVersion: 2
   m_LocalRotation: {x: 0.25881907, y: 0, z: 0, w: 0.9659259}
-  m_LocalPosition: {x: 0.02, y: 6.6796083, z: -15.030254}
+  m_LocalPosition: {x: 0.02, y: 20.679607, z: -30.61871}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -9,6 +9,8 @@ TagManager:
   - CargoData
   - HUD
   - TurningWheel
+  - GameManager
+  - Goal
   layers:
   - Default
   - TransparentFX

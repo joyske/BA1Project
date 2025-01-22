@@ -33,6 +33,7 @@ public class ReloadCargo : MonoBehaviour
         GameObject newObject = Instantiate(boat, targetPos, Quaternion.identity);
         newObject.transform.eulerAngles = new Vector3(newObject.transform.eulerAngles.x, yRotation, newObject.transform.eulerAngles.z);
         grid = newObject.GetComponentInChildren<Grid>();
+        newObject.GetComponent<ShipMovement>().enabled = false;
 
         yield return new WaitForSeconds(delayTime);
 
@@ -42,6 +43,7 @@ public class ReloadCargo : MonoBehaviour
         PlaceSavedObjects();
         GameObject.Find("GroundGrid").SetActive(false);
         newObject.GetComponent<Rigidbody>().isKinematic = false;
+        newObject.GetComponent<ShipMovement>().enabled = true;
 
     }
 
