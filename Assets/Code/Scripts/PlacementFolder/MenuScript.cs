@@ -9,8 +9,10 @@ public class MenuScript : MonoBehaviour
     [SerializeField] PlacementSystem placementSystem;
     private GridData gridData;
 
-    [SerializeField] Toggle toggle;
-    [SerializeField] RectTransform switchTransform;
+    [SerializeField] Toggle deleteToggle;
+    [SerializeField] RectTransform deleteSwitch;
+    [SerializeField] Toggle simulateToggle;
+    [SerializeField] RectTransform simulateSwitch;
 
     public void Awake()
     {
@@ -30,23 +32,30 @@ public class MenuScript : MonoBehaviour
 
     public void ToggleSimulation()
     {
-        if (toggle.isOn) { StartSimulation(); return; }
+        if (simulateToggle.isOn) { StartSimulation(); return; }
         ResetSimulation();
     }
 
     public void ToggleDelete()
     {
-        if (toggle.isOn) { placementSystem.StartRemoving(); StartToggle(); return; }
-        placementSystem.StartPlacement(placementSystem.lastUsedIndex); EndToggle();
+        if (deleteToggle.isOn) 
+        { 
+            placementSystem.StartRemoving(); 
+            StartToggle(deleteToggle, deleteSwitch); 
+            return; 
+        }
+        EndToggle(deleteToggle, deleteSwitch);
+        placementSystem.StartPlacement(placementSystem.lastUsedIndex); 
+        
     }
 
-    public void StartToggle()
+    public void StartToggle(Toggle toggle, RectTransform switchTransform)
     {
         switchTransform.localPosition = new Vector3(15f, 0f, 0f);
         toggle.transform.GetChild(0).GetComponent<Image>().color = Color.green;
     }
 
-    public void EndToggle()
+    public void EndToggle(Toggle toggle, RectTransform switchTransform)
     {
         switchTransform.localPosition = new Vector3(-15f, 0f, 0f);
         toggle.transform.GetChild(0).GetComponent<Image>().color = Color.red;
@@ -54,13 +63,13 @@ public class MenuScript : MonoBehaviour
 
     public void StartSimulation()
     {
-        StartToggle();
+        StartToggle(simulateToggle, simulateSwitch);
         placementSystem.StartSimulation();
     }
 
     public void ResetSimulation()
     {
-        EndToggle();
+        EndToggle(simulateToggle, simulateSwitch);
         placementSystem.ResetObjects();
     }
 

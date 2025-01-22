@@ -2313,8 +2313,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   placementSystem: {fileID: 1288713956}
-  toggle: {fileID: 1764651696}
-  switchTransform: {fileID: 735016409}
+  deleteToggle: {fileID: 1735324935}
+  deleteSwitch: {fileID: 445192316}
+  simulateToggle: {fileID: 1764651696}
+  simulateSwitch: {fileID: 735016409}
 --- !u!1 &1184140483
 GameObject:
   m_ObjectHideFlags: 0
