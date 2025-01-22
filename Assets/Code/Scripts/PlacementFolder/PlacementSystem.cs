@@ -49,7 +49,10 @@ public class PlacementSystem : MonoBehaviour
         //gridPosition.y = boatTransform.position.y;  
         grid.transform.position = gridPosition;
         StopPlacement();
-       //GridData = new(); // item == object TODO name entscheiden 
+        //GridData = new(); // item == object TODO name entscheiden 
+
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
 

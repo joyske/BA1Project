@@ -59,70 +59,74 @@ public class ShipMovement : MonoBehaviour
     {
         TurningWheel = GameObject.FindWithTag("TurningWheel");
         PlayerInputManager = GetComponent<PlayerInputManager>();
-    }
 
-    //public float maxForwardSpeed;
-    //public float maxBackwardSpeed;
-    //public float desiredSpeedChangeMultiplier;
-    //public float currentDesiredSpeed;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Confined;
+    }
 
     private void FixedUpdate()
     {
-        //W - S
-        //Debug.Log("Forward:" + PlayerInputManager.movementInput.y);
-
-        //A - D
-        //Debug.Log("Sideway:" + PlayerInputManager.movementInput.x);
-
-
-
-
-        if ((Input.GetKey(KeyCode.W)) && !(Input.GetKey(KeyCode.S)))
+        if (PlayerInputManager.movementInput.y != 0)
         {
-            if (currentDesiredSpeed <= 0) { currentDesiredSpeed += ((desiredSpeedChangeMultiplier * 1.5f) * Time.fixedDeltaTime); }
-            else { currentDesiredSpeed += (desiredSpeedChangeMultiplier * Time.fixedDeltaTime); }
-            
+            currentDesiredSpeed += (desiredSpeedChangeMultiplier * PlayerInputManager.movementInput.y) * Time.fixedDeltaTime;
+
             if (currentDesiredSpeed > maxForwardSpeed) { currentDesiredSpeed = maxForwardSpeed; }
+            if (currentDesiredSpeed < maxBackwardSpeed) { currentDesiredSpeed = maxBackwardSpeed; }
+        }
+
+        if (PlayerInputManager.movementInput.x != 0) 
+        { DesiredRotation = Vector3.SmoothDamp(DesiredRotation, new Vector3(0, (PlayerInputManager.movementInput.x) * turningSpeed, 0), ref velocity, turnDelay * Time.fixedDeltaTime); }
+        else 
+        { DesiredRotation = Vector3.SmoothDamp(DesiredRotation, new Vector3(0, 0, 0), ref velocity, turnDelay * Time.fixedDeltaTime); }
+
+
+
+        //if ((Input.GetKey(KeyCode.W)) && !(Input.GetKey(KeyCode.S)))
+        //{
+        //    if (currentDesiredSpeed <= 0) { currentDesiredSpeed += ((desiredSpeedChangeMultiplier * 1.5f) * Time.fixedDeltaTime); }
+        //    else { currentDesiredSpeed += (desiredSpeedChangeMultiplier * Time.fixedDeltaTime); }
+            
+        //    if (currentDesiredSpeed > maxForwardSpeed) { currentDesiredSpeed = maxForwardSpeed; }
 
             //currentSpeed = Mathf.Lerp(currentSpeed, forwardSpeed, accelerateDelay * Time.fixedDeltaTime);
-        }
+        //}
 
-        if ((Input.GetKey(KeyCode.S)) && !(Input.GetKey(KeyCode.W)))
-        {
-            if (currentDesiredSpeed >= 0) { currentDesiredSpeed -= ((desiredSpeedChangeMultiplier * 1.5f) * Time.fixedDeltaTime); }
-            else { currentDesiredSpeed -= (desiredSpeedChangeMultiplier * Time.fixedDeltaTime); }
+        //if ((Input.GetKey(KeyCode.S)) && !(Input.GetKey(KeyCode.W)))
+        //{
+        //    if (currentDesiredSpeed >= 0) { currentDesiredSpeed -= ((desiredSpeedChangeMultiplier * 1.5f) * Time.fixedDeltaTime); }
+        //    else { currentDesiredSpeed -= (desiredSpeedChangeMultiplier * Time.fixedDeltaTime); }
 
             
-            if (currentDesiredSpeed < maxBackwardSpeed) { currentDesiredSpeed = maxBackwardSpeed; }
+        //    if (currentDesiredSpeed < maxBackwardSpeed) { currentDesiredSpeed = maxBackwardSpeed; }
 
             //currentSpeed = Mathf.Lerp(currentSpeed, backwardSpeed, accelerateDelay * Time.fixedDeltaTime);
-        }
+        //}
 
-        if ((!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S)) || (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.S)))
-        {
+        //if ((!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S)) || (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.S)))
+        //{
             
             
             //currentSpeed = Mathf.Lerp(currentSpeed, 0f, accelerateDelay * Time.fixedDeltaTime);
-        }
+        //}
 
         //Debug.Log("CurrentDesiredSpeed: " + currentDesiredSpeed);
 
 
 
-        if ((Input.GetKey(KeyCode.A)) && !(Input.GetKey(KeyCode.D)))
-        {
-            DesiredRotation = Vector3.SmoothDamp(DesiredRotation, new Vector3 (0, -turningSpeed, 0), ref velocity, turnDelay * Time.fixedDeltaTime);
-        }
+        //if ((Input.GetKey(KeyCode.A)) && !(Input.GetKey(KeyCode.D)))
+        //{
+        //    DesiredRotation = Vector3.SmoothDamp(DesiredRotation, new Vector3 (0, -turningSpeed, 0), ref velocity, turnDelay * Time.fixedDeltaTime);
+        //}
 
-        if ((Input.GetKey(KeyCode.D)) && !(Input.GetKey(KeyCode.A)))
-        {
-            DesiredRotation = Vector3.SmoothDamp(DesiredRotation, new Vector3(0, turningSpeed, 0), ref velocity, turnDelay * Time.fixedDeltaTime);
-        }
+        //if ((Input.GetKey(KeyCode.D)) && !(Input.GetKey(KeyCode.A)))
+        //{
+        //    DesiredRotation = Vector3.SmoothDamp(DesiredRotation, new Vector3(0, turningSpeed, 0), ref velocity, turnDelay * Time.fixedDeltaTime);
+        //}
 
-        if ((!(Input.GetKey(KeyCode.A)) && !(Input.GetKey(KeyCode.D))) || (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D)))
-        {
-            DesiredRotation = Vector3.SmoothDamp(DesiredRotation, new Vector3(0, 0, 0), ref velocity, turnDelay * Time.fixedDeltaTime);
-        }
+        //if ((!(Input.GetKey(KeyCode.A)) && !(Input.GetKey(KeyCode.D))) || (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D)))
+        //{
+        //    DesiredRotation = Vector3.SmoothDamp(DesiredRotation, new Vector3(0, 0, 0), ref velocity, turnDelay * Time.fixedDeltaTime);
+        //}
 
 
 
@@ -144,15 +148,9 @@ public class ShipMovement : MonoBehaviour
 
                 //rigidBodyRef.AddForceAtPosition((-transform.right * currentSpeed * Time.fixedDeltaTime) / Floaters.Length, Floater.transform.position, ForceMode.Acceleration);
             }
-
-
-            //rigidBodyRef.AddForceAtPosition(new Vector3(0f, Mathf.Abs(Physics.gravity.y) * displacementMulti, 0f), transform.position, ForceMode.Acceleration);
         }
 
-        //rigidBodyRef.AddForce(-transform.right * currentSpeed * Time.fixedDeltaTime, ForceMode.Acceleration);
-
         TurningWheel.transform.Rotate(-Vector3.up * Time.deltaTime * (currentDesiredSpeed * WheelTurnSpeed), Space.Self);
-
     }
 }
 
