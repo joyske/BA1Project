@@ -2,11 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MenuScript : MonoBehaviour
 {
     [SerializeField] PlacementSystem placementSystem;
     private GridData gridData;
+
+    [SerializeField] Toggle toggle;
+    [SerializeField] RectTransform switchTransform;
 
     public void Awake()
     {
@@ -24,13 +28,23 @@ public class MenuScript : MonoBehaviour
         SceneManager.LoadScene(1);       
     }
 
+    public void ToggleSimulation()
+    {
+        if (toggle.isOn) { StartSimulation(); return; }
+        ResetSimulation();
+    }
+
     public void StartSimulation()
     {
+        switchTransform.localPosition = new Vector3(15f, 0f, 0f);
+        toggle.transform.GetChild(0).GetComponent<Image>().color = Color.green;
         placementSystem.StartSimulation();
     }
 
     public void ResetSimulation()
     {
+        switchTransform.localPosition = new Vector3(-15f, 0f, 0f);
+        toggle.transform.GetChild(0).GetComponent<Image>().color = Color.red;
         placementSystem.ResetObjects();
     }
 
