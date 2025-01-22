@@ -8,6 +8,8 @@ using UnityEngine.SceneManagement;
 public class PlacementSystem : MonoBehaviour
 {
 
+    public int lastUsedIndex;
+
     [SerializeField]
     private InputManager inputManager;
 
@@ -59,6 +61,7 @@ public class PlacementSystem : MonoBehaviour
     {
         if (!isSimulating)
         {
+            lastUsedIndex = ID;
             StopPlacement();
             gridVisualization.SetActive(true);
             placementState = new PlacementState(ID, grid, previewSystem, inventory, gridData, cargoPlacement);

@@ -34,17 +34,33 @@ public class MenuScript : MonoBehaviour
         ResetSimulation();
     }
 
-    public void StartSimulation()
+    public void ToggleDelete()
+    {
+        if (toggle.isOn) { placementSystem.StartRemoving(); StartToggle(); return; }
+        placementSystem.StartPlacement(placementSystem.lastUsedIndex); EndToggle();
+    }
+
+    public void StartToggle()
     {
         switchTransform.localPosition = new Vector3(15f, 0f, 0f);
         toggle.transform.GetChild(0).GetComponent<Image>().color = Color.green;
+    }
+
+    public void EndToggle()
+    {
+        switchTransform.localPosition = new Vector3(-15f, 0f, 0f);
+        toggle.transform.GetChild(0).GetComponent<Image>().color = Color.red;
+    }
+
+    public void StartSimulation()
+    {
+        StartToggle();
         placementSystem.StartSimulation();
     }
 
     public void ResetSimulation()
     {
-        switchTransform.localPosition = new Vector3(-15f, 0f, 0f);
-        toggle.transform.GetChild(0).GetComponent<Image>().color = Color.red;
+        EndToggle();
         placementSystem.ResetObjects();
     }
 
