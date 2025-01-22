@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7140463139506587421
 Transform:
   m_ObjectHideFlags: 0
@@ -45,4 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: 479af2c8f7c970644a038e8f42f862c0, type: 2}
-  boat: {fileID: 2794390668913423381, guid: 4ee614ec29c4bf4419bf3a7f87a4be95, type: 3}
+  boat: {fileID: 2794390668913423381, guid: f60e3d5f369eccb43abfaab6b9175843, type: 3}
+  delayTime: 1
+  yRotation: 90
