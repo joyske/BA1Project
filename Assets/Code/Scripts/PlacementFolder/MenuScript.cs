@@ -16,11 +16,6 @@ public class MenuScript : MonoBehaviour
         {
             gridData.placedObjects.Clear();
         }*/
-
-        if(SceneManager.GetActiveScene().buildIndex == 1)
-        {
-            this.gameObject.SetActive(false);
-        }
        
     }
     public void LoadLevel()

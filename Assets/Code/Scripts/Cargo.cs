@@ -28,7 +28,7 @@ public class Cargo : MonoBehaviour
 
         if (GetComponent<SphereCollider>())
         {
-            transform.parent.GetChild(1).GetComponent<BoxCollider>().enabled = false;
+            transform.GetComponent<BoxCollider>().enabled = false;
             GetComponent<SphereCollider>().enabled = true;
         }
 
