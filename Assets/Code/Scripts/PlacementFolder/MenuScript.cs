@@ -27,7 +27,6 @@ public class MenuScript : MonoBehaviour
     }
     public void LoadLevel()
     {
-
         //SceneManager.LoadScene(1);
         gameManagement.LoadLevelScene();
         Time.timeScale = 1.0f;
