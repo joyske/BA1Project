@@ -424,6 +424,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 329295762}
   m_CullTransparentMesh: 1
+--- !u!1 &379663599 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2086498668251340121, guid: 4ee614ec29c4bf4419bf3a7f87a4be95,
+    type: 3}
+  m_PrefabInstance: {fileID: 1056860379}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &379931258
 GameObject:
   m_ObjectHideFlags: 0
@@ -1977,6 +1983,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementInput: {x: 0, y: 0}
   rotateView: 0
+--- !u!4 &1056860395 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4234341347783281476, guid: 4ee614ec29c4bf4419bf3a7f87a4be95,
+    type: 3}
+  m_PrefabInstance: {fileID: 1056860379}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1079240807
 GameObject:
   m_ObjectHideFlags: 0
@@ -2482,12 +2494,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lastUsedIndex: 0
   inputManager: {fileID: 2055545447}
-  grid: {fileID: 0}
+  grid: {fileID: 1460760696}
   inventory: {fileID: 11400000, guid: 479af2c8f7c970644a038e8f42f862c0, type: 2}
-  gridVisualization: {fileID: 0}
+  gridVisualization: {fileID: 379663599}
   gridData: {fileID: 865512340}
   previewSystem: {fileID: 1952927559}
-  boatTransform: {fileID: 0}
+  boatTransform: {fileID: 1056860395}
   cargoPlacement: {fileID: 220575476}
 --- !u!1 &1393079302
 GameObject:
@@ -2622,6 +2634,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1393079302}
   m_CullTransparentMesh: 1
+--- !u!156049354 &1460760696 stripped
+Grid:
+  m_CorrespondingSourceObject: {fileID: 5272319391726440087, guid: 4ee614ec29c4bf4419bf3a7f87a4be95,
+    type: 3}
+  m_PrefabInstance: {fileID: 1056860379}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1481695083
 GameObject:
   m_ObjectHideFlags: 0
