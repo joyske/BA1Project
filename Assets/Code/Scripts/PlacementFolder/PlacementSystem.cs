@@ -78,14 +78,16 @@ public class PlacementSystem : MonoBehaviour
 
 
     public void StartRemoving()
-    {
-        isRemoving = true;
-        StopPlacement();
-        gridVisualization.SetActive(true);
-        placementState = new RemovingState(grid, previewSystem, gridData, cargoPlacement);
-        inputManager.OnClicked += PlaceItem;
-        inputManager.OnExit += StopPlacement;
-        isRemoving = false;
+    {   if (!isSimulating)
+        {
+            isRemoving = true;
+            StopPlacement();
+            gridVisualization.SetActive(true);
+            placementState = new RemovingState(grid, previewSystem, gridData, cargoPlacement);
+            inputManager.OnClicked += PlaceItem;
+            inputManager.OnExit += StopPlacement;
+            isRemoving = false;
+        }
     }
 
 
