@@ -1818,7 +1818,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -292.90002, y: 710.17004}
+  m_AnchoredPosition: {x: -292.90002, y: 665.17004}
   m_SizeDelta: {x: 372.5, y: 108.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1039273593
@@ -2287,9 +2287,9 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 623046704}
-  - {fileID: 1393079303}
-  - {fileID: 1768074129}
   - {fileID: 1039273592}
+  - {fileID: 1768074129}
+  - {fileID: 1393079303}
   - {fileID: 1184140484}
   - {fileID: 1764651695}
   - {fileID: 1965784528}
@@ -2505,7 +2505,7 @@ MonoBehaviour:
   previewSystem: {fileID: 1952927559}
   boatTransform: {fileID: 412121283}
   cargoPlacement: {fileID: 220575476}
-  inventorySceneData: {fileID: 0}
+  inventorySceneData: {fileID: 11400000, guid: 291df5840b9ebba41b903f0610d5d1ec, type: 2}
 --- !u!1 &1393079302
 GameObject:
   m_ObjectHideFlags: 0
@@ -3591,7 +3591,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -301.4, y: 874}
+  m_AnchoredPosition: {x: -301.4, y: 829}
   m_SizeDelta: {x: 372.5, y: 108.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1768074130
@@ -3618,7 +3618,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 1, g: 0.49999988, b: 0.49999988, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1

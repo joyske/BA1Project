@@ -70,11 +70,17 @@ public class MenuScript : MonoBehaviour
     {
         EndToggle(deleteToggle, deleteSwitch);
         StartToggle(simulateToggle, simulateSwitch);
+        transform.GetChild(0).transform.gameObject.SetActive(false);  
+        transform.GetChild(1).GetComponent<Button>().interactable = false;
+        transform.GetChild(2).GetComponent<Button>().interactable = false;
         placementSystem.StartSimulation();
     }
 
     public void ResetSimulation()
     {
+        transform.GetChild(0).transform.gameObject.SetActive(true);
+        transform.GetChild(1).GetComponent<Button>().interactable = true;
+        transform.GetChild(2).GetComponent<Button>().interactable = true;
         EndToggle(simulateToggle, simulateSwitch);
         placementSystem.ResetObjects();
     }
