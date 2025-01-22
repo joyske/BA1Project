@@ -475,7 +475,7 @@ MonoBehaviour:
   - {fileID: 4572753696941622621}
   - {fileID: 7201149784687752012}
   CollidedMultiplier: 0.7
-  WheelTurnSpeed: 0.15
+  WheelTurnSpeed: 0.3
 --- !u!114 &8773474204839688171
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -47,7 +47,7 @@ public class PlacementState : IPlacementState
 
     public void OnAction(Vector3Int gridPos)
     {
-        Debug.Log(gridPos);
+        //Debug.Log(gridPos);
         bool placementValid = CheckPlacementValidity(gridPos, selectedObjectIndex);
         if (!placementValid) return;
 
