@@ -151,7 +151,7 @@ public class ShipMovement : MonoBehaviour
 
         TurningWheel.transform.Rotate(-Vector3.up * Time.deltaTime * (currentDesiredSpeed * WheelTurnSpeed), Space.Self);
 
-        if (Input.GetMouseButtonDown(0) != false)
+        if (Input.GetMouseButtonDown(0) != false | Input.GetMouseButtonDown(1))
         {
             HideMouseCursor();
         }
@@ -160,7 +160,6 @@ public class ShipMovement : MonoBehaviour
     private void HideMouseCursor()
     {
         Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Confined;
     }
 }
 
