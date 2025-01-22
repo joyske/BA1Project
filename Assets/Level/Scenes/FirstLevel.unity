@@ -3339,6 +3339,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 472609082206480163, guid: 2b95d784f5956ed4595e077ddb570f0f,
         type: 3}
+      propertyPath: delayTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 472609082206480163, guid: 2b95d784f5956ed4595e077ddb570f0f,
+        type: 3}
       propertyPath: yRotation
       value: 90
       objectReference: {fileID: 0}

@@ -44,7 +44,7 @@ public class PlacementSystem : MonoBehaviour
     {
         isSimulating = false;
         Vector3 gridPosition = grid.transform.position;
-        gridPosition.y = boatTransform.position.y;  
+        //gridPosition.y = boatTransform.position.y;  
         grid.transform.position = gridPosition;
         StopPlacement();
        //GridData = new(); // item == object TODO name entscheiden 

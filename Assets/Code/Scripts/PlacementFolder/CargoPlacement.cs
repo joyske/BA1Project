@@ -29,14 +29,14 @@ public class CargoPlacement : MonoBehaviour
         foreach (GameObject obj in placedCargo)
         {
             // enable physics simulation
-            Rigidbody rb = obj.GetComponentInChildren<Rigidbody>();
+            Rigidbody rb = obj.GetComponent<Rigidbody>();
             rb.isKinematic = false;
 
             // toggle colliders for physics simulation TODO cylinderC
-            SphereCollider sphereCollider = obj.GetComponentInChildren<SphereCollider>();
+            SphereCollider sphereCollider = obj.GetComponent<SphereCollider>();
             if (sphereCollider != null)
             {
-                BoxCollider boxCollider = obj.GetComponentInChildren<BoxCollider>();
+                BoxCollider boxCollider = obj.GetComponent<BoxCollider>();
                 if (boxCollider != null)
                 {
                     boxCollider.enabled = false;

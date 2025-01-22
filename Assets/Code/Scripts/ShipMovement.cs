@@ -69,10 +69,10 @@ public class ShipMovement : MonoBehaviour
     private void FixedUpdate()
     {
         //W - S
-        Debug.Log("Forward:" + PlayerInputManager.movementInput.y);
+        //Debug.Log("Forward:" + PlayerInputManager.movementInput.y);
 
         //A - D
-        Debug.Log("Sideway:" + PlayerInputManager.movementInput.x);
+        //Debug.Log("Sideway:" + PlayerInputManager.movementInput.x);
 
 
 

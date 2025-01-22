@@ -14,7 +14,7 @@ public class ReloadCargo : MonoBehaviour
     GameObject boat;
 
     [SerializeField]
-    float delayTime = 1.0f;
+    float delayTime = 2.0f;
 
     [SerializeField] float yRotation = 0f;
 
@@ -29,19 +29,20 @@ public class ReloadCargo : MonoBehaviour
     /// </summary>
     private IEnumerator InitializeBoatAndCargo()
     {
-        Vector3 targetPos = new Vector3(0, 0.5f, 0);
+        Vector3 targetPos = new Vector3(0, 0, 0);
         GameObject newObject = Instantiate(boat, targetPos, Quaternion.identity);
         newObject.transform.eulerAngles = new Vector3(newObject.transform.eulerAngles.x, yRotation, newObject.transform.eulerAngles.z);
         grid = newObject.GetComponentInChildren<Grid>();
 
         yield return new WaitForSeconds(delayTime);
 
-        newObject.GetComponentInChildren<Rigidbody>().isKinematic = true;
+        newObject.GetComponent<Rigidbody>().isKinematic = true;
         GameObject cargo = GameObject.Find("CargoData");
         gridData = cargo.GetComponent<GridData>();
         PlaceSavedObjects();
+        GameObject.Find("GroundGrid").SetActive(false);
+        newObject.GetComponent<Rigidbody>().isKinematic = false;
 
-        newObject.GetComponentInChildren<Rigidbody>().isKinematic = false;
     }
 
     /// <summary>
@@ -65,6 +66,8 @@ public class ReloadCargo : MonoBehaviour
             // Instantiate and position the object
             GameObject obj = Instantiate(prefabData.Prefab, grid.CellToWorld(position), Quaternion.identity);
             EnablePhysics(obj);
+            
+
         }
     }
 
@@ -74,14 +77,14 @@ public class ReloadCargo : MonoBehaviour
     /// <param name="obj"></param>
     public void EnablePhysics(GameObject obj)
     {
-        Rigidbody rb = obj.GetComponentInChildren<Rigidbody>();
+        Rigidbody rb = obj.GetComponent<Rigidbody>();
         rb.isKinematic = false;
 
         // Toggle colliders for physics simulation
-        SphereCollider sphereCollider = obj.GetComponentInChildren<SphereCollider>();
+        SphereCollider sphereCollider = obj.GetComponent<SphereCollider>();
         if (sphereCollider != null)
         {
-            BoxCollider boxCollider = obj.GetComponentInChildren<BoxCollider>();
+            BoxCollider boxCollider = obj.GetComponent<BoxCollider>();
             if (boxCollider != null)
             {
                 boxCollider.enabled = false;

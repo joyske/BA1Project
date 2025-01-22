@@ -49,7 +49,7 @@ public class GridData : MonoBehaviour
         List<Vector3Int> positionToOccupy = CalculatePositions(gridPosition, objectSize);
         foreach (var position in positionToOccupy)
         {
-            if (placedObjects.ContainsKey(position) || position.x > 1 || position.y < -3)
+            if (placedObjects.ContainsKey(position) || BoundsChecker.IsOutOfBounds(position))
             {
                 return false;
             }
