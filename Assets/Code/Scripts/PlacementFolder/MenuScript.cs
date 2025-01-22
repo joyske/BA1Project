@@ -40,7 +40,8 @@ public class MenuScript : MonoBehaviour
     {
         if (deleteToggle.isOn) 
         { 
-            placementSystem.StartRemoving(); 
+            placementSystem.StartRemoving();
+            EndToggle(simulateToggle, simulateSwitch);
             StartToggle(deleteToggle, deleteSwitch); 
             return; 
         }
@@ -51,18 +52,21 @@ public class MenuScript : MonoBehaviour
 
     public void StartToggle(Toggle toggle, RectTransform switchTransform)
     {
-        switchTransform.localPosition = new Vector3(15f, 0f, 0f);
+        switchTransform.localPosition = new Vector3(10f, 0f, 0f);
         toggle.transform.GetChild(0).GetComponent<Image>().color = Color.green;
+        toggle.isOn = true;
     }
 
     public void EndToggle(Toggle toggle, RectTransform switchTransform)
     {
-        switchTransform.localPosition = new Vector3(-15f, 0f, 0f);
+        switchTransform.localPosition = new Vector3(-10f, 0f, 0f);
         toggle.transform.GetChild(0).GetComponent<Image>().color = Color.red;
+        toggle.isOn = false;
     }
 
     public void StartSimulation()
     {
+        EndToggle(deleteToggle, deleteSwitch);
         StartToggle(simulateToggle, simulateSwitch);
         placementSystem.StartSimulation();
     }
