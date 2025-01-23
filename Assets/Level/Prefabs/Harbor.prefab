@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e5e087668ddd224c82050cffd24bb84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeDistance: 200
-  minWaveHeightAlpha: 0
+  fadeDistance: 300
+  minWaveHeightAlpha: 0.4
   maxWaveHeightAlpha: 1
   isTargetHarbor: 1
 --- !u!1 &8168934263296739909
