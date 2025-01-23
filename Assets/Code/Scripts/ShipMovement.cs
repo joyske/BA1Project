@@ -46,12 +46,22 @@ public class ShipMovement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        CollidingElements++;
+        if (!((collision.gameObject.tag == ("Ocean")) | (collision.gameObject.tag == ("Player"))))
+        { CollidingElements++; }
+        //if (!((collision.gameObject.tag == ("Ocean")) | (collision.gameObject.tag == ("Player"))))
+        //{ currentDesiredSpeed = currentDesiredSpeed * 0.7f;}
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (!((collision.gameObject.tag == ("Ocean")) | (collision.gameObject.tag == ("Player"))))
+        { currentDesiredSpeed = currentDesiredSpeed * (1 - (((1 - 0.2f) / CollidingElements)) * Time.deltaTime); }
     }
 
     private void OnCollisionExit(Collision collision)
     {
-        CollidingElements--;
+        if (!((collision.gameObject.tag == ("Ocean")) | (collision.gameObject.tag == ("Player"))))
+        { CollidingElements--; }
     }
 
 
@@ -73,10 +83,16 @@ public class ShipMovement : MonoBehaviour
             if (currentDesiredSpeed < maxBackwardSpeed) { currentDesiredSpeed = maxBackwardSpeed; }
         }
 
+        //(1 - (((1 - 0.2f) / CollidingElements)) * Time.deltaTime);
+
         if (PlayerInputManager.movementInput.x != 0) 
         { DesiredRotation = Vector3.SmoothDamp(DesiredRotation, new Vector3(0, (PlayerInputManager.movementInput.x) * turningSpeed, 0), ref velocity, turnDelay * Time.fixedDeltaTime); }
         else 
-        { DesiredRotation = Vector3.SmoothDamp(DesiredRotation, new Vector3(0, 0, 0), ref velocity, turnDelay * Time.fixedDeltaTime); }
+        { 
+            DesiredRotation = Vector3.SmoothDamp(DesiredRotation, new Vector3(0, 0, 0), ref velocity, turnDelay * Time.fixedDeltaTime);
+            if(Vector3.Magnitude(DesiredRotation) <= 2)
+            { DesiredRotation = new Vector3(0, 0, 0); }
+        }
 
 
 
