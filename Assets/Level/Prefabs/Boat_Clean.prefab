@@ -469,7 +469,7 @@ MonoBehaviour:
   desiredSpeedChangeMultiplier: 600
   currentDesiredSpeed: 0
   accelerateDelay: 1
-  turnDelay: 25
+  turnDelay: 15
   Floaters:
   - {fileID: 2320500409870054955}
   - {fileID: 8174605925401917088}
