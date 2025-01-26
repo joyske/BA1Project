@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class PlayerHUD : MonoBehaviour
 {
     private ShipMovement shipMovement;
+    private Transform player;
+
     private GridData gridData;
     [SerializeField] Slider cargoSlider;
     [SerializeField] Slider speedSlider;
@@ -28,7 +30,9 @@ public class PlayerHUD : MonoBehaviour
 
     void Start()
     {
-        shipMovement = GameObject.FindWithTag("Boat").transform.GetComponent<ShipMovement>();
+        player = GameObject.FindWithTag("Boat").transform;
+        shipMovement = player.GetComponent<ShipMovement>();
+        
 
         maxSpeed = shipMovement.maxForwardSpeed;
         minSpeed = shipMovement.maxBackwardSpeed;

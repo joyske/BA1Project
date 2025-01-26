@@ -8,6 +8,10 @@ public class Cargo : MonoBehaviour
     private PlayerHUD playerHUD;
     private Floater floater;
     private bool subtractedCargo;
+    private bool leftBoat = false;
+
+    private BoxCollider boatColliderZone;
+    private Transform player;
 
     void Awake()
     {
@@ -32,16 +36,35 @@ public class Cargo : MonoBehaviour
             GetComponent<SphereCollider>().enabled = true;
         }
 
+        player = GameObject.FindWithTag("Boat").transform;
+        boatColliderZone = player.GetChild(player.childCount - 1).GetComponent<BoxCollider>();
+
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (floater.hitWater && !subtractedCargo)
+        if (floater.hitWater && !subtractedCargo && leftBoat)
         {
             playerHUD.currentCargoAmount -= 1;
             subtractedCargo = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.transform.tag == "SafeZone")
+        {
+            leftBoat = true;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.transform.tag == "SafeZone" && !subtractedCargo)
+        {
+            leftBoat = false;
         }
     }
 }
