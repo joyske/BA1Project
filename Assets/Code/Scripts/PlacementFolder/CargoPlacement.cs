@@ -19,8 +19,6 @@ public class CargoPlacement : MonoBehaviour
         return placedCargo.Count - 1; // null values werden nicht gelöscht 
     }
 
-
-
     /// <summary>
     /// Turns on physics for each placed Object
     /// </summary>

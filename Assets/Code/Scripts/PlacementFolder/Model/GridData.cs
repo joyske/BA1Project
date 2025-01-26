@@ -20,7 +20,7 @@ public class GridData : MonoBehaviour
 
 
     /// <summary>
-    ///  Check if Object can be placed on cell
+    ///  
     /// </summary>
     /// <param name="gridPosition"> Cell object would be placed on</param>
     /// <param name="objectSize"> Size of object</param>
@@ -39,8 +39,9 @@ public class GridData : MonoBehaviour
             {
                 throw new Exception($"Dictionary already contains item");
             }
-            placedObjects[position] = data;
+            //placedObjects[position] = data;
         }
+        placedObjects[gridPosition] = data;
 
     }
 
@@ -50,6 +51,13 @@ public class GridData : MonoBehaviour
         foreach (var position in positionToOccupy)
         {
             if (placedObjects.ContainsKey(position) || BoundsChecker.IsOutOfBounds(position))
+            {
+                return false;
+            }
+        }
+        foreach (var placementData in placedObjects.Values)
+        {
+            if (placementData.occupiedPositions.Contains(gridPosition))
             {
                 return false;
             }
@@ -105,6 +113,12 @@ public class GridData : MonoBehaviour
         {
             placedObjects.Remove(pos);
         }
+
+    }
+
+    public int GetObjectID(Vector3Int gridPos)
+    {
+        return placedObjects[gridPos].ID;
     }
 
 

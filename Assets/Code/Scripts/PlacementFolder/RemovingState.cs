@@ -10,16 +10,19 @@ public class RemovingState : IPlacementState
     PreviewSystem previewSystem;
     GridData gridData;
     CargoPlacement cargoPlacement;
+    InventoryUIManager inventoryManager;
 
-    public RemovingState(Grid grid, PreviewSystem previewSystem,  GridData gridData, CargoPlacement cargoPlacement)
+    public RemovingState(Grid grid, PreviewSystem previewSystem,  GridData gridData, CargoPlacement cargoPlacement, InventoryUIManager inventoryManager)
     {
         this.grid = grid;
         this.previewSystem = previewSystem;
         this.gridData = gridData;
         this.cargoPlacement = cargoPlacement;
+        this.inventoryManager = inventoryManager;
 
 
         previewSystem.StartShowingRemovePreview();
+        this.inventoryManager = inventoryManager;
     }
 
     public void EndState()
@@ -58,9 +61,10 @@ public class RemovingState : IPlacementState
             gameObjectindex = selectedData.GetIndex(gridPos);
             if (gameObjectindex == -1)
                 return;
-            Debug.Log(gridPos);
+            int itemID = selectedData.GetObjectID(gridPos);
             selectedData.RemoveObjectAt(gridPos);
-            cargoPlacement.RemoveObjectAt(gameObjectindex); 
+            cargoPlacement.RemoveObjectAt(gameObjectindex);
+            inventoryManager.IncrementPlacedItem(itemID);
         }
         Vector3 cellPos = grid.CellToWorld(gridPos);
         previewSystem.UpdatePosition(cellPos, CheckIfSelectionIsValid(gridPos));

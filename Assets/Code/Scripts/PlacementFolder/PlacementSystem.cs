@@ -43,15 +43,16 @@ public class PlacementSystem : MonoBehaviour
     IPlacementState placementState;
 
     [SerializeField]
-    InventorySceneData inventorySceneData;
+    InventoryUIManager inventoryManager;
+
 
     private void Start()
     {
         isSimulating = false;
         isRemoving = false; 
-        Vector3 gridPosition = grid.transform.position;
-        //gridPosition.y = boatTransform.position.y;  
-        grid.transform.position = gridPosition;
+        //Vector3 gridPosition = grid.transform.position;
+        ////gridPosition.y = boatTransform.position.y;  
+        //grid.transform.position = gridPosition;
         StopPlacement();
         //GridData = new(); // item == object TODO name entscheiden 
 
@@ -65,12 +66,12 @@ public class PlacementSystem : MonoBehaviour
     /// <param name="ID"></param>
     public void StartPlacement(int ID)
     {
-        if (!isSimulating && !isRemoving)
+        if (!isSimulating && !isRemoving && inventoryManager.CanPlaceItem(ID))
         {
             lastUsedIndex = ID;
             StopPlacement();
             gridVisualization.SetActive(true);
-            placementState = new PlacementState(ID, grid, previewSystem, inventory, gridData, cargoPlacement);
+            placementState = new PlacementState(ID, grid, previewSystem, inventory, gridData, cargoPlacement, inventoryManager);
             inputManager.OnClicked += PlaceItem;
             inputManager.OnExit += StopPlacement;
         }
@@ -83,7 +84,7 @@ public class PlacementSystem : MonoBehaviour
             isRemoving = true;
             StopPlacement();
             gridVisualization.SetActive(true);
-            placementState = new RemovingState(grid, previewSystem, gridData, cargoPlacement);
+            placementState = new RemovingState(grid, previewSystem, gridData, cargoPlacement, inventoryManager);
             inputManager.OnClicked += PlaceItem;
             inputManager.OnExit += StopPlacement;
             isRemoving = false;
@@ -117,8 +118,6 @@ public class PlacementSystem : MonoBehaviour
     //{
     //    return gridData.CanPlaceObjectAt(gridPos, inventory.objectsData[selectedObjectIndex].Size);
     //}
-
-
     private void StopPlacement()
     {
         if (placementState == null) return;
@@ -159,12 +158,7 @@ public class PlacementSystem : MonoBehaviour
             placementState.UpdateState(gridPos);
             lastDetectedPos = gridPos;
         }
-     
-        //mouseIndicator.transform.position = mousePos;
     }
-
-
-
 
     //TODO Simulationsmethoden als State ?? Definitv PlaceSavedObjects
 

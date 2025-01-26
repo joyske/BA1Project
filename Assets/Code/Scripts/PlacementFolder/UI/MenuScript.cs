@@ -13,6 +13,7 @@ public class MenuScript : MonoBehaviour
     [SerializeField] RectTransform deleteSwitch;
     [SerializeField] Toggle simulateToggle;
     [SerializeField] RectTransform simulateSwitch;
+    [SerializeField] Button startButton;
     private GameManagement gameManagement;
 
     public void Awake()
@@ -114,5 +115,6 @@ public class MenuScript : MonoBehaviour
         placementSystem.StartRemoving();
     }
 
+    public void UpdateStart(bool CanStart) => startButton.interactable = CanStart;
 
 }
