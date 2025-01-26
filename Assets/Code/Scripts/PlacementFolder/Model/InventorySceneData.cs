@@ -31,23 +31,7 @@ public class CountData
         [field: SerializeField]
         public int TotalItemCount { get; private set; } 
 
-        [field: SerializeField]
-        public int PlacedItemCount { get; private set; } 
-
-        public int RemainingItemCount => TotalItemCount - PlacedItemCount; 
-
-        // Method to increment placed count
-        public void IncrementPlacedCount()
-        {
-            if (RemainingItemCount > 0)
-            {
-                PlacedItemCount++;
-            }
-            else
-            {
-                Debug.LogError($"No more items with ID {ItemID} available for placement.");
-            }
-        }
-    }
+       
+ }
 
 

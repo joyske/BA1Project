@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47329ad5742201e42bde7b72da3e7dd5, type: 3}
+  m_Name: InventoryDatabase
+  m_EditorClassIdentifier: 
+  objectsData:
+  - <Name>k__BackingField: BoxLight
+    <ID>k__BackingField: 0
+    <Size>k__BackingField: {x: 1, y: 1, z: 1}
+    <Prefab>k__BackingField: {fileID: 4116288736278081604, guid: 0199dd938b3c4f54cbb499e535060ef7,
+      type: 3}
+    <sprite>k__BackingField: {fileID: 21300000, guid: 81f2c0307a6c4e3459f19546b6edc70a,
+      type: 3}
+  - <Name>k__BackingField: Orange
+    <ID>k__BackingField: 1
+    <Size>k__BackingField: {x: 1, y: 1, z: 1}
+    <Prefab>k__BackingField: {fileID: 5566791323414645081, guid: ee96a499e5a70b045ada6900e91e12d2,
+      type: 3}
+    <sprite>k__BackingField: {fileID: 21300000, guid: 7c219f588f11fad4a994126eb8f14362,
+      type: 3}
+  - <Name>k__BackingField: BarrelHeavyStanding
+    <ID>k__BackingField: 2
+    <Size>k__BackingField: {x: 1, y: 2, z: 1}
+    <Prefab>k__BackingField: {fileID: 4116288736278081604, guid: 0edb37b45c929ba4a863e848891be064,
+      type: 3}
+    <sprite>k__BackingField: {fileID: 21300000, guid: 7f1ec5d4d64fea448af2211c1447ad74,
+      type: 3}
+  - <Name>k__BackingField: BoxHeavy
+    <ID>k__BackingField: 3
+    <Size>k__BackingField: {x: 1, y: 1, z: 1}
+    <Prefab>k__BackingField: {fileID: 4116288736278081604, guid: e9715538ce7f1ac498be84022cee105e,
+      type: 3}
+    <sprite>k__BackingField: {fileID: 21300000, guid: 6782b9a0615291340a975b344eb94e55,
+      type: 3}
+  - <Name>k__BackingField: BarrelHeavyLying
+    <ID>k__BackingField: 4
+    <Size>k__BackingField: {x: 2, y: 1, z: 1}
+    <Prefab>k__BackingField: {fileID: 4116288736278081604, guid: bbbcec26a87c7c047901f522e1f784f0,
+      type: 3}
+    <sprite>k__BackingField: {fileID: 21300000, guid: 7f1ec5d4d64fea448af2211c1447ad74,
+      type: 3}
+  - <Name>k__BackingField: BoxHeavy
+    <ID>k__BackingField: 3
+    <Size>k__BackingField: {x: 1, y: 1, z: 1}
+    <Prefab>k__BackingField: {fileID: 4116288736278081604, guid: e9715538ce7f1ac498be84022cee105e,
+      type: 3}
+    <sprite>k__BackingField: {fileID: 21300000, guid: 6782b9a0615291340a975b344eb94e55,
+      type: 3}

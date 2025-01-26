@@ -11,9 +11,8 @@ public class PlacementState : IPlacementState
     Inventory inventory;
     GridData gridData;
     CargoPlacement cargoPlacement;
-    InventorySceneData inventorySceneData;
-
-    public PlacementState(int iD, Grid grid, PreviewSystem previewSystem, Inventory inventory, GridData gridData, CargoPlacement cargoPlacement)
+    InventoryUIManager inventoryManager;
+    public PlacementState(int iD, Grid grid, PreviewSystem previewSystem, Inventory inventory, GridData gridData, CargoPlacement cargoPlacement, InventoryUIManager inventoryManager)
     {
         ID = iD;
         this.grid = grid;
@@ -21,10 +20,10 @@ public class PlacementState : IPlacementState
         this.inventory = inventory;
         this.gridData = gridData;
         this.cargoPlacement = cargoPlacement;
-        //this.inventorySceneData = inventorySceneData;
+        this.inventoryManager = inventoryManager;
 
 
-        selectedObjectIndex = inventory.objectsData.FindIndex(data => data.ID == ID);  // Get item with id from inventory
+        selectedObjectIndex = inventory.objectsData.FindIndex(data => data.ID == ID);  
         if (selectedObjectIndex < 0)
         {
             Debug.LogError($"NO ID FOUND {ID}");
@@ -49,15 +48,21 @@ public class PlacementState : IPlacementState
 
     public void OnAction(Vector3Int gridPos)
     {
-        Debug.Log(gridPos);
-        bool placementValid = CheckPlacementValidity(gridPos, selectedObjectIndex);
-        if (!placementValid) return;
+        if (inventoryManager.CanPlaceItem(ID))
+        {
+            bool placementValid = CheckPlacementValidity(gridPos, selectedObjectIndex);
+            if (!placementValid) return;
 
-        int index = cargoPlacement.Placement(inventory.objectsData[selectedObjectIndex].Prefab, grid.CellToWorld(gridPos));
+            int index = cargoPlacement.Placement(inventory.objectsData[selectedObjectIndex].Prefab, grid.CellToWorld(gridPos));
 
-        gridData.AddObjectAt(gridPos, inventory.objectsData[selectedObjectIndex].Size, inventory.objectsData[selectedObjectIndex].ID, index);
-        previewSystem.UpdatePosition(grid.CellToWorld(gridPos), false);
-        //UpdatePlacementCount(ID);
+            gridData.AddObjectAt(gridPos, inventory.objectsData[selectedObjectIndex].Size, inventory.objectsData[selectedObjectIndex].ID, index);
+            previewSystem.UpdatePosition(grid.CellToWorld(gridPos), false);
+            inventoryManager.DecreasePlacedItem(inventory.objectsData[selectedObjectIndex].ID);
+            //UpdatePlacementCount(ID);
+        } else
+        {
+            previewSystem.StopShowingPreview();
+        }
     }
 
 
