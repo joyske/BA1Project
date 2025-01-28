@@ -64,7 +64,7 @@ public class PlayerHUD : MonoBehaviour
         timer.text = timeLeft.ToString("0.00") + " s";
 
         cargoSlider.value = currentCargoAmount;
-        cargoText.text = currentCargoAmount.ToString("0") + "/" + maxCargoText;
+        cargoText.text = currentCargoAmount.ToString("0");
 
         if(currentCargoAmount <= 0 || timeLeft <= 0f)
         {
