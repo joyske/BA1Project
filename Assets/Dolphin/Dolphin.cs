@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -6,9 +7,14 @@ using UnityEngine.EventSystems;
 public class Dolphin : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 4f;
+    private float currentSpeed;
     [SerializeField] float jumpForce = 10f;
     [SerializeField] float SecondsBetweenJumps = 0.1f;
     [SerializeField] float waterDepth = -2.5f;
+    [SerializeField] float destroyDelay = 1f;
+
+    [SerializeField] LayerMask hitLayers;
+    
 
     private float timePassed = 0f;
     private Vector3 moveDirection;
@@ -20,12 +26,27 @@ public class Dolphin : MonoBehaviour
 
     void Start()
     {
+        currentSpeed = 0f;
+        StartCoroutine(StartDelay());
+        
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
         moveDirection = transform.forward;
         timePassed = 0f;      
     }
 
+    IEnumerator StartDelay()
+    {
+        float randomTime = Random.Range(0f, 3f);
+        Debug.Log(randomTime);
+        yield return new WaitForSeconds(randomTime);
+        currentSpeed = moveSpeed;
+    }
+
+    private void Update()
+    {
+        TerrainCheck();
+    }
     private void FixedUpdate()
     {
         SetRotation();
@@ -39,25 +60,44 @@ public class Dolphin : MonoBehaviour
         }
 
         Vector3 currentVelocity = GetCurrentVelocity();
-        rb.AddForce((moveDirection * moveSpeed - currentVelocity), ForceMode.VelocityChange);
+        rb.AddForce((moveDirection * currentSpeed - currentVelocity), ForceMode.VelocityChange);
         
         SetAnimation();
 
     }   
+
+    void TerrainCheck()
+    {
+        RaycastHit hit;
+        float distance = 4f;
+
+        if(Physics.Raycast(transform.position,transform.forward, out hit, distance, hitLayers))
+        {
+            Debug.DrawRay(transform.position, transform.forward * distance, Color.red);
+            transform.eulerAngles = new Vector3(0f, -transform.rotation.eulerAngles.y, 0f);
+
+            moveDirection = transform.forward;
+        }
+        else
+        {
+            Debug.DrawRay(transform.position, transform.forward * distance, Color.green);
+            Debug.DrawRay(transform.position, new Vector3(transform.forward.x, transform.forward.y - 1f, transform.forward.z) * distance, Color.yellow);
+        }
+    }
 
     private void SetAnimation()
     {
         Vector3 velocity = rb.velocity.normalized;
         float animY = velocity.y;
         anim.SetFloat("yVelocity", animY);
-        Debug.Log(velocity);
+        //Debug.Log(velocity);
     }
 
     private void SetRotation()
     {
         Vector3 currentDirection = GetCurrentDirection();
 
-        if (!IsPlayerAboveWater() && !isJumping)
+        if (!IsAboveWater() && !isJumping)
         {
             currentDirection = moveDirection;
             rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
@@ -86,7 +126,7 @@ public class Dolphin : MonoBehaviour
 
     }
 
-    private bool IsPlayerAboveWater() 
+    private bool IsAboveWater() 
     {
         if(transform.position.y > waterDepth)
         {            
@@ -103,4 +143,20 @@ public class Dolphin : MonoBehaviour
 
     }
 
+    private void OnTriggerEnter(Collider col)
+    {
+        Debug.Log("HAAAAA");
+        if (col.transform.tag == "SafeZone")
+        {
+            StartCoroutine(DestroyDolphin());
+            Debug.Log("HIIIII");
+        }
+    }
+
+    IEnumerator DestroyDolphin()
+    {
+        
+        yield return new WaitForSeconds(destroyDelay);
+        Destroy(this.gameObject);
+    }
 }

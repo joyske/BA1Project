@@ -105,6 +105,10 @@ MonoBehaviour:
   jumpForce: 400000
   SecondsBetweenJumps: 0.1
   waterDepth: -2.5
+  destroyDelay: 1
+  hitLayers:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!54 &9040378631883599429
 Rigidbody:
   m_ObjectHideFlags: 0
