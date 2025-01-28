@@ -12,6 +12,7 @@ TagManager:
   - GameManager
   - Goal
   - SafeZone
+  - DolphinSpawnZone
   layers:
   - Default
   - TransparentFX

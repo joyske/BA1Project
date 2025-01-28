@@ -26,8 +26,8 @@ public class Dolphin : MonoBehaviour
 
     void Start()
     {
-        currentSpeed = 0f;
-        StartCoroutine(StartDelay());
+        currentSpeed = moveSpeed;
+        //StartCoroutine(StartDelay());
         
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
@@ -37,9 +37,8 @@ public class Dolphin : MonoBehaviour
 
     IEnumerator StartDelay()
     {
-        float randomTime = Random.Range(0f, 3f);
-        Debug.Log(randomTime);
-        yield return new WaitForSeconds(randomTime);
+        float delayTime = 3f;
+        yield return new WaitForSeconds(delayTime);
         currentSpeed = moveSpeed;
     }
 
@@ -143,10 +142,9 @@ public class Dolphin : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider col)
+    private void OnCollisionEnter(Collision col)
     {
-        Debug.Log("HAAAAA");
-        if (col.transform.tag == "SafeZone")
+        if (col.transform.tag == "Boat")
         {
             StartCoroutine(DestroyDolphin());
             Debug.Log("HIIIII");
