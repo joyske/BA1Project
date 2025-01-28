@@ -49,6 +49,7 @@ MonoBehaviour:
   minWaveHeightAlpha: 0.4
   maxWaveHeightAlpha: 1
   isTargetHarbor: 1
+  goalCylinder: {fileID: 8168934263296739909}
 --- !u!1 &8168934263296739909
 GameObject:
   m_ObjectHideFlags: 0
