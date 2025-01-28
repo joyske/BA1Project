@@ -922,7 +922,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7867986506457916661}
   - component: {fileID: 6580208560275169437}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DolphinSpawnZone
   m_TagString: DolphinSpawnZone
   m_Icon: {fileID: 0}
