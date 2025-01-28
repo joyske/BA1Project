@@ -433,7 +433,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2794390668913423381}
   serializedVersion: 4
-  m_Mass: 5000
+  m_Mass: 20000
   m_Drag: 0.01
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 2, y: 0, z: 0}
@@ -468,7 +468,7 @@ MonoBehaviour:
   turningSpeed: 130
   maxForwardSpeed: 2000
   maxBackwardSpeed: -1000
-  desiredSpeedChangeMultiplier: 600
+  desiredSpeedChangeMultiplier: 800
   currentDesiredSpeed: 0
   accelerateDelay: 1
   turnDelay: 15
