@@ -13,11 +13,19 @@ MonoBehaviour:
   m_Name: InventorySceneDB
   m_EditorClassIdentifier: 
   SceneData:
+  - <SceneID>k__BackingField: 0
+    <CountData>k__BackingField:
+    - <ItemID>k__BackingField: 0
+      <TotalItemCount>k__BackingField: 3
   - <SceneID>k__BackingField: 1
     <CountData>k__BackingField:
     - <ItemID>k__BackingField: 2
-      <TotalItemCount>k__BackingField: 3
-  - <SceneID>k__BackingField: 0
+      <TotalItemCount>k__BackingField: 2
+    - <ItemID>k__BackingField: 2
+      <TotalItemCount>k__BackingField: 2
+  - <SceneID>k__BackingField: 2
     <CountData>k__BackingField:
+    - <ItemID>k__BackingField: 2
+      <TotalItemCount>k__BackingField: 2
     - <ItemID>k__BackingField: 2
       <TotalItemCount>k__BackingField: 2

@@ -6,11 +6,10 @@ using UnityEngine;
 
 public class CargoPlacement : MonoBehaviour
 {
-    // for inspector might delete later
-    [SerializeField]
+
     private List<GameObject> placedCargo = new();
 
-    internal int Placement(GameObject prefab, Vector3 pos)
+    public int Placement(GameObject prefab, Vector3 pos)
     {
         GameObject newObject = Instantiate(prefab);
         newObject.transform.position = pos;
@@ -24,56 +23,71 @@ public class CargoPlacement : MonoBehaviour
     /// </summary>
     public void EnablePhysics()
     {
+
         foreach (GameObject obj in placedCargo)
         {
-            // enable physics simulation
-            Rigidbody rb = obj.GetComponent<Rigidbody>();
-            rb.isKinematic = false;
-
-            // toggle colliders for physics simulation TODO cylinderC
-            SphereCollider sphereCollider = obj.GetComponent<SphereCollider>();
-            if (sphereCollider != null)
+            if (obj != null)
             {
-                BoxCollider boxCollider = obj.GetComponent<BoxCollider>();
-                if (boxCollider != null)
-                {
-                    boxCollider.enabled = false;
-                }
-                sphereCollider.enabled = true;
+                // enable physics simulation
+                Rigidbody rb = obj.GetComponent<Rigidbody>();
+                rb.isKinematic = false;
 
+                // toggle colliders for physics simulation TODO cylinderC
+                SphereCollider sphereCollider = obj.GetComponent<SphereCollider>();
+                if (sphereCollider != null)
+                {
+                    BoxCollider boxCollider = obj.GetComponent<BoxCollider>();
+                    if (boxCollider != null)
+                    {
+                        boxCollider.enabled = false;
+                    }
+                    sphereCollider.enabled = true;
+
+                }
             }
+            
         }
     }
-
 
     /// <summary>
     /// Destroys all placed items
     /// </summary>
     public void DestroyAllCargo()
     {
-        foreach (GameObject obj in placedCargo)
+
+        for (int i = 0; i < placedCargo.Count; i++)
         {
-            Destroy(obj);
+            if (placedCargo[i] != null)
+            {
+                Destroy(placedCargo[i]);
+                placedCargo[i] = null;
+            }
         }
 
-        placedCargo.Clear();
     }
-
 
     /// <summary>
     /// Adds an object to the list TODO this method 
     /// </summary>
     /// <param name="cargo"></param>
-    public void AddCargoToList(GameObject cargo)
+    public void AddCargoToList(GameObject cargo, int index)
     {
-        placedCargo.Add(cargo);
+        placedCargo[index] = cargo;
     }
 
-    internal void RemoveObjectAt(int gameObjectindex)
+
+    /// <summary>
+    /// Destroy and nulls object with index gameObjectIndex
+    /// </summary>
+    /// <param name="gameObjectIndex"></param>
+    public void RemoveObjectAt(int gameObjectIndex)
     {
-        if (placedCargo.Count <= gameObjectindex || placedCargo[gameObjectindex] == null)
+        if (placedCargo.Count <= gameObjectIndex || placedCargo[gameObjectIndex] == null)
+        {
             return;
-        Destroy(placedCargo[gameObjectindex]);
-        placedCargo[gameObjectindex] = null;    
+        }
+        Destroy(placedCargo[gameObjectIndex]);
+        placedCargo[gameObjectIndex] = null;    
+
     }
 }

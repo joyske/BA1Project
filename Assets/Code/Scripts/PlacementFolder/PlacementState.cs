@@ -58,6 +58,10 @@ public class PlacementState : IPlacementState
             gridData.AddObjectAt(gridPos, inventory.objectsData[selectedObjectIndex].Size, inventory.objectsData[selectedObjectIndex].ID, index);
             previewSystem.UpdatePosition(grid.CellToWorld(gridPos), false);
             inventoryManager.DecreasePlacedItem(inventory.objectsData[selectedObjectIndex].ID);
+            if (!inventoryManager.CanPlaceItem(ID))
+            {
+                previewSystem.StopShowingPreview();
+            }
             //UpdatePlacementCount(ID);
         } else
         {
@@ -83,28 +87,4 @@ public class PlacementState : IPlacementState
         bool placementValid = CheckPlacementValidity(gridPos, selectedObjectIndex);
         previewSystem.UpdatePosition(grid.CellToWorld(gridPos), placementValid);
     }
-
-
-
-    //private void UpdatePlacementCount(int itemID)
-    //{
-    //    //var sceneData = inventorySceneData.SceneData.Find(scene => scene.SceneID == cargoPlacement.CurrentSceneID);
-    //    var sceneData = inventorySceneData.SceneData.Find(scene => scene.SceneID == 0);
-    //    if (sceneData == null)
-    //    {
-    //        //Debug.LogError($"No scene data found for Scene ID {cargoPlacement.CurrentSceneID}");
-    //        return;
-    //    }
-
-    //    var countData = sceneData.CountData.Find(data => data.ItemID == itemID);
-    //    if (countData == null)
-    //    {
-    //        Debug.LogError($"No count data found for Item ID {itemID}");
-    //        return;
-    //    }
-
-    //    countData.IncrementPlacedCount();
-    //    Debug.Log(countData.PlacedItemCount);
-    //    Debug.Log(countData.RemainingItemCount);// Ensure CountData has this method
-    //}
 }

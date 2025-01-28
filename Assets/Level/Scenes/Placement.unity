@@ -442,7 +442,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03d458fcc075aad4db0fe2ba041f1b28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placedCargo: []
 --- !u!4 &220575477
 Transform:
   m_ObjectHideFlags: 0
@@ -569,7 +568,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.63760525, g: 0.8207547, b: 0.5071645, a: 1}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -2910,11 +2909,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   placementSystem: {fileID: 1288713956}
-  deleteToggle: {fileID: 1735324935}
-  deleteSwitch: {fileID: 445192316}
   simulateToggle: {fileID: 1764651696}
   simulateSwitch: {fileID: 735016409}
   startButton: {fileID: 1393079304}
+  deleteButton: {fileID: 1768074130}
 --- !u!1 &1184140483
 GameObject:
   m_ObjectHideFlags: 0
@@ -3337,6 +3335,7 @@ MonoBehaviour:
   boatTransform: {fileID: 412121283}
   cargoPlacement: {fileID: 220575476}
   inventoryManager: {fileID: 623046708}
+  menuScript: {fileID: 1150326423}
 --- !u!1 &1393079302
 GameObject:
   m_ObjectHideFlags: 0
@@ -4608,9 +4607,9 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 1, g: 0.49999988, b: 0.49999988, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -4908,7 +4907,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.63760525, g: 0.8207547, b: 0.5071645, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.35534158, g: 0.6509434, b: 0.14431292, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1

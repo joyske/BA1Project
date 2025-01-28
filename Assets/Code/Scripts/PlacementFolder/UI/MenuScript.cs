@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -9,11 +10,11 @@ public class MenuScript : MonoBehaviour
     [SerializeField] PlacementSystem placementSystem;
     private GridData gridData;
 
-    [SerializeField] Toggle deleteToggle;
-    [SerializeField] RectTransform deleteSwitch;
+
     [SerializeField] Toggle simulateToggle;
     [SerializeField] RectTransform simulateSwitch;
     [SerializeField] Button startButton;
+    [SerializeField] Button deleteButton;
     private GameManagement gameManagement;
 
     public void Awake()
@@ -26,6 +27,15 @@ public class MenuScript : MonoBehaviour
         }*/
 
     }
+
+
+    public static GameObject GetEventClickedButton()
+    {
+        EventSystem currentEvent = EventSystem.current;
+        return currentEvent.currentSelectedGameObject;
+    }
+
+    
     public void LoadLevel()
     {
         //SceneManager.LoadScene(1);
@@ -37,20 +47,6 @@ public class MenuScript : MonoBehaviour
     {
         if (simulateToggle.isOn) { StartSimulation(); return; }
         ResetSimulation();
-    }
-
-    public void ToggleDelete()
-    {
-        if (deleteToggle.isOn) 
-        { 
-            placementSystem.StartRemoving();
-            EndToggle(simulateToggle, simulateSwitch);
-            StartToggle(deleteToggle, deleteSwitch); 
-            return; 
-        }
-        EndToggle(deleteToggle, deleteSwitch);
-        placementSystem.StartPlacement(placementSystem.lastUsedIndex); 
-        
     }
 
     public void StartToggle(Toggle toggle, RectTransform switchTransform)
@@ -69,7 +65,6 @@ public class MenuScript : MonoBehaviour
 
     public void StartSimulation()
     {
-        EndToggle(deleteToggle, deleteSwitch);
         StartToggle(simulateToggle, simulateSwitch);
         transform.GetChild(0).transform.gameObject.SetActive(false);  
         transform.GetChild(1).GetComponent<Button>().interactable = false;
@@ -113,6 +108,13 @@ public class MenuScript : MonoBehaviour
     public void Delete()
     {
         placementSystem.StartRemoving();
+        
+    }
+
+    public void InDeleteMode(bool inDelete)
+    {
+        Color color = inDelete ? Color.red : Color.white;
+        deleteButton.GetComponent<Image>().color = color;
     }
 
     public void UpdateStart(bool CanStart) => startButton.interactable = CanStart;

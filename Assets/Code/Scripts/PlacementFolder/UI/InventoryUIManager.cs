@@ -39,6 +39,10 @@ public class InventoryUIManager : MonoBehaviour
 
     }
 
+
+    /// <summary>
+    /// Initializes Inventory UI with sprite, ItemId and Quantity
+    /// </summary>
     private void InitUI()
     {
 
@@ -65,6 +69,12 @@ public class InventoryUIManager : MonoBehaviour
     }
 
 
+
+    /// <summary>
+    /// Gets Sprite with ItemID
+    /// </summary>
+    /// <param name="itemID"></param>
+    /// <returns></returns>
     public Sprite GetSpriteByID(int itemID)
     {
 
@@ -96,13 +106,6 @@ public class InventoryUIManager : MonoBehaviour
             }
         }
 
-        //foreach (var obj in placedItemCounts)
-        //{
-        //    Debug.Log($"kid {obj.Key}");
-        //    Debug.Log($"quantity {obj.Value}");
-
-        //}
-
     }
 
     public void IncrementPlacedItem(int itemID)
@@ -128,6 +131,7 @@ public class InventoryUIManager : MonoBehaviour
     {
         if (placedItemCounts[itemID] == 0)
         {
+            SetButtonSelection(itemID, false);
             return false;
 
         }
@@ -160,5 +164,14 @@ public class InventoryUIManager : MonoBehaviour
     public bool CanStartGame()
     {
         return placedItemCounts.Values.All(value => value == 0);
+    }
+
+
+    public void SetButtonSelection(int itemID, bool isSelected)
+    {
+        if (itemID >= 0)
+        {
+            inventorySlots.FirstOrDefault(s => s.GetItemID() == itemID).IsSelected(isSelected);
+        }
     }
 }

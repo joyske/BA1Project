@@ -45,6 +45,9 @@ public class PlacementSystem : MonoBehaviour
     [SerializeField]
     InventoryUIManager inventoryManager;
 
+    [SerializeField]
+    MenuScript menuScript;
+
 
     private void Start()
     {
@@ -68,6 +71,10 @@ public class PlacementSystem : MonoBehaviour
     {
         if (!isSimulating && !isRemoving && inventoryManager.CanPlaceItem(ID))
         {
+            menuScript.InDeleteMode(isRemoving);
+            inventoryManager.SetButtonSelection(lastUsedIndex, false);
+            inventoryManager.SetButtonSelection(ID, true);
+
             lastUsedIndex = ID;
             StopPlacement();
             gridVisualization.SetActive(true);
@@ -79,9 +86,13 @@ public class PlacementSystem : MonoBehaviour
 
 
     public void StartRemoving()
-    {   if (!isSimulating)
+    {
+
+        if (!isSimulating)
         {
+            inventoryManager.SetButtonSelection(lastUsedIndex, false);
             isRemoving = true;
+            menuScript.InDeleteMode(isRemoving);
             StopPlacement();
             gridVisualization.SetActive(true);
             placementState = new RemovingState(grid, previewSystem, gridData, cargoPlacement, inventoryManager);
@@ -167,6 +178,8 @@ public class PlacementSystem : MonoBehaviour
     /// </summary>
     public void StartSimulation()
     {
+        inventoryManager.SetButtonSelection(lastUsedIndex, false);
+        menuScript.InDeleteMode(isRemoving);
         isSimulating = true;
         StopPlacement();
         cargoPlacement.EnablePhysics();  
@@ -177,6 +190,7 @@ public class PlacementSystem : MonoBehaviour
     ///// </summary>
     public void ResetObjects()
     {
+        inventoryManager.SetButtonSelection(lastUsedIndex, false);
         isSimulating = false;
         StopPlacement();
         cargoPlacement.DestroyAllCargo();
@@ -204,7 +218,7 @@ public class PlacementSystem : MonoBehaviour
 
             // Instantiate and position the object
             GameObject newObject = Instantiate(prefabData.Prefab, grid.CellToWorld(position), Quaternion.identity);
-            cargoPlacement.AddCargoToList( newObject );
+            cargoPlacement.AddCargoToList( newObject, data.PlacedObjectIndex);
         }
     }
 

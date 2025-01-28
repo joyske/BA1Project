@@ -785,7 +785,7 @@ GameObject:
   - component: {fileID: 2609133368614688053}
   m_Layer: 0
   m_Name: BoatZone
-  m_TagString: Untagged
+  m_TagString: SafeZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

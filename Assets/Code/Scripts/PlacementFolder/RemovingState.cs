@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -66,6 +67,7 @@ public class RemovingState : IPlacementState
             cargoPlacement.RemoveObjectAt(gameObjectindex);
             inventoryManager.IncrementPlacedItem(itemID);
         }
+
         Vector3 cellPos = grid.CellToWorld(gridPos);
         previewSystem.UpdatePosition(cellPos, CheckIfSelectionIsValid(gridPos));
 

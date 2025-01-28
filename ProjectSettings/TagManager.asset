@@ -11,6 +11,7 @@ TagManager:
   - TurningWheel
   - GameManager
   - Goal
+  - SafeZone
   layers:
   - Default
   - TransparentFX

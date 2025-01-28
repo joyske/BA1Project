@@ -54,4 +54,11 @@ public class ItemSlotUI : MonoBehaviour
     {
         return itemID;
     }
+
+    public void IsSelected(bool selected)
+    {
+
+        Color color = selected ? Color.green : Color.white;
+        slotButton.GetComponent<Image>().color = color;
+    }
 }
