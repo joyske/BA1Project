@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 public class CameraLock : MonoBehaviour
 {
     private CinemachineCamera _camera;
+    private CinemachinePanTilt cinemachinePanTilt;
 
     private PlayerInputManager Input;
 
@@ -15,39 +16,43 @@ public class CameraLock : MonoBehaviour
     private InputAxis lastTiltAxis;
     private bool didJustSwitch;
 
+    
+
     void Start()
     {
         Input = GameObject.FindWithTag("Boat").GetComponent<PlayerInputManager>();
         _camera = GetComponent<CinemachineCamera>();
-        _camera.enabled = false;
+        cinemachinePanTilt = GetComponent<CinemachinePanTilt>();
+        cinemachinePanTilt.enabled = false;
 
-        lastPanAxis = _camera.GetComponent<CinemachinePanTilt>().PanAxis;
-        lastTiltAxis = _camera.GetComponent<CinemachinePanTilt>().TiltAxis;
+        lastPanAxis = cinemachinePanTilt.PanAxis;
+        lastTiltAxis = cinemachinePanTilt.TiltAxis;
     }
 
     // Update is called once per frame
     void Update()
     {
+
         if (Input.rotateView)
         {
             if (didJustSwitch == false ) 
             {
-                _camera.GetComponent<CinemachinePanTilt>().PanAxis = lastPanAxis;
-                _camera.GetComponent<CinemachinePanTilt>().TiltAxis = lastTiltAxis;
+                cinemachinePanTilt.PanAxis = lastPanAxis;
+                cinemachinePanTilt.TiltAxis = lastTiltAxis;
             }
 
-            _camera.enabled = true;
+            cinemachinePanTilt.enabled = true;
             didJustSwitch = true;
             return;
         }
 
         if (didJustSwitch) 
         {
-            lastPanAxis = _camera.GetComponent<CinemachinePanTilt>().PanAxis;
-            lastTiltAxis = _camera.GetComponent<CinemachinePanTilt>().TiltAxis;
+            lastPanAxis = cinemachinePanTilt.PanAxis;
+            lastTiltAxis = cinemachinePanTilt.TiltAxis;
         }
-        
-        _camera.enabled = false;
+
+        cinemachinePanTilt.enabled = false;
         didJustSwitch = false;
 
     }

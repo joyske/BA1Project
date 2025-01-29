@@ -27,8 +27,12 @@ public class PlayerHUD : MonoBehaviour
 
     public Transform PauseMenu;
 
+    public float valueDistance;
+    public float sliderAddValue;
 
-    void Start()
+
+
+    void OnEnable()
     {
         player = GameObject.FindWithTag("Boat").transform;
         shipMovement = player.GetComponent<ShipMovement>();
@@ -61,7 +65,7 @@ public class PlayerHUD : MonoBehaviour
         speedSlider.value = currentSpeed;
 
         timeLeft -= Time.deltaTime;
-        timer.text = timeLeft.ToString("0.00") + " s";
+        timer.text = toMinutes();
 
         cargoSlider.value = currentCargoAmount;
         cargoText.text = currentCargoAmount.ToString("0");
@@ -70,6 +74,16 @@ public class PlayerHUD : MonoBehaviour
         {
             GameOver();
         }
+    }
+
+    private string toMinutes()
+    {
+        int minutes = Mathf.FloorToInt(timeLeft / 60f);
+        int seconds = Mathf.FloorToInt(timeLeft - minutes * 60);
+
+        string newTime = string.Format("{0:0}:{1:00}", minutes, seconds);
+
+        return newTime;
     }
 
     void GameOver()
