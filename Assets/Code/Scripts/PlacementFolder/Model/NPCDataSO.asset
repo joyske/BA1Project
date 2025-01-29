@@ -38,7 +38,7 @@ MonoBehaviour:
       you one!\""
     <Sprite>k__BackingField: {fileID: 21300000, guid: f5063a5bfbdc9ab4a9baa2369f915cfd,
       type: 3}
-  - <SceneID>k__BackingField: 0
+  - <SceneID>k__BackingField: 2
     <OneStarText>k__BackingField: "\"Aye, you\u2019ve done me proud. I\u2019d share
       a swig of my finest grog, but it\u2019s strictly captain\u2019s privileges!\" "
     <TwoStarText>k__BackingField: "\"Hmm\u2026 it\u2019ll do, but I can\u2019t guarantee
