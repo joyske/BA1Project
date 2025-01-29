@@ -58,7 +58,7 @@ MonoBehaviour:
   - <Name>k__BackingField: Crystal
     <ID>k__BackingField: 6
     <Size>k__BackingField: {x: 1, y: 1, z: 1}
-    <Prefab>k__BackingField: {fileID: 4116288736278081604, guid: a5b6c8c684c7b7d4a93a6fb4ad53c89b,
+    <Prefab>k__BackingField: {fileID: 5566791323414645081, guid: 1d15e758e41aa424889e4a40e9f9f52c,
       type: 3}
     <sprite>k__BackingField: {fileID: 21300000, guid: 2617ca922ba4e7b44bda614a79509bcf,
       type: 3}
