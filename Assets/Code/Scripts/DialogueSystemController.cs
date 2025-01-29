@@ -24,13 +24,7 @@ public class DialogueSystemController : MonoBehaviour
 
     private void Awake()
     {
-       gameManagement = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagement>();
-        if (SceneManager.GetActiveScene().buildIndex != 0)
-        {
-            playerHUD = GameObject.FindGameObjectWithTag("HUD").GetComponent<PlayerHUD>();
-        }
-        sceneID = gameManagement.currentLevelIndex;
-        npcDialogueData = npcData.NPCDialogueData.Find(data => data.SceneID == sceneID);
+      
     }
 
     private void Start()
@@ -40,6 +34,16 @@ public class DialogueSystemController : MonoBehaviour
 
     void InitDialogues()
     {
+        gameManagement = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagement>();
+        if (SceneManager.GetActiveScene().buildIndex != 0)
+        {
+            playerHUD = GameObject.FindGameObjectWithTag("HUD").GetComponent<PlayerHUD>();
+        }
+
+        sceneID = gameManagement.currentLevelIndex;
+        npcDialogueData = npcData.NPCDialogueData.Find(data => data.SceneID == sceneID);
+
+
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
 
@@ -95,6 +99,7 @@ public class DialogueSystemController : MonoBehaviour
     {
         InitDialogues();
         dialogueUI.gameObject.SetActive(true);
+       // Time.timeScale = 0;
     }
 
     public void HideDialogue() { dialogueUI.gameObject.SetActive(false); }

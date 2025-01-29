@@ -9,7 +9,7 @@ public class GameManagement : MonoBehaviour
 
     public int currentLevelIndex = 0;
 
-    public string[] levelScenes = { "FirstLevel", "SecondLevel"};
+    public string[] levelScenes = { "FirstLevel", "SecondLevel", "ThirdLevel", "FourthLevel"};
     //public  string[] placementScenes = { "PlacementScene1", "PlacementScene2", "PlacementScene3" };
     GridData gridData;
 
@@ -24,6 +24,7 @@ public class GameManagement : MonoBehaviour
 
     public void LoadLevelScene()
     {
+        //Time.timeScale = 1;
         SceneManager.LoadScene(levelScenes[currentLevelIndex]);
         //currentLevelIndex++;
     }
@@ -35,10 +36,10 @@ public class GameManagement : MonoBehaviour
 
     public void IncreaseLevel()
     {
+        GameObject cargo = GameObject.Find("CargoData");
+        gridData = cargo.GetComponent<GridData>();
         Destroy(gridData.gameObject);
         currentLevelIndex++;
     }
-
-
 
 }
