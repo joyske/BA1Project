@@ -3053,6 +3053,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 472609082206480163, guid: 2b95d784f5956ed4595e077ddb570f0f,
+        type: 3}
+      propertyPath: loadingScreen
+      value: 
+      objectReference: {fileID: 1923470971374322815}
     - target: {fileID: 1909728842368426023, guid: 2b95d784f5956ed4595e077ddb570f0f,
         type: 3}
       propertyPath: dialogueUI
@@ -11027,6 +11032,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e418c68bd3199844ba95139e3221168e, type: 3}
+--- !u!114 &1923470971374322815 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3108691619528047751, guid: e418c68bd3199844ba95139e3221168e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1923470971374322814}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4447422211803002908
 PrefabInstance:
   m_ObjectHideFlags: 0

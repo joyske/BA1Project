@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ReloadCargo : MonoBehaviour
 {
@@ -21,6 +22,9 @@ public class ReloadCargo : MonoBehaviour
     private GameObject newObject;
 
     PlayerHUD hud;
+
+    [SerializeField]
+    Image loadingScreen;
 
     private void Awake()
     {
@@ -51,7 +55,7 @@ public class ReloadCargo : MonoBehaviour
         GameObject.Find("GroundGrid").SetActive(false);
         newObject.GetComponent<Rigidbody>().isKinematic = false;
         newObject.GetComponent<ShipMovement>().enabled = true;
-
+        loadingScreen.enabled = false;
         
 
     }
