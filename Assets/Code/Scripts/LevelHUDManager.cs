@@ -6,6 +6,16 @@ public class LevelHUDManager : MonoBehaviour
 {
     public Transform PauseMenu;
 
+    [SerializeField]
+    DialogueSystemController dialogueController;
+
+    private GameManagement gameManagement;
+
+    private void Awake()
+    {
+        gameManagement = GameObject.FindWithTag("GameManager").GetComponent<GameManagement>();
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -14,4 +24,17 @@ public class LevelHUDManager : MonoBehaviour
             Time.timeScale = 0.0f;
         }
     }
+
+    public void ShowGoalDialogue()
+    {
+        dialogueController.ShowDialogue();
+        Cursor.visible = true;
+    }
+
+    public void LoadPlacementScene()
+    {
+        gameManagement.IncreaseLevel();
+        gameManagement.LoadPlacementScene();
+    }
+
 }

@@ -11,11 +11,14 @@ public class GameManagement : MonoBehaviour
 
     public string[] levelScenes = { "FirstLevel", "SecondLevel"};
     //public  string[] placementScenes = { "PlacementScene1", "PlacementScene2", "PlacementScene3" };
+    GridData gridData;
 
 
     void Start()
     {
         DontDestroyOnLoad(gameObject);
+        GameObject cargo = GameObject.Find("CargoData");
+        gridData = cargo.GetComponent<GridData>();
     }
 
 
@@ -28,6 +31,12 @@ public class GameManagement : MonoBehaviour
     public void LoadPlacementScene()
     {
         SceneManager.LoadScene("Placement");
+    }
+
+    public void IncreaseLevel()
+    {
+        Destroy(gridData.gameObject);
+        currentLevelIndex++;
     }
 
 

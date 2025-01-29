@@ -20,12 +20,16 @@ public class ReloadCargo : MonoBehaviour
 
     private GameObject newObject;
 
+    PlayerHUD hud;
+
     private void Awake()
     {
         Vector3 targetPos = new Vector3(0, 0, 0);
         newObject = Instantiate(boat, targetPos, Quaternion.identity);
+        hud = GameObject.FindWithTag("HUD").GetComponent<PlayerHUD>();
+        hud.InitHUD();
         StartCoroutine(InitializeBoatAndCargo());
-    }
+    }   
 
     /// <summary>
     /// Instantiates the boat, waits for it to settle, and then places the cargo
@@ -47,6 +51,8 @@ public class ReloadCargo : MonoBehaviour
         GameObject.Find("GroundGrid").SetActive(false);
         newObject.GetComponent<Rigidbody>().isKinematic = false;
         newObject.GetComponent<ShipMovement>().enabled = true;
+
+        
 
     }
 
@@ -82,19 +88,25 @@ public class ReloadCargo : MonoBehaviour
     /// <param name="obj"></param>
     public void EnablePhysics(GameObject obj)
     {
+        // enable physics simulation
         Rigidbody rb = obj.GetComponent<Rigidbody>();
         rb.isKinematic = false;
 
-        // Toggle colliders for physics simulation
-        SphereCollider sphereCollider = obj.GetComponent<SphereCollider>();
-        if (sphereCollider != null)
+        if (obj.GetComponent<SphereCollider>())
         {
-            BoxCollider boxCollider = obj.GetComponent<BoxCollider>();
-            if (boxCollider != null)
+            obj.GetComponent<BoxCollider>().enabled = false;
+            obj.GetComponent<SphereCollider>().enabled = true;
+        }
+
+        if (obj.GetComponent<MeshCollider>())
+        {
+
+            if (obj.GetComponent<BoxCollider>())
             {
-                boxCollider.enabled = false;
+                obj.GetComponent<BoxCollider>().enabled = false;
+                obj.GetComponent<MeshCollider>().enabled = true;
             }
-            sphereCollider.enabled = true;
+
         }
     }
 }

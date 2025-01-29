@@ -44,14 +44,21 @@ MonoBehaviour:
   - <Name>k__BackingField: BarrelHeavyLying
     <ID>k__BackingField: 4
     <Size>k__BackingField: {x: 2, y: 1, z: 1}
-    <Prefab>k__BackingField: {fileID: 4116288736278081604, guid: bbbcec26a87c7c047901f522e1f784f0,
+    <Prefab>k__BackingField: {fileID: 4116288736278081604, guid: 1aa8e875d8302b5468e6e1a0d11b68d8,
       type: 3}
-    <sprite>k__BackingField: {fileID: 21300000, guid: 7f1ec5d4d64fea448af2211c1447ad74,
+    <sprite>k__BackingField: {fileID: 21300000, guid: 9d5dcd01dcee4bd438a3ce4d5019379e,
       type: 3}
-  - <Name>k__BackingField: BoxHeavy
-    <ID>k__BackingField: 3
+  - <Name>k__BackingField: BarrelLight
+    <ID>k__BackingField: 5
     <Size>k__BackingField: {x: 1, y: 1, z: 1}
-    <Prefab>k__BackingField: {fileID: 4116288736278081604, guid: e9715538ce7f1ac498be84022cee105e,
+    <Prefab>k__BackingField: {fileID: 4116288736278081604, guid: a5b6c8c684c7b7d4a93a6fb4ad53c89b,
       type: 3}
-    <sprite>k__BackingField: {fileID: 21300000, guid: 6782b9a0615291340a975b344eb94e55,
+    <sprite>k__BackingField: {fileID: 21300000, guid: 8b07b17a9a1f6fc4a9219b724cf46677,
+      type: 3}
+  - <Name>k__BackingField: Crystal
+    <ID>k__BackingField: 6
+    <Size>k__BackingField: {x: 1, y: 1, z: 1}
+    <Prefab>k__BackingField: {fileID: 4116288736278081604, guid: a5b6c8c684c7b7d4a93a6fb4ad53c89b,
+      type: 3}
+    <sprite>k__BackingField: {fileID: 21300000, guid: 2617ca922ba4e7b44bda614a79509bcf,
       type: 3}

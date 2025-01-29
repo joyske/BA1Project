@@ -14,7 +14,7 @@ public class PlayerHUD : MonoBehaviour
     [SerializeField] Text timer;
     [SerializeField] Text cargoText;
 
-    private int maxCargoAmount;
+    public int maxCargoAmount;
     public int currentCargoAmount;
     private string maxCargoText;
 
@@ -34,9 +34,15 @@ public class PlayerHUD : MonoBehaviour
 
     void OnEnable()
     {
+      
+
+    }
+
+    public void InitHUD()
+    {
         player = GameObject.FindWithTag("Boat").transform;
         shipMovement = player.GetComponent<ShipMovement>();
-        
+
 
         maxSpeed = shipMovement.maxForwardSpeed;
         minSpeed = shipMovement.maxBackwardSpeed;
@@ -56,7 +62,6 @@ public class PlayerHUD : MonoBehaviour
 
         cargoSlider.maxValue = maxCargoAmount;
         cargoSlider.minValue = 0f;
-
     }
 
     void Update()

@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 070a1474ebb04a247a678e53e28ffadf, type: 3}
+  m_Name: NPCDataSO
+  m_EditorClassIdentifier: 
+  NPCDialogueData:
+  - <SceneID>k__BackingField: 0
+    <OneStarText>k__BackingField: "\"Such care in your work! You\u2019ve brought
+      not just supplies, but peace to our little corner of the sea.\""
+    <TwoStarText>k__BackingField: "\"Not bad, but some of the sick may have to wait
+      longer than I\u2019d like. Let\u2019s do better next time, okay?\""
+    <ThreeStarText>k__BackingField: "\"Excellent work! You\u2019ve brought everything
+      we need to heal both the people and the reef. You\u2019ve truly made a difference
+      today! Thank you, dear!\""
+    <MissionText>k__BackingField: "\"Hello there friend! I\u2019ve got critical supplies
+      that need delivering\u2014some for the reef\u2019s creatures and some to heal
+      those in need on the island. Lives depend on it, so please be swift and careful!\" "
+    <Sprite>k__BackingField: {fileID: 21300000, guid: ec109ccc116f668499644215d32a792e,
+      type: 3}
+  - <SceneID>k__BackingField: 1
+    <OneStarText>k__BackingField: "\"Aye, you\u2019ve done me proud. I\u2019d share
+      a swig of my finest grog, but it\u2019s strictly captain\u2019s privileges!\" "
+    <TwoStarText>k__BackingField: "\"Not the worst job I\u2019ve seen\u2026 but don\u2019t
+      be patting yourself on the back just yet.\""
+    <ThreeStarText>k__BackingField: "\"Now that\u2019s what I call sailing! You\u2019ve
+      got the makings of a true sea dog!\""
+    <MissionText>k__BackingField: "\"Listen up, matey! Got some precious cargo that
+      needs moving. Don\u2019t be lollygagging\u2014get it done, and I\u2019ll owe
+      you one!\""
+    <Sprite>k__BackingField: {fileID: 21300000, guid: f5063a5bfbdc9ab4a9baa2369f915cfd,
+      type: 3}
+  - <SceneID>k__BackingField: 0
+    <OneStarText>k__BackingField: "\"Aye, you\u2019ve done me proud. I\u2019d share
+      a swig of my finest grog, but it\u2019s strictly captain\u2019s privileges!\" "
+    <TwoStarText>k__BackingField: "\"Hmm\u2026 it\u2019ll do, but I can\u2019t guarantee
+      perfection without everything. Practice makes perfect, darling!\""
+    <ThreeStarText>k__BackingField: "\"Marvelous! You\u2019ve saved the day, and
+      my kitchen is abuzz with excitement. The cakes will be divine!\""
+    <MissionText>k__BackingField: "\"Darling, I have a tavern to run, and these ingredients
+      are essential for my newest creations! Don\u2019t let the butter melt or the
+      flour blow away!\""
+    <Sprite>k__BackingField: {fileID: 21300000, guid: 9efd1df00688e474f907836848204a09,
+      type: 3}
+  - <SceneID>k__BackingField: 3
+    <OneStarText>k__BackingField: "\"Oh no, no, no! I was this close to a breakthrough,
+      but now I\u2019ll need to recalibrate everything!\""
+    <TwoStarText>k__BackingField: "\"Well\u2026 this\u2019ll keep me busy for a bit,
+      though it\u2019s not quite the eureka moment I hoped for. Thanks, I guess?\""
+    <ThreeStarText>k__BackingField: "\"Yes! Yes! This is exactly what I needed\u2014my
+      masterpiece will be the talk of the island! Thank you, thank you, thank you!\""
+    <MissionText>k__BackingField: "\"Oh, oh, oh! I need these parts pronto\u2014my
+      latest invention depends on it! Tick-tock, my friend, I can\u2019t waste a
+      second!\""
+    <Sprite>k__BackingField: {fileID: 21300000, guid: d864548942a82ea489e8b1b9b8f9d2ee,
+      type: 3}

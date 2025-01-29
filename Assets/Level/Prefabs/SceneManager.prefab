@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 7140463139506587421}
   - component: {fileID: 472609082206480163}
   - component: {fileID: 7751455804393104181}
+  - component: {fileID: 1909728842368426023}
   m_Layer: 0
   m_Name: SceneManager
-  m_TagString: Untagged
+  m_TagString: SceneManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62,3 +63,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PauseMenu: {fileID: 0}
+  dialogueController: {fileID: 1909728842368426023}
+--- !u!114 &1909728842368426023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8667054854243387831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c7de55a1f97d7e4782308341a83eba7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcData: {fileID: 11400000, guid: ec25254d50733514eaad3133debdb8e0, type: 2}
+  dialogueUI: {fileID: 0}

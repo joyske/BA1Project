@@ -38,7 +38,6 @@ public class MenuScript : MonoBehaviour
     
     public void LoadLevel()
     {
-        //SceneManager.LoadScene(1);
         gameManagement.LoadLevelScene();
         Time.timeScale = 1.0f;
     }
@@ -118,5 +117,11 @@ public class MenuScript : MonoBehaviour
     }
 
     public void UpdateStart(bool CanStart) => startButton.interactable = CanStart;
+
+
+    public void ShowPlacementUI()
+    {
+        // TODO
+    }
 
 }

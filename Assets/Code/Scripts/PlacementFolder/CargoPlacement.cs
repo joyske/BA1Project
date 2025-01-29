@@ -30,19 +30,23 @@ public class CargoPlacement : MonoBehaviour
             {
                 // enable physics simulation
                 Rigidbody rb = obj.GetComponent<Rigidbody>();
-                rb.isKinematic = false;
+                rb.isKinematic = false;     
 
-                // toggle colliders for physics simulation TODO cylinderC
-                SphereCollider sphereCollider = obj.GetComponent<SphereCollider>();
-                if (sphereCollider != null)
+                if (obj.GetComponent<SphereCollider>())
                 {
-                    BoxCollider boxCollider = obj.GetComponent<BoxCollider>();
-                    if (boxCollider != null)
-                    {
-                        boxCollider.enabled = false;
-                    }
-                    sphereCollider.enabled = true;
+                    obj.GetComponent<BoxCollider>().enabled = false;
+                    obj.GetComponent<SphereCollider>().enabled = true;
+                }
 
+                if (obj.GetComponent<MeshCollider>())
+                {
+
+                    if (obj.GetComponent<BoxCollider>())
+                    {
+                        obj.GetComponent<BoxCollider>().enabled = false;
+                        obj.GetComponent<MeshCollider>().enabled = true;
+                    }
+               
                 }
             }
             

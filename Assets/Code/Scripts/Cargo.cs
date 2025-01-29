@@ -26,6 +26,7 @@ public class Cargo : MonoBehaviour
             GetComponent<Rigidbody>().mass = 1f;
             return;
         }
+
         playerHUD = GameObject.FindWithTag("HUD").GetComponent<PlayerHUD>();
         floater.enabled = true;
         GetComponent<Rigidbody>().useGravity = false;
@@ -34,6 +35,16 @@ public class Cargo : MonoBehaviour
         {
             transform.GetComponent<BoxCollider>().enabled = false;
             GetComponent<SphereCollider>().enabled = true;
+        }
+
+        if (GetComponent<MeshCollider>())
+        {
+            if (GetComponent<BoxCollider>())
+            {
+                transform.GetComponent<BoxCollider>().enabled = false;
+                GetComponent<MeshCollider>().enabled = true;
+            }
+      
         }
 
         player = GameObject.FindWithTag("Boat").transform;
