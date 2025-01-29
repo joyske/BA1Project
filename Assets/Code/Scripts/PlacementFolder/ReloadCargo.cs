@@ -18,9 +18,12 @@ public class ReloadCargo : MonoBehaviour
 
     [SerializeField] float yRotation = 0f;
 
+    private GameObject newObject;
+
     private void Awake()
     {
-
+        Vector3 targetPos = new Vector3(0, 0, 0);
+        newObject = Instantiate(boat, targetPos, Quaternion.identity);
         StartCoroutine(InitializeBoatAndCargo());
     }
 
@@ -30,7 +33,7 @@ public class ReloadCargo : MonoBehaviour
     private IEnumerator InitializeBoatAndCargo()
     {
         Vector3 targetPos = new Vector3(0, 0, 0);
-        GameObject newObject = Instantiate(boat, targetPos, Quaternion.identity);
+        //GameObject newObject = Instantiate(boat, targetPos, Quaternion.identity);
         newObject.transform.eulerAngles = new Vector3(newObject.transform.eulerAngles.x, yRotation, newObject.transform.eulerAngles.z);
         grid = newObject.GetComponentInChildren<Grid>();
         newObject.GetComponent<ShipMovement>().enabled = false;
