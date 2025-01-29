@@ -467,18 +467,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBodyRef: {fileID: 8025174803762529428}
   turningSpeed: 130
-  maxForwardSpeed: 2000
-  maxBackwardSpeed: -1000
-  desiredSpeedChangeMultiplier: 800
+  maxForwardSpeed: 1000
+  maxBackwardSpeed: -500
+  desiredSpeedChangeMultiplier: 600
   currentDesiredSpeed: 0
   accelerateDelay: 1
   turnDelay: 15
+  CollidedMultiplier: 0.7
   Floaters:
   - {fileID: 2320500409870054955}
   - {fileID: 8174605925401917088}
   - {fileID: 4572753696941622621}
   - {fileID: 7201149784687752012}
-  CollidedMultiplier: 0.7
   WheelTurnSpeed: 0.3
 --- !u!114 &8773474204839688171
 MonoBehaviour:

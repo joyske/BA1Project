@@ -3,53 +3,43 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-//using UnityEngine.InputSystem;
 
 public class ShipMovement : MonoBehaviour
 {
-    //ShipControls shipControls;
     public Rigidbody rigidBodyRef;
 
-    //private float currentSpeed;
-    //public float forwardSpeed 1100;
-    //public float backwardSpeed -550;
-    
     public float turningSpeed;
-
     public float maxForwardSpeed;
     public float maxBackwardSpeed;
     public float desiredSpeedChangeMultiplier;
-    public float currentDesiredSpeed;
-
-    //public Vector2 movementInput;
-
-    private Vector3 DesiredRotation;
-    private Vector3 ActualRotation;
-
-    private Vector3 DesiredVelocity;
-    private Vector3 ActualVelocity;
-
-    public float accelerateDelay;
+    
     public float turnDelay;
+    public float CollidedMultiplier = 0.7f;
+    public float WheelTurnSpeed;
 
     public Floater[] Floaters;
 
     private Vector3 velocity = Vector3.zero;
     private int CollidingElements = 0;
     private float CurrentCollidedMultiplier = 1;
-    public float CollidedMultiplier = 0.7f;
+
+    [HideInInspector]
+    public float currentDesiredSpeed;
 
     private GameObject TurningWheel;
-    public float WheelTurnSpeed;
-
     private PlayerInputManager PlayerInputManager;
 
+    private Vector3 DesiredRotation;
+    private Vector3 targetVelocity = Vector3.zero;
+    private Vector3 deltaVelocity;
+    
+
+
+    //Colliding elements reduce desired speed
     private void OnCollisionEnter(Collision collision)
     {
         if (!((collision.gameObject.tag == ("Ocean")) | (collision.gameObject.tag == ("Player"))))
         { CollidingElements++; }
-        //if (!((collision.gameObject.tag == ("Ocean")) | (collision.gameObject.tag == ("Player"))))
-        //{ currentDesiredSpeed = currentDesiredSpeed * 0.7f;}
     }
 
     private void OnCollisionStay(Collision collision)
@@ -67,6 +57,7 @@ public class ShipMovement : MonoBehaviour
 
     private void Start()
     {
+        //Get references, hide cursor
         TurningWheel = GameObject.FindWithTag("TurningWheel");
         PlayerInputManager = GetComponent<PlayerInputManager>();
 
@@ -75,6 +66,7 @@ public class ShipMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //Determine desired forward/backward speed
         if (PlayerInputManager.movementInput.y != 0)
         {
             currentDesiredSpeed += (desiredSpeedChangeMultiplier * PlayerInputManager.movementInput.y) * Time.fixedDeltaTime;
@@ -83,8 +75,7 @@ public class ShipMovement : MonoBehaviour
             if (currentDesiredSpeed < maxBackwardSpeed) { currentDesiredSpeed = maxBackwardSpeed; }
         }
 
-        //(1 - (((1 - 0.2f) / CollidingElements)) * Time.deltaTime);
-
+        //Determine desired rotation force
         if (PlayerInputManager.movementInput.x != 0) 
         { DesiredRotation = Vector3.SmoothDamp(DesiredRotation, new Vector3(0, (PlayerInputManager.movementInput.x) * turningSpeed, 0), ref velocity, turnDelay * Time.fixedDeltaTime); }
         else 
@@ -95,79 +86,34 @@ public class ShipMovement : MonoBehaviour
         }
 
 
-
-        //if ((Input.GetKey(KeyCode.W)) && !(Input.GetKey(KeyCode.S)))
-        //{
-        //    if (currentDesiredSpeed <= 0) { currentDesiredSpeed += ((desiredSpeedChangeMultiplier * 1.5f) * Time.fixedDeltaTime); }
-        //    else { currentDesiredSpeed += (desiredSpeedChangeMultiplier * Time.fixedDeltaTime); }
-            
-        //    if (currentDesiredSpeed > maxForwardSpeed) { currentDesiredSpeed = maxForwardSpeed; }
-
-            //currentSpeed = Mathf.Lerp(currentSpeed, forwardSpeed, accelerateDelay * Time.fixedDeltaTime);
-        //}
-
-        //if ((Input.GetKey(KeyCode.S)) && !(Input.GetKey(KeyCode.W)))
-        //{
-        //    if (currentDesiredSpeed >= 0) { currentDesiredSpeed -= ((desiredSpeedChangeMultiplier * 1.5f) * Time.fixedDeltaTime); }
-        //    else { currentDesiredSpeed -= (desiredSpeedChangeMultiplier * Time.fixedDeltaTime); }
-
-            
-        //    if (currentDesiredSpeed < maxBackwardSpeed) { currentDesiredSpeed = maxBackwardSpeed; }
-
-            //currentSpeed = Mathf.Lerp(currentSpeed, backwardSpeed, accelerateDelay * Time.fixedDeltaTime);
-        //}
-
-        //if ((!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S)) || (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.S)))
-        //{
-            
-            
-            //currentSpeed = Mathf.Lerp(currentSpeed, 0f, accelerateDelay * Time.fixedDeltaTime);
-        //}
-
-        //Debug.Log("CurrentDesiredSpeed: " + currentDesiredSpeed);
-
-
-
-        //if ((Input.GetKey(KeyCode.A)) && !(Input.GetKey(KeyCode.D)))
-        //{
-        //    DesiredRotation = Vector3.SmoothDamp(DesiredRotation, new Vector3 (0, -turningSpeed, 0), ref velocity, turnDelay * Time.fixedDeltaTime);
-        //}
-
-        //if ((Input.GetKey(KeyCode.D)) && !(Input.GetKey(KeyCode.A)))
-        //{
-        //    DesiredRotation = Vector3.SmoothDamp(DesiredRotation, new Vector3(0, turningSpeed, 0), ref velocity, turnDelay * Time.fixedDeltaTime);
-        //}
-
-        //if ((!(Input.GetKey(KeyCode.A)) && !(Input.GetKey(KeyCode.D))) || (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D)))
-        //{
-        //    DesiredRotation = Vector3.SmoothDamp(DesiredRotation, new Vector3(0, 0, 0), ref velocity, turnDelay * Time.fixedDeltaTime);
-        //}
-
-
-
-
-
+        //Lower user input force if currently colliding
         if (CollidingElements > 0) { CurrentCollidedMultiplier = CollidedMultiplier; }
-        else { CurrentCollidedMultiplier = .5f; }
+        else { CurrentCollidedMultiplier = 1; }
 
-
-        //Add force/torque based on user inputs
+        //Add torque based on user inputs
         rigidBodyRef.AddTorque(DesiredRotation * CollidedMultiplier * Time.fixedDeltaTime, ForceMode.Acceleration);
 
+
+
+        targetVelocity = -transform.right * currentDesiredSpeed * CurrentCollidedMultiplier;
+        deltaVelocity = targetVelocity - rigidBodyRef.velocity;
+
+        //Apply proportional force for each submerged floater based on user inputs
         foreach (var Floater in Floaters)
         {
-
             if(Floater.isSubmerged || CollidingElements > 0)
             {
                 rigidBodyRef.AddForce((-transform.right * currentDesiredSpeed * CurrentCollidedMultiplier * Time.fixedDeltaTime) / Floaters.Length, ForceMode.Acceleration);
-
-                //rigidBodyRef.AddForceAtPosition((-transform.right * currentSpeed * Time.fixedDeltaTime) / Floaters.Length, Floater.transform.position, ForceMode.Acceleration);
             }
         }
 
+
+
+        //Turn wheels proportional to current desired velocity
         TurningWheel.transform.Rotate(-Vector3.up * Time.deltaTime * (currentDesiredSpeed * WheelTurnSpeed), Space.Self);
 
-        if (Input.GetMouseButtonDown(0) != false | Input.GetMouseButtonDown(1))
+        //Rehide cursor on enter window after alt + tab
+        if (Input.GetMouseButtonDown(0) | Input.GetMouseButtonDown(1))
         {
             HideMouseCursor();
         }
