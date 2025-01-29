@@ -22,26 +22,28 @@ MonoBehaviour:
   - <SceneID>k__BackingField: 1
     <CountData>k__BackingField:
     - <ItemID>k__BackingField: 0
-      <TotalItemCount>k__BackingField: 5
-    - <ItemID>k__BackingField: 5
-      <TotalItemCount>k__BackingField: 12
+      <TotalItemCount>k__BackingField: 8
     - <ItemID>k__BackingField: 3
       <TotalItemCount>k__BackingField: 10
+    - <ItemID>k__BackingField: 5
+      <TotalItemCount>k__BackingField: 8
+    - <ItemID>k__BackingField: 1
+      <TotalItemCount>k__BackingField: 3
   - <SceneID>k__BackingField: 2
     <CountData>k__BackingField:
     - <ItemID>k__BackingField: 1
-      <TotalItemCount>k__BackingField: 8
-    - <ItemID>k__BackingField: 1
-      <TotalItemCount>k__BackingField: 6
-    - <ItemID>k__BackingField: 1
       <TotalItemCount>k__BackingField: 20
+    - <ItemID>k__BackingField: 3
+      <TotalItemCount>k__BackingField: 6
+    - <ItemID>k__BackingField: 6
+      <TotalItemCount>k__BackingField: 8
   - <SceneID>k__BackingField: 3
     <CountData>k__BackingField:
+    - <ItemID>k__BackingField: 3
+      <TotalItemCount>k__BackingField: 12
     - <ItemID>k__BackingField: 2
       <TotalItemCount>k__BackingField: 4
     - <ItemID>k__BackingField: 4
       <TotalItemCount>k__BackingField: 4
     - <ItemID>k__BackingField: 6
       <TotalItemCount>k__BackingField: 2
-    - <ItemID>k__BackingField: 3
-      <TotalItemCount>k__BackingField: 12
