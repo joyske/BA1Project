@@ -39,14 +39,7 @@ public class HarborComponent : MonoBehaviour
         defaultSecondBand = water.largeBand1Multiplier;
 
         if (!isTargetHarbor) { Destroy(goalCylinder); }
-        else { harborComponents = FindObjectsByType<HarborComponent>(FindObjectsSortMode.None).ToList(); }
-        
-        //else { 
-        //    var harbors = FindObjectsByType<HarborComponent>(FindObjectsSortMode.None);
-        //    foreach (var harbors) { }}
-        //else { harborComponents = FindObjectsByType<HarborComponent>(FindObjectsSortMode.None).Select(HarborComponent => HarborComponent.gameObject).ToList(); }
-        //GameObject.FindObjectsByType<HarborComponent>(FindObjectsSortMode.None); Debug.Log(harborComponents); }
-        
+        else { harborComponents = FindObjectsByType<HarborComponent>(FindObjectsSortMode.None).ToList(); }        
     }
 
     void Update()
@@ -56,7 +49,6 @@ public class HarborComponent : MonoBehaviour
         if (isTargetHarbor)
         {
             for (int i = 0; i < harborComponents.Count; i++) { if (harborComponents[i].currentDistance < closestHarbor.currentDistance) { closestHarbor = harborComponents[i]; } }
-            
 
             if (playerRef == null) { playerRef = GameObject.FindGameObjectWithTag("Boat"); }
             else
@@ -68,9 +60,6 @@ public class HarborComponent : MonoBehaviour
                     if (currentWaveHeightAlpha < closestHarbor.minWaveHeightAlpha) { currentWaveHeightAlpha = closestHarbor.minWaveHeightAlpha; }
                 }
                 else { currentWaveHeightAlpha = closestHarbor.maxWaveHeightAlpha; }
-
-                Debug.Log(closestHarbor);
-                Debug.Log(closestHarbor.currentDistance);
 
                 water.largeBand0Multiplier = defaultFirstBand * currentWaveHeightAlpha;
                 water.largeBand1Multiplier = defaultSecondBand * currentWaveHeightAlpha;
