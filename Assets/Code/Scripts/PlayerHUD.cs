@@ -12,6 +12,7 @@ public class PlayerHUD : MonoBehaviour
     [SerializeField] Slider cargoSlider;
     [SerializeField] Slider speedSlider;
     [SerializeField] Text timer;
+    [SerializeField] Slider timerSlider;
     [SerializeField] Text cargoText;
 
     public int maxCargoAmount;
@@ -53,6 +54,9 @@ public class PlayerHUD : MonoBehaviour
 
         timeLeft = maxTimeSeconds;
 
+        timerSlider.maxValue = maxTimeSeconds;
+        timerSlider.minValue = 0;
+
         gridData = GameObject.FindWithTag("CargoData").transform.GetComponent<GridData>();
 
         maxCargoAmount = gridData.placedObjects.Count;
@@ -75,7 +79,9 @@ public class PlayerHUD : MonoBehaviour
         cargoSlider.value = currentCargoAmount;
         cargoText.text = currentCargoAmount.ToString("0");
 
-        if(currentCargoAmount <= 0 || timeLeft <= 0f)
+        timerSlider.value = timeLeft;
+
+        if (currentCargoAmount <= 0 || timeLeft <= 0f)
         {
             GameOver();
         }
