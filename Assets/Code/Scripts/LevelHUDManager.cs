@@ -21,6 +21,7 @@ public class LevelHUDManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             PauseMenu.gameObject.SetActive(true);
+            Cursor.visible = true;
             Time.timeScale = 0.0f;
         }
     }

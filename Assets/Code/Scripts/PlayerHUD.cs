@@ -95,6 +95,7 @@ public class PlayerHUD : MonoBehaviour
     {
         PauseMenu.gameObject.SetActive(true);
         PauseMenu.GetChild(PauseMenu.childCount-1).GetComponent<Text>().text = "Game Over";
+        PauseMenu.GetChild(2).gameObject.SetActive(false);
         //Time.timeScale = 0.0f;
         Cursor.visible = true;
     }
