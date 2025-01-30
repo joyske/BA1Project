@@ -61,16 +61,17 @@ public class Dolphin : MonoBehaviour
         Vector3 currentVelocity = GetCurrentVelocity();
         rb.AddForce((moveDirection * currentSpeed - currentVelocity), ForceMode.VelocityChange);
         
-        SetAnimation();
+        //SetAnimation();
 
     }   
 
     void TerrainCheck()
     {
         RaycastHit hit;
-        float distance = 4f;
+        float distance = 5f;
 
-        if(Physics.Raycast(transform.position,transform.forward, out hit, distance, hitLayers))
+        if(Physics.Raycast(transform.position,transform.forward, out hit, distance, hitLayers) 
+            || Physics.Raycast(transform.position, new Vector3(transform.forward.x, transform.forward.y - 1f, transform.forward.z).normalized, out hit, distance, hitLayers))
         {
             Debug.DrawRay(transform.position, transform.forward * distance, Color.red);
             transform.eulerAngles = new Vector3(0f, -transform.rotation.eulerAngles.y, 0f);
@@ -80,7 +81,7 @@ public class Dolphin : MonoBehaviour
         else
         {
             Debug.DrawRay(transform.position, transform.forward * distance, Color.green);
-            Debug.DrawRay(transform.position, new Vector3(transform.forward.x, transform.forward.y - 1f, transform.forward.z) * distance, Color.yellow);
+            Debug.DrawRay(transform.position, new Vector3(transform.forward.x, transform.forward.y - 1f, transform.forward.z).normalized * distance, Color.yellow);
         }
     }
 

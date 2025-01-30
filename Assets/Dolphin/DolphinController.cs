@@ -5,12 +5,12 @@ using UnityEngine;
 public class DolphinController : MonoBehaviour
 {
     private Dolphin dolphin;
-    private MeshRenderer meshRenderer;
+    private SkinnedMeshRenderer meshRenderer;
 
     void Start()
     {
         dolphin = GetComponent<Dolphin>(); 
-        meshRenderer = GetComponent<MeshRenderer>();
+        meshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
         ToggleDolphins(false);
     }
 
