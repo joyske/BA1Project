@@ -7350,8 +7350,8 @@ MonoBehaviour:
   deformationAreaSize: {x: 200, y: 200}
   deformationAreaOffset: {x: 0, y: 0}
   foam: 1
-  foamResolution: 256
-  foamAreaSize: {x: 200, y: 200}
+  foamResolution: 1024
+  foamAreaSize: {x: 2000, y: 2000}
   foamAreaOffset: {x: 0, y: 0}
   foamPersistenceMultiplier: 1
   foamColor: {r: 0.74156296, g: 0.8960326, b: 0.823706, a: 1}
