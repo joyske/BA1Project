@@ -78,12 +78,12 @@ public class PlayerHUD : MonoBehaviour
         if (currentSpeed > 0)
         {
             float positiveSpeed = Mathf.InverseLerp(0, maxSpeed, currentSpeed);
-            speedHandleRotation = Mathf.Lerp(0f, 105f, positiveSpeed);
+            speedHandleRotation = Mathf.Lerp(0f, -105f, positiveSpeed);
         }
         else
         {
             float negativeSpeed = Mathf.InverseLerp(0, minSpeed, currentSpeed);
-            speedHandleRotation = Mathf.Lerp(0f, -105f, negativeSpeed);
+            speedHandleRotation = Mathf.Lerp(0f, 105f, negativeSpeed);
         }
 
         speedHandle.rectTransform.rotation = Quaternion.Euler(0, 0, speedHandleRotation);
