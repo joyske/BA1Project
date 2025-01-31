@@ -8,6 +8,7 @@ public class GoalChecker : MonoBehaviour
     private GameManagement gameManagement;
     private GridData gridData;
     private LevelHUDManager levelHUDManager;
+    bool dialogeShown = false;
 
     public void Awake()
     {
@@ -21,7 +22,14 @@ public class GoalChecker : MonoBehaviour
         if (other.CompareTag("Goal"))
         {
             levelHUDManager = GameObject.FindWithTag("SceneManager").GetComponent<LevelHUDManager>();
-            levelHUDManager.ShowGoalDialogue();
+            if (!dialogeShown )
+            {
+                PlayerHUD playerHUD = GameObject.FindGameObjectWithTag("HUD").GetComponent<PlayerHUD>();
+                playerHUD.InGoal();
+                levelHUDManager.ShowGoalDialogue();     
+                dialogeShown = true;
+            }
+
   
             //Destroy(gridData.gameObject);
         }

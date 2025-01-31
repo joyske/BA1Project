@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class DialogueSystemController : MonoBehaviour
 {
@@ -20,25 +21,15 @@ public class DialogueSystemController : MonoBehaviour
     PlayerHUD playerHUD;
 
     [SerializeField]
-    DialogueUI dialogueUI;  
+    DialogueUI dialogueUI;
 
-    private void Awake()
-    {
-      
-    }
+    [SerializeField]
+    Image[] stars;
 
-    private void Start()
-    {
-        
-    }
 
     void InitDialogues()
     {
         gameManagement = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagement>();
-        if (SceneManager.GetActiveScene().buildIndex != 0)
-        {
-            playerHUD = GameObject.FindGameObjectWithTag("HUD").GetComponent<PlayerHUD>();
-        }
 
         sceneID = gameManagement.currentLevelIndex;
         npcDialogueData = npcData.NPCDialogueData.Find(data => data.SceneID == sceneID);
@@ -51,8 +42,11 @@ public class DialogueSystemController : MonoBehaviour
         }
         else
         {
+            playerHUD = GameObject.FindGameObjectWithTag("HUD").GetComponent<PlayerHUD>();
+            //playerHUD.InGoal();
             int starLevel = CalculateStarLevel();
             dialogueText = GetFinishDialogue(starLevel);
+            ShowStars(starLevel);
         }
 
         SetNPCDialogue();
@@ -60,7 +54,14 @@ public class DialogueSystemController : MonoBehaviour
 
     private int CalculateStarLevel()
     {
-        float cargoPercentage = (playerHUD.currentCargoAmount / playerHUD.maxCargoAmount) * 100f;
+        int currentCargo = playerHUD.finalCargo;
+        int maxCargo = playerHUD.maxCargoAmount;
+
+        Debug.Log(currentCargo);
+        Debug.Log(maxCargo);
+        float cargoPercentage = (currentCargo / maxCargo) * 100f;
+
+        Debug.Log(cargoPercentage);
         switch (cargoPercentage)
         {
             case > 50f:
@@ -100,6 +101,14 @@ public class DialogueSystemController : MonoBehaviour
         InitDialogues();
         dialogueUI.gameObject.SetActive(true);
        // Time.timeScale = 0;
+    }
+
+    public void ShowStars(int starCount)
+    {
+        for (int i = 0; i < starCount; i++)
+        {
+            stars[i].gameObject.SetActive(true);    
+        }
     }
 
     public void HideDialogue() { dialogueUI.gameObject.SetActive(false); }

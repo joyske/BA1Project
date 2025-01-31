@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -31,6 +32,8 @@ public class PlayerHUD : MonoBehaviour
 
     public float valueDistance;
     public float sliderAddValue;
+
+    public int finalCargo;
 
 
 
@@ -121,4 +124,8 @@ public class PlayerHUD : MonoBehaviour
         Cursor.visible = true;
     }
 
+    public void InGoal()
+    {
+        finalCargo = currentCargoAmount;
+    }
 }

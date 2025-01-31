@@ -50,6 +50,7 @@ MonoBehaviour:
   boat: {fileID: 2794390668913423381, guid: f60e3d5f369eccb43abfaab6b9175843, type: 3}
   delayTime: 3
   yRotation: 90
+  loadingScreen: {fileID: 0}
 --- !u!114 &7751455804393104181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,3 +79,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcData: {fileID: 11400000, guid: ec25254d50733514eaad3133debdb8e0, type: 2}
   dialogueUI: {fileID: 0}
+  stars:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

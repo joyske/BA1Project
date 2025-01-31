@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 4908.8013, g: 6164.0713, b: 6724.548, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2725,6 +2725,21 @@ PrefabInstance:
       propertyPath: dialogueUI
       value: 
       objectReference: {fileID: 728728072}
+    - target: {fileID: 1909728842368426023, guid: 2b95d784f5956ed4595e077ddb570f0f,
+        type: 3}
+      propertyPath: 'stars.Array.data[0]'
+      value: 
+      objectReference: {fileID: 728728076}
+    - target: {fileID: 1909728842368426023, guid: 2b95d784f5956ed4595e077ddb570f0f,
+        type: 3}
+      propertyPath: 'stars.Array.data[1]'
+      value: 
+      objectReference: {fileID: 728728075}
+    - target: {fileID: 1909728842368426023, guid: 2b95d784f5956ed4595e077ddb570f0f,
+        type: 3}
+      propertyPath: 'stars.Array.data[2]'
+      value: 
+      objectReference: {fileID: 728728074}
     - target: {fileID: 7140463139506587421, guid: 2b95d784f5956ed4595e077ddb570f0f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3211,6 +3226,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LoadPlacementScene
       objectReference: {fileID: 0}
+    - target: {fileID: 8609166456505122989, guid: e418c68bd3199844ba95139e3221168e,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8609166456505122989, guid: e418c68bd3199844ba95139e3221168e,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8849099107504373293, guid: e418c68bd3199844ba95139e3221168e,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -3261,6 +3286,42 @@ MonoBehaviour:
 --- !u!114 &728728073 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3108691619528047751, guid: e418c68bd3199844ba95139e3221168e,
+    type: 3}
+  m_PrefabInstance: {fileID: 728728071}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &728728074 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8965687890828049586, guid: e418c68bd3199844ba95139e3221168e,
+    type: 3}
+  m_PrefabInstance: {fileID: 728728071}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &728728075 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3292103832955080524, guid: e418c68bd3199844ba95139e3221168e,
+    type: 3}
+  m_PrefabInstance: {fileID: 728728071}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &728728076 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1889200842375594302, guid: e418c68bd3199844ba95139e3221168e,
     type: 3}
   m_PrefabInstance: {fileID: 728728071}
   m_PrefabAsset: {fileID: 0}
