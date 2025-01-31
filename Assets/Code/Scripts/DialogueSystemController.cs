@@ -54,14 +54,10 @@ public class DialogueSystemController : MonoBehaviour
 
     private int CalculateStarLevel()
     {
-        int currentCargo = playerHUD.finalCargo;
-        int maxCargo = playerHUD.maxCargoAmount;
-
-        Debug.Log(currentCargo);
-        Debug.Log(maxCargo);
+        float currentCargo = (float) playerHUD.finalCargo;
+        float maxCargo = (float) playerHUD.maxCargoAmount;
         float cargoPercentage = (currentCargo / maxCargo) * 100f;
 
-        Debug.Log(cargoPercentage);
         switch (cargoPercentage)
         {
             case > 50f:
