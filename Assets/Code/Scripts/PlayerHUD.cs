@@ -12,6 +12,7 @@ public class PlayerHUD : MonoBehaviour
     [SerializeField] Slider cargoSlider;
     [SerializeField] Slider speedSlider;
     [SerializeField] Text timer;
+    [SerializeField] Image speedHandle;
     [SerializeField] Slider timerSlider;
     [SerializeField] Text cargoText;
 
@@ -72,6 +73,20 @@ public class PlayerHUD : MonoBehaviour
     {
         currentSpeed = shipMovement.currentDesiredSpeed;
         speedSlider.value = currentSpeed;
+
+        float speedHandleRotation;
+        if (currentSpeed > 0)
+        {
+            float positiveSpeed = Mathf.InverseLerp(0, maxSpeed, currentSpeed);
+            speedHandleRotation = Mathf.Lerp(0f, 105f, positiveSpeed);
+        }
+        else
+        {
+            float negativeSpeed = Mathf.InverseLerp(0, minSpeed, currentSpeed);
+            speedHandleRotation = Mathf.Lerp(0f, -105f, negativeSpeed);
+        }
+
+        speedHandle.rectTransform.rotation = Quaternion.Euler(0, 0, speedHandleRotation);
 
         timeLeft -= Time.deltaTime;
         timer.text = toMinutes();
