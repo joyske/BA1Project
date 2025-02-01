@@ -1369,6 +1369,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5430036420811977554, guid: f60e3d5f369eccb43abfaab6b9175843,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5430036420811977554, guid: f60e3d5f369eccb43abfaab6b9175843,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5430036420811977554, guid: f60e3d5f369eccb43abfaab6b9175843,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5430036420811977554, guid: f60e3d5f369eccb43abfaab6b9175843,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 6596900107406136826, guid: f60e3d5f369eccb43abfaab6b9175843,
         type: 3}
       propertyPath: m_IsActive
@@ -3953,7 +3973,6 @@ MonoBehaviour:
   m_Script: {fileID: 2029507880}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Entries: []
 --- !u!4 &847190296
 Transform:
   m_ObjectHideFlags: 19

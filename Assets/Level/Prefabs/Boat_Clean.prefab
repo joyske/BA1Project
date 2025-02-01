@@ -146,8 +146,8 @@ Transform:
   m_GameObject: {fileID: 2086498668251340121}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.12, y: 1, z: -2.05}
-  m_LocalScale: {x: 0.38600335, y: 0.35, z: 0.5969627}
+  m_LocalPosition: {x: 0, y: 1, z: -2}
+  m_LocalScale: {x: 0.4, y: 0.35, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5836188734831704657}
@@ -470,16 +470,15 @@ MonoBehaviour:
   maxForwardSpeed: 1000
   maxBackwardSpeed: -500
   desiredSpeedChangeMultiplier: 600
-  currentDesiredSpeed: 0
-  accelerateDelay: 1
   turnDelay: 15
   CollidedMultiplier: 0.7
+  WheelTurnSpeed: 0.3
   Floaters:
   - {fileID: 2320500409870054955}
   - {fileID: 8174605925401917088}
   - {fileID: 4572753696941622621}
   - {fileID: 7201149784687752012}
-  WheelTurnSpeed: 0.3
+  currentDesiredSpeed: 0
 --- !u!114 &8773474204839688171
 MonoBehaviour:
   m_ObjectHideFlags: 0
