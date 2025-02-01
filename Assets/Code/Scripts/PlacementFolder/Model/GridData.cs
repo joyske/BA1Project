@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
+using static GridData;
 
 
 // Save positions of objects and checking for valid placement
@@ -54,12 +55,13 @@ public class GridData : MonoBehaviour
             {
                 return false;
             }
-        }
-        foreach (var placementData in placedObjects.Values)
-        {
-            if (placementData.occupiedPositions.Contains(gridPosition))
+
+            foreach (var placementData in placedObjects.Values)
             {
-                return false;
+                if (placementData.occupiedPositions.Contains(position))
+                {
+                    return false;
+                }
             }
         }
         return true;
