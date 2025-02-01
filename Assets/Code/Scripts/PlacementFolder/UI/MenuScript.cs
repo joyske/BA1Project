@@ -17,6 +17,9 @@ public class MenuScript : MonoBehaviour
     [SerializeField] Button deleteButton;
     private GameManagement gameManagement;
 
+    private GameObject startButtons;
+    private bool toggleRestart = false;
+
     public void Awake()
     {
         gameManagement = GameObject.FindWithTag("GameManager").GetComponent<GameManagement>();
@@ -48,6 +51,17 @@ public class MenuScript : MonoBehaviour
         ResetSimulation();
     }
 
+    public void ToggleRestart()
+    {
+        RectTransform restartButtonTrigger = GetComponentInChildren<EventTrigger>().transform.GetComponent<RectTransform>();
+
+        startButtons = transform.GetChild(transform.childCount - 3).gameObject;
+        toggleRestart = !toggleRestart;
+        startButtons.SetActive(toggleRestart);
+        float offset;
+        if (!toggleRestart) { offset = -297f; } else { offset = -170f; }
+        restartButtonTrigger.offsetMax = new Vector2(offset, restartButtonTrigger.offsetMax.y);
+    }
     public void StartToggle(Toggle toggle, RectTransform switchTransform)
     {
         switchTransform.localPosition = new Vector3(10f, 0f, 0f);
