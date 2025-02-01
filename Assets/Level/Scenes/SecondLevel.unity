@@ -3792,6 +3792,11 @@ PrefabInstance:
       propertyPath: PauseMenu
       value: 
       objectReference: {fileID: 187380778}
+    - target: {fileID: 8957063337483139662, guid: e418c68bd3199844ba95139e3221168e,
+        type: 3}
+      propertyPath: maxTimeSeconds
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 9142120902094642181, guid: e418c68bd3199844ba95139e3221168e,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -7950,17 +7955,17 @@ PrefabInstance:
     - target: {fileID: 3855109809439107402, guid: 0cf66deb48fd72e40b2c8723bbec45bd,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -153.9
+      value: -166.7
       objectReference: {fileID: 0}
     - target: {fileID: 3855109809439107402, guid: 0cf66deb48fd72e40b2c8723bbec45bd,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 100.3
+      value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 3855109809439107402, guid: 0cf66deb48fd72e40b2c8723bbec45bd,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 386.6
+      value: 407.6
       objectReference: {fileID: 0}
     - target: {fileID: 3855109809439107402, guid: 0cf66deb48fd72e40b2c8723bbec45bd,
         type: 3}

@@ -29,12 +29,14 @@ MonoBehaviour:
       <TotalItemCount>k__BackingField: 2
   - <SceneID>k__BackingField: 2
     <CountData>k__BackingField:
+    - <ItemID>k__BackingField: 0
+      <TotalItemCount>k__BackingField: 16
     - <ItemID>k__BackingField: 3
-      <TotalItemCount>k__BackingField: 20
+      <TotalItemCount>k__BackingField: 4
     - <ItemID>k__BackingField: 1
-      <TotalItemCount>k__BackingField: 6
-    - <ItemID>k__BackingField: 6
       <TotalItemCount>k__BackingField: 8
+    - <ItemID>k__BackingField: 6
+      <TotalItemCount>k__BackingField: 6
   - <SceneID>k__BackingField: 3
     <CountData>k__BackingField:
     - <ItemID>k__BackingField: 3
