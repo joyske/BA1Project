@@ -9,6 +9,7 @@ public class Cargo : MonoBehaviour
     private Floater floater;
     private bool subtractedCargo;
     private bool leftBoat = false;
+    private bool hitGround = false;
 
     private BoxCollider boatColliderZone;
     private Transform player;
@@ -56,7 +57,7 @@ public class Cargo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (floater.hitWater && !subtractedCargo && leftBoat)
+        if (((floater.hitWater && leftBoat) || hitGround) && !subtractedCargo)
         {
             playerHUD.currentCargoAmount -= 1;
             subtractedCargo = true;
@@ -76,6 +77,17 @@ public class Cargo : MonoBehaviour
         if (other.transform.tag == "SafeZone" && !subtractedCargo)
         {
             leftBoat = false;
+        }
+    }
+
+    private void OnCollisionStay(Collision other)
+    {
+        if(other.gameObject.layer == 7)
+        {
+            if (leftBoat)
+            {
+                hitGround = true;
+            }
         }
     }
 }

@@ -210,6 +210,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4038830789028434901, guid: 68a2d2640839a694eb458e74e76c800a,
         type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4038830789028434901, guid: 68a2d2640839a694eb458e74e76c800a,
+        type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -2252,6 +2257,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6677244030894619455, guid: 49e7ce34b58af2a419a6a8ee5f3ef2f9,
         type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6677244030894619455, guid: 49e7ce34b58af2a419a6a8ee5f3ef2f9,
+        type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -2430,6 +2440,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5428767569071412750, guid: c7416700103074143abf46ec64ebfa9d,
         type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428767569071412750, guid: c7416700103074143abf46ec64ebfa9d,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -2516,6 +2531,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: H3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428767569071412750, guid: c7416700103074143abf46ec64ebfa9d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5428767569071412750, guid: c7416700103074143abf46ec64ebfa9d,
         type: 3}
@@ -3279,7 +3299,7 @@ GameObject:
   - component: {fileID: 747368647}
   - component: {fileID: 747368646}
   - component: {fileID: 747368645}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Terrain (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6208,6 +6228,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5428767569071412750, guid: c7416700103074143abf46ec64ebfa9d,
         type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428767569071412750, guid: c7416700103074143abf46ec64ebfa9d,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -6393,6 +6418,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: H1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4038830789028434901, guid: 68a2d2640839a694eb458e74e76c800a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4038830789028434901, guid: 68a2d2640839a694eb458e74e76c800a,
         type: 3}
@@ -9945,7 +9975,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1982906478}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rocks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10621,6 +10651,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Front
       objectReference: {fileID: 0}
+    - target: {fileID: 210415836865658491, guid: c70dcf04d0f9f394d9cc377d5a11b4a4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2672398547036939035, guid: c70dcf04d0f9f394d9cc377d5a11b4a4,
         type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -10718,7 +10753,7 @@ GameObject:
   - component: {fileID: 2133795637}
   - component: {fileID: 2133795636}
   - component: {fileID: 2133795635}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11462,12 +11497,12 @@ PrefabInstance:
     - target: {fileID: 5611090516450022375, guid: e418c68bd3199844ba95139e3221168e,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 30.551758
+      value: 26.6
       objectReference: {fileID: 0}
     - target: {fileID: 5611090516450022375, guid: e418c68bd3199844ba95139e3221168e,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -111.20001
+      value: -107.2
       objectReference: {fileID: 0}
     - target: {fileID: 5905582776752762893, guid: e418c68bd3199844ba95139e3221168e,
         type: 3}
@@ -11945,10 +11980,45 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3053928625497350630, guid: 2594d23d71fd7384181a304514ced6c0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.0000038146973
+      objectReference: {fileID: 0}
+    - target: {fileID: 3786878757571092375, guid: 2594d23d71fd7384181a304514ced6c0,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3786878757571092375, guid: 2594d23d71fd7384181a304514ced6c0,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5897947020018496602, guid: 2594d23d71fd7384181a304514ced6c0,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5897947020018496602, guid: 2594d23d71fd7384181a304514ced6c0,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5897947020018496602, guid: 2594d23d71fd7384181a304514ced6c0,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5996663557785568117, guid: 2594d23d71fd7384181a304514ced6c0,
         type: 3}
       propertyPath: m_Name
       value: PauseMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 6633144627130649008, guid: 2594d23d71fd7384181a304514ced6c0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7111986265967697678, guid: 2594d23d71fd7384181a304514ced6c0,
         type: 3}
