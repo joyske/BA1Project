@@ -96,7 +96,6 @@ public class MenuScript : MonoBehaviour
 
     public void LoadStackingSystem()
     {
-        Time.timeScale = 1.0f;
         Destroy(gridData.gameObject);
         gameManagement.LoadPlacementScene();
         //gameManagement.currentLevelIndex--;
@@ -110,7 +109,7 @@ public class MenuScript : MonoBehaviour
 
     public void BackToMainMenu()
     {
-        //SceneManager.LoadScene(?);
+        gameManagement.LoadTitleScreen();
     }
 
     public void ExitGame()

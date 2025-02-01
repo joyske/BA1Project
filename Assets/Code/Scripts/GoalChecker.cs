@@ -28,6 +28,7 @@ public class GoalChecker : MonoBehaviour
                 playerHUD.InGoal();
                 levelHUDManager.ShowGoalDialogue();     
                 dialogeShown = true;
+                Time.timeScale = 0.0f;
             }
 
   

@@ -19,7 +19,7 @@ public class Cargo : MonoBehaviour
         
         floater = GetComponent<Floater>();
 
-        if(SceneManager.GetActiveScene().buildIndex  == 0)
+        if(SceneManager.GetActiveScene().buildIndex  == 1)
         {
             floater.enabled = false;
             GetComponent<Rigidbody>().isKinematic = true;
