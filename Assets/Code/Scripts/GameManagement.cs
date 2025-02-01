@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -17,29 +18,54 @@ public class GameManagement : MonoBehaviour
     void Start()
     {
         DontDestroyOnLoad(gameObject);
-        GameObject cargo = GameObject.Find("CargoData");
-        gridData = cargo.GetComponent<GridData>();
+        if (!(SceneManager.GetActiveScene().buildIndex == 0))
+        {
+            GameObject cargo = GameObject.Find("CargoData");
+            gridData = cargo.GetComponent<GridData>();
+        }
+
     }
 
 
     public void LoadLevelScene()
     {
-        //Time.timeScale = 1;
         SceneManager.LoadScene(levelScenes[currentLevelIndex]);
-        //currentLevelIndex++;
     }
 
     public void LoadPlacementScene()
     {
-        SceneManager.LoadScene("Placement");
+        Time.timeScale = 1.0f;
+        if (currentLevelIndex == SceneManager.sceneCountInBuildSettings-2)
+        {
+            LoadTitleScreen();
+        }
+        else
+        {
+            SceneManager.LoadScene("Placement");
+        }
+
+
     }
 
     public void IncreaseLevel()
     {
+        DestroyCargo();
+        currentLevelIndex++;
+    }
+
+    public void DestroyCargo()
+    {
         GameObject cargo = GameObject.Find("CargoData");
         gridData = cargo.GetComponent<GridData>();
         Destroy(gridData.gameObject);
-        currentLevelIndex++;
+    }
+
+    public void LoadTitleScreen()
+    {
+        DestroyCargo();
+        Destroy(gameObject);
+        currentLevelIndex = 0;
+        SceneManager.LoadScene(0);
     }
 
 }

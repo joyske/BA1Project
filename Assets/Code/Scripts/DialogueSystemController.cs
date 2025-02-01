@@ -35,7 +35,7 @@ public class DialogueSystemController : MonoBehaviour
         npcDialogueData = npcData.NPCDialogueData.Find(data => data.SceneID == sceneID);
 
 
-        if (SceneManager.GetActiveScene().buildIndex == 0)
+        if (SceneManager.GetActiveScene().buildIndex == 1)
         {
 
             dialogueText = GetMissionDialogue();
