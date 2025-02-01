@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: db76de505142f6f469ebd5c398c9889c
+guid: a1dd3bda09766f546bad56c6534690cd
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -31,11 +31,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: CINEMA_4D_JUMP-delphinidae
-      takeName: CINEMA_4D_JUMP-delphinidae
-      internalID: -2061527536387662467
+      name: DolphinSwim
+      takeName: CINEMA_4D_Main
+      internalID: -1498010087492872569
       firstFrame: 0
-      lastFrame: 74
+      lastFrame: 34
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -118,7 +118,7 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     globalScale: 1
-    rootMotionBoneName: UBERROT
+    rootMotionBoneName: ROOT_rot
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
