@@ -51,14 +51,14 @@ public class MenuScript : MonoBehaviour
     public void StartToggle(Toggle toggle, RectTransform switchTransform)
     {
         switchTransform.localPosition = new Vector3(10f, 0f, 0f);
-        toggle.transform.GetChild(0).GetComponent<Image>().color = Color.green;
+        //toggle.transform.GetChild(0).GetComponent<Image>().color = Color.green;
         toggle.isOn = true;
     }
 
     public void EndToggle(Toggle toggle, RectTransform switchTransform)
     {
         switchTransform.localPosition = new Vector3(-10f, 0f, 0f);
-        toggle.transform.GetChild(0).GetComponent<Image>().color = Color.red;
+        //toggle.transform.GetChild(0).GetComponent<Image>().color = Color.red;
         toggle.isOn = false;
     }
 
