@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NPCDialogueData:
   - <SceneID>k__BackingField: 0
-    <OneStarText>k__BackingField: "\"Such care in your work! You\u2019ve brought
-      not just supplies, but peace to our little corner of the sea.\""
+    <OneStarText>k__BackingField: "\"Oh no\u2026 this won\u2019t be enough for the
+      sick or the reef! I hope no one suffers because of this\u2026\""
     <TwoStarText>k__BackingField: "\"Not bad, but some of the sick may have to wait
       longer than I\u2019d like. Let\u2019s do better next time, okay?\""
     <ThreeStarText>k__BackingField: "\"Excellent work! You\u2019ve brought everything
