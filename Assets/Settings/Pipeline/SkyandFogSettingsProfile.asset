@@ -289,7 +289,7 @@ MonoBehaviour:
   active: 1
   rotation:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 186.6
   skyIntensityMode:
     m_OverrideState: 1
     m_Value: 1
@@ -301,10 +301,10 @@ MonoBehaviour:
     m_Value: 1
   upperHemisphereLuxValue:
     m_OverrideState: 1
-    m_Value: 0.83129567
+    m_Value: 0.87274104
   upperHemisphereLuxColor:
     m_OverrideState: 1
-    m_Value: {x: 0.5, y: 0.4008608, z: 0.37959626}
+    m_Value: {x: 0.10428325, y: 0.20110822, z: 0.5}
   desiredLuxValue:
     m_OverrideState: 0
     m_Value: 20000
@@ -319,7 +319,7 @@ MonoBehaviour:
     m_Value: 0
   hdriSky:
     m_OverrideState: 1
-    m_Value: {fileID: 8900000, guid: 0ad1457f9624f074bbbbfc58eedd0d55, type: 3}
+    m_Value: {fileID: 8900000, guid: 110eb16d721c48a4c846612bf9c3d726, type: 3}
   distortionMode:
     m_OverrideState: 0
     m_Value: 0
@@ -860,10 +860,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b51a78e223a2e504bb88a059b55229ea, type: 3}
   m_Name: WhiteBalance
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   temperature:
-    m_OverrideState: 0
-    m_Value: 1.7
+    m_OverrideState: 1
+    m_Value: 30.5
   tint:
     m_OverrideState: 0
     m_Value: -1.1
