@@ -1528,7 +1528,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 8ba92e2dd7f884a0f88b98fa2d235fe7, type: 2}
+  sharedProfile: {fileID: 11400000, guid: fce87739f868d3b47835f2815b98f80e, type: 2}
 --- !u!4 &432432461
 Transform:
   m_ObjectHideFlags: 0
@@ -4217,7 +4217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d566e31a550d8024e89131ae040afce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLevelIndex: 3
+  currentLevelIndex: 0
   levelScenes:
   - FirstLevel
   - SecondLevel
@@ -5485,13 +5485,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1433626999}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.5030199, z: 0, w: 0.8642748}
-  m_LocalPosition: {x: -183.7, y: 0, z: 992.7}
+  m_LocalRotation: {x: -0, y: 0.10958317, z: -0, w: 0.99397767}
+  m_LocalPosition: {x: -1263, y: 0, z: 2146}
   m_LocalScale: {x: 4000, y: 6000, z: 4000}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -60.4, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 12.583, z: 0}
 --- !u!1001 &1474055743
 PrefabInstance:
   m_ObjectHideFlags: 0
