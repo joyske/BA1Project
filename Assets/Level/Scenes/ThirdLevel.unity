@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2290.054, g: 5851.602, b: 12034.376, a: 1}
+  m_IndirectSpecularColor: {r: 2290.0461, g: 5851.602, b: 12034.376, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4263,15 +4263,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7898574735223619, guid: 42db33daef79792438b00f30e12e09a6, type: 3}
       propertyPath: m_LocalScale.x
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7898574735223619, guid: 42db33daef79792438b00f30e12e09a6, type: 3}
       propertyPath: m_LocalScale.y
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7898574735223619, guid: 42db33daef79792438b00f30e12e09a6, type: 3}
       propertyPath: m_LocalScale.z
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7898574735223619, guid: 42db33daef79792438b00f30e12e09a6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4321,6 +4321,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Harbor
+      objectReference: {fileID: 0}
+    - target: {fileID: 7870920198005651201, guid: 42db33daef79792438b00f30e12e09a6,
+        type: 3}
+      propertyPath: fadeDistance
+      value: 250
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8200,15 +8205,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7898574735223619, guid: 42db33daef79792438b00f30e12e09a6, type: 3}
       propertyPath: m_LocalScale.x
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7898574735223619, guid: 42db33daef79792438b00f30e12e09a6, type: 3}
       propertyPath: m_LocalScale.y
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7898574735223619, guid: 42db33daef79792438b00f30e12e09a6, type: 3}
       propertyPath: m_LocalScale.z
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7898574735223619, guid: 42db33daef79792438b00f30e12e09a6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8262,7 +8267,7 @@ PrefabInstance:
     - target: {fileID: 7870920198005651201, guid: 42db33daef79792438b00f30e12e09a6,
         type: 3}
       propertyPath: fadeDistance
-      value: 100
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 7870920198005651201, guid: 42db33daef79792438b00f30e12e09a6,
         type: 3}
