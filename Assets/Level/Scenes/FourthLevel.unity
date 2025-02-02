@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2290.054, g: 5851.602, b: 12034.376, a: 1}
+  m_IndirectSpecularColor: {r: 3973.231, g: 4616.5825, b: 4930.7427, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -612,7 +612,7 @@ Light:
   serializedVersion: 11
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 130000
+  m_Intensity: 8115.8477
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -692,7 +692,7 @@ MonoBehaviour:
   m_PointlightHDType: 0
   m_SpotLightShape: 0
   m_AreaLightShape: 0
-  m_Intensity: 130000
+  m_Intensity: 8115.8477
   m_EnableSpotReflector: 0
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 0
@@ -1486,7 +1486,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 56dd45e5962488a4794b9c138ae1b6c8, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 8ab046cb6c79f7545bd6d6b95bc18e87, type: 2}
 --- !u!4 &432432461
 Transform:
   m_ObjectHideFlags: 0
