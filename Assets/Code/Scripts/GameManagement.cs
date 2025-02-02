@@ -6,26 +6,37 @@ using UnityEngine.SceneManagement;
 
 public class GameManagement : MonoBehaviour
 {
-   
+    public static GameManagement Instance { get; private set; } // Singleton instance
 
     public int currentLevelIndex = 0;
-
-    public string[] levelScenes = { "FirstLevel", "SecondLevel", "ThirdLevel", "FourthLevel"};
-    //public  string[] placementScenes = { "PlacementScene1", "PlacementScene2", "PlacementScene3" };
+    public string[] levelScenes = { "FirstLevel", "SecondLevel", "ThirdLevel", "FourthLevel" };
     GridData gridData;
 
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject); // Destroy duplicate instances
+            return;
+        }
+    }
 
     void Start()
     {
-        DontDestroyOnLoad(gameObject);
         if (!(SceneManager.GetActiveScene().buildIndex == 0))
         {
             GameObject cargo = GameObject.Find("CargoData");
-            gridData = cargo.GetComponent<GridData>();
+            if (cargo != null)
+            {
+                gridData = cargo.GetComponent<GridData>();
+            }
         }
-
     }
-
 
     public void LoadLevelScene()
     {
@@ -35,7 +46,7 @@ public class GameManagement : MonoBehaviour
     public void LoadPlacementScene()
     {
         Time.timeScale = 1.0f;
-        if (currentLevelIndex == SceneManager.sceneCountInBuildSettings-2)
+        if (currentLevelIndex == SceneManager.sceneCountInBuildSettings - 2)
         {
             LoadTitleScreen();
         }
@@ -43,8 +54,6 @@ public class GameManagement : MonoBehaviour
         {
             SceneManager.LoadScene("Placement");
         }
-
-
     }
 
     public void IncreaseLevel()
@@ -56,16 +65,19 @@ public class GameManagement : MonoBehaviour
     public void DestroyCargo()
     {
         GameObject cargo = GameObject.Find("CargoData");
-        gridData = cargo.GetComponent<GridData>();
-        Destroy(gridData.gameObject);
+        if (cargo != null)
+        {
+            gridData = cargo.GetComponent<GridData>();
+            Destroy(gridData.gameObject);
+        }
     }
 
     public void LoadTitleScreen()
     {
         DestroyCargo();
         Destroy(gameObject);
+        Instance = null; // Reset instance so a new one can be created
         currentLevelIndex = 0;
         SceneManager.LoadScene(0);
     }
-
 }

@@ -6,6 +6,8 @@ public class LevelHUDManager : MonoBehaviour
 {
     public Transform PauseMenu;
 
+    public Transform GameOverScreen;
+
     [SerializeField]
     DialogueSystemController dialogueController;
 
@@ -36,6 +38,12 @@ public class LevelHUDManager : MonoBehaviour
     {
         gameManagement.IncreaseLevel();
         gameManagement.LoadPlacementScene();
+    }
+
+    public void ShowGameOver()
+    {
+        GameOverScreen.gameObject.SetActive(true);
+        Cursor.visible = true;
     }
 
 }

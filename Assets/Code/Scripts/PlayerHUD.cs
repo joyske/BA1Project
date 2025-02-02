@@ -35,13 +35,9 @@ public class PlayerHUD : MonoBehaviour
 
     public int finalCargo;
 
+    [SerializeField]
+    LevelHUDManager levelHUDManager;
 
-
-    void OnEnable()
-    {
-      
-
-    }
 
     public void InitHUD()
     {
@@ -117,11 +113,7 @@ public class PlayerHUD : MonoBehaviour
 
     void GameOver()
     {
-        PauseMenu.gameObject.SetActive(true);
-        PauseMenu.GetChild(PauseMenu.childCount-1).GetComponent<Text>().text = "Game Over";
-        PauseMenu.GetChild(2).gameObject.SetActive(false);
-        //Time.timeScale = 0.0f;
-        Cursor.visible = true;
+        levelHUDManager.ShowGameOver();
     }
 
     public void InGoal()

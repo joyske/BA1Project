@@ -46,7 +46,7 @@ public class PlacementSystem : MonoBehaviour
     InventoryUIManager inventoryManager;
 
     [SerializeField]
-    MenuScript menuScript;
+    PlacementHUDManager hudManager;
 
 
     private void Start()
@@ -71,7 +71,7 @@ public class PlacementSystem : MonoBehaviour
     {
         if (!isSimulating && !isRemoving && inventoryManager.CanPlaceItem(ID))
         {
-            menuScript.InDeleteMode(isRemoving);
+            hudManager.InDeleteMode(isRemoving);
             inventoryManager.SetButtonSelection(lastUsedIndex, false);
             inventoryManager.SetButtonSelection(ID, true);
 
@@ -92,7 +92,7 @@ public class PlacementSystem : MonoBehaviour
         {
             inventoryManager.SetButtonSelection(lastUsedIndex, false);
             isRemoving = true;
-            menuScript.InDeleteMode(isRemoving);
+            hudManager.InDeleteMode(isRemoving);
             StopPlacement();
             gridVisualization.SetActive(true);
             placementState = new RemovingState(grid, previewSystem, gridData, cargoPlacement, inventoryManager);
@@ -179,7 +179,7 @@ public class PlacementSystem : MonoBehaviour
     public void StartSimulation()
     {
         inventoryManager.SetButtonSelection(lastUsedIndex, false);
-        menuScript.InDeleteMode(isRemoving);
+        hudManager.InDeleteMode(isRemoving);
         isSimulating = true;
         StopPlacement();
         cargoPlacement.EnablePhysics();  

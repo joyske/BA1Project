@@ -24,7 +24,7 @@ public class InventoryUIManager : MonoBehaviour
     List<ItemSlotUI> inventorySlots;
 
     [SerializeField]
-    MenuScript menuScript;
+    PlacementHUDManager hudManager;
 
 
     private void Awake()
@@ -113,7 +113,7 @@ public class InventoryUIManager : MonoBehaviour
     {
         placedItemCounts[itemID]++;
         inventorySlots.FirstOrDefault(s => s.GetItemID() == itemID).UpdateQuantity(placedItemCounts[itemID]);
-        menuScript.UpdateStart(CanStartGame());
+        hudManager.UpdateStart(CanStartGame());
     }
 
     public void DecreasePlacedItem(int itemID)
@@ -125,7 +125,7 @@ public class InventoryUIManager : MonoBehaviour
         {
             itemSlot.enabled = false;
         }
-        menuScript.UpdateStart(CanStartGame());
+        hudManager.UpdateStart(CanStartGame());
     }
 
     public bool CanPlaceItem(int itemID)

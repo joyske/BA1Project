@@ -10,6 +10,8 @@ public class PlacementSceneManager : MonoBehaviour
     [SerializeField]
     MenuScript menuScript;
 
+    [SerializeField]
+    PlacementHUDManager placementHUD;
 
     private void Start()
     {
@@ -20,6 +22,6 @@ public class PlacementSceneManager : MonoBehaviour
     public void ShowPlacementScreen()
     {
         dialogueController.HideDialogue();
-        menuScript.gameObject.SetActive(true);
+        placementHUD.gameObject.SetActive(true);
     }
 }
