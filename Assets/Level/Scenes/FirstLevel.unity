@@ -570,6 +570,94 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 77419797}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &98595294
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -64.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 323.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2941974535742424953, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_Name
+      value: Wind Turbine (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931493250830034835, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: rotationSpeed
+      value: 90
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1, type: 3}
 --- !u!1001 &107669520
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1626,6 +1714,79 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c8ded1e75d3f584d9678aeef743129d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &180901144
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -186.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 191.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2941974535742424953, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_Name
+      value: Wind Turbine (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931493250830034835, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: rotationSpeed
+      value: 90
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1, type: 3}
 --- !u!1001 &189643637
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2674,6 +2835,94 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 333280058}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &337516848
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -48.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 25.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 575.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2941974535742424953, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_Name
+      value: Wind Turbine (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931493250830034835, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: rotationSpeed
+      value: 85
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1, type: 3}
 --- !u!1 &400837684
 GameObject:
   m_ObjectHideFlags: 0
@@ -3146,6 +3395,94 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 465455977}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &495922884
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -294.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 20.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 639.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2941974535742424953, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_Name
+      value: Wind Turbine (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931493250830034835, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: rotationSpeed
+      value: 80
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1, type: 3}
 --- !u!1001 &496648727
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4863,6 +5200,94 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34ae7d6807933d548b79d7a4acbba3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &638637061
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -296.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 53.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 54.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2941974535742424953, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_Name
+      value: Wind Turbine (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931493250830034835, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: rotationSpeed
+      value: 110
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1, type: 3}
 --- !u!1001 &687222703
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5175,6 +5600,94 @@ MonoBehaviour:
   m_ObjectForwardAxis: 2
   m_ObjectUpAxis: 1
   m_StartOffset: 0.5
+--- !u!1001 &737023766
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 24.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 31.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 294.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2941974535742424953, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_Name
+      value: Wind Turbine (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931493250830034835, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: rotationSpeed
+      value: 87
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1, type: 3}
 --- !u!1001 &738921367
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6847,6 +7360,94 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 964692207}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &965804823
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -381
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 52.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 185.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2941974535742424953, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_Name
+      value: Wind Turbine (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931493250830034835, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: rotationSpeed
+      value: 114
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1, type: 3}
 --- !u!1001 &987822225
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7236,6 +7837,182 @@ Transform:
   - {fileID: 1538834568}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1061452165
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -252.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 29.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 392.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2941974535742424953, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_Name
+      value: Wind Turbine (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931493250830034835, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: rotationSpeed
+      value: 108
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1, type: 3}
+--- !u!1001 &1118813215
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -103.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2941974535742424953, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_Name
+      value: Wind Turbine (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931493250830034835, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: rotationSpeed
+      value: 70
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1, type: 3}
 --- !u!1001 &1193192424
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8093,6 +8870,94 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c8ded1e75d3f584d9678aeef743129d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &1359297771
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -271.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 506.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2941974535742424953, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_Name
+      value: Wind Turbine (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931493250830034835, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: rotationSpeed
+      value: 87
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1, type: 3}
 --- !u!1001 &1368555008
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10054,6 +10919,167 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1585681065}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1590911409
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 194.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2941974535742424953, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_Name
+      value: Wind Turbine (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931493250830034835, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: rotationSpeed
+      value: 90
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1, type: 3}
+--- !u!1001 &1592623315
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -89.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 82.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2941974535742424953, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_Name
+      value: Wind Turbine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931493250830034835, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: rotationSpeed
+      value: 100
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1, type: 3}
 --- !u!1001 &1605701511
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10575,6 +11601,94 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1671638227}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1673981667
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -351.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 11.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 306.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2941974535742424953, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_Name
+      value: Wind Turbine (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931493250830034835, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: rotationSpeed
+      value: 90
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1, type: 3}
 --- !u!1001 &1676713295
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12192,6 +13306,94 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1886129110}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1900645412
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.95641506
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.95641506
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.95641506
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -103.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 344.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564851580538740163, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2941974535742424953, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: m_Name
+      value: Wind Turbine (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931493250830034835, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1,
+        type: 3}
+      propertyPath: rotationSpeed
+      value: 87
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 64b1f4d8dcf6b5e47a4ce621a0ac42e1, type: 3}
 --- !u!1001 &1902161384
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14199,3 +15401,17 @@ SceneRoots:
   - {fileID: 48795878}
   - {fileID: 315616658}
   - {fileID: 1962122027}
+  - {fileID: 1592623315}
+  - {fileID: 98595294}
+  - {fileID: 1359297771}
+  - {fileID: 337516848}
+  - {fileID: 495922884}
+  - {fileID: 737023766}
+  - {fileID: 1673981667}
+  - {fileID: 1590911409}
+  - {fileID: 638637061}
+  - {fileID: 965804823}
+  - {fileID: 1118813215}
+  - {fileID: 180901144}
+  - {fileID: 1061452165}
+  - {fileID: 1900645412}
