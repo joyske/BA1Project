@@ -60,9 +60,9 @@ public class DialogueSystemController : MonoBehaviour
 
         switch (cargoPercentage)
         {
-            case > 50f:
+            case > 70f:
                 return 3;
-            case > 25f:
+            case > 40f:
                 return 2;
             default:
                 return 1;
