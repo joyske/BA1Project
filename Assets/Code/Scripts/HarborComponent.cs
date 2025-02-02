@@ -31,7 +31,6 @@ public class HarborComponent : MonoBehaviour
     private int harborsInRange;
     private float lowestWaveHeightAlpha;
 
-
     void Start()
     {
         closestHarbor = GetComponent<HarborComponent>();
@@ -50,7 +49,6 @@ public class HarborComponent : MonoBehaviour
     void Update()
     {
         currentDistance = Vector3.Distance(transform.position, playerRef.transform.position);
-        Debug.Log("Distance: " + currentDistance);
 
         if (isTargetHarbor)
         {
@@ -59,6 +57,9 @@ public class HarborComponent : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     void calculateCurrentWaveHeightAlpha()
     {
         currentWaveHeightAlpha = 1;
@@ -79,7 +80,6 @@ public class HarborComponent : MonoBehaviour
             if (i == harborComponents.Count - 1) 
             { 
                 currentWaveHeightAlpha = lowestWaveHeightAlpha;
-                Debug.Log("Alpha: " + currentWaveHeightAlpha);
 
                 water.largeBand0Multiplier = defaultFirstBand * currentWaveHeightAlpha;
                 water.largeBand1Multiplier = defaultSecondBand * currentWaveHeightAlpha;
