@@ -5,10 +5,8 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlacementSystem : MonoBehaviour
+public class PlacementManager : MonoBehaviour
 {
-
-    public int lastUsedIndex;
 
     [SerializeField]
     private InputManager inputManager;
@@ -18,7 +16,6 @@ public class PlacementSystem : MonoBehaviour
 
     [SerializeField]
     Inventory inventory;
-
 
     [SerializeField]
     private GameObject gridVisualization;
@@ -34,10 +31,8 @@ public class PlacementSystem : MonoBehaviour
     [SerializeField]
     Transform boatTransform;
 
-    bool isSimulating, isRemoving;
-
     [SerializeField]
-    CargoPlacement cargoPlacement;
+    CargoManager cargoManager;
 
     [SerializeField]
     IPlacementState placementState;
@@ -48,28 +43,24 @@ public class PlacementSystem : MonoBehaviour
     [SerializeField]
     PlacementHUDManager hudManager;
 
+    public int lastUsedIndex;
+
+    bool isSimulating, isRemoving;
 
     private void Start()
     {
         isSimulating = false;
         isRemoving = false; 
-        //Vector3 gridPosition = grid.transform.position;
-        ////gridPosition.y = boatTransform.position.y;  
-        //grid.transform.position = gridPosition;
         StopPlacement();
-        //GridData = new(); // item == object TODO name entscheiden 
-
         Cursor.visible = true;
     }
 
-
     /// <summary>
-    /// Start Placemnt of Item with given ID 
+    /// Starts placement state for an item with the given ID.
     /// </summary>
-    /// <param name="ID"></param>
     public void StartPlacement(int ID)
     {
-        if (!isSimulating && !isRemoving && inventoryManager.CanPlaceItem(ID))
+        if (!isSimulating && !isRemoving && inventoryManager.CheckIfItemsLeft(ID))
         {
             hudManager.InDeleteMode(isRemoving);
             inventoryManager.SetButtonSelection(lastUsedIndex, false);
@@ -78,16 +69,17 @@ public class PlacementSystem : MonoBehaviour
             lastUsedIndex = ID;
             StopPlacement();
             gridVisualization.SetActive(true);
-            placementState = new PlacementState(ID, grid, previewSystem, inventory, gridData, cargoPlacement, inventoryManager);
+            placementState = new PlacementState(ID, grid, previewSystem, inventory, gridData, cargoManager, inventoryManager);
             inputManager.OnClicked += PlaceItem;
             inputManager.OnExit += StopPlacement;
         }
     }
 
-
+    /// <summary>
+    /// Starts removing state.
+    /// </summary>
     public void StartRemoving()
     {
-
         if (!isSimulating)
         {
             inventoryManager.SetButtonSelection(lastUsedIndex, false);
@@ -95,7 +87,7 @@ public class PlacementSystem : MonoBehaviour
             hudManager.InDeleteMode(isRemoving);
             StopPlacement();
             gridVisualization.SetActive(true);
-            placementState = new RemovingState(grid, previewSystem, gridData, cargoPlacement, inventoryManager);
+            placementState = new RemovingState(grid, previewSystem, gridData, cargoManager, inventoryManager);
             inputManager.OnClicked += PlaceItem;
             inputManager.OnExit += StopPlacement;
             isRemoving = false;
@@ -104,7 +96,7 @@ public class PlacementSystem : MonoBehaviour
 
 
     /// <summary>
-    /// Place item on grid 
+    /// Places an item at the selected grid position
     /// </summary>
     private void PlaceItem()
     {
@@ -112,23 +104,16 @@ public class PlacementSystem : MonoBehaviour
         {
             return;
         }
-        Vector3 mousePos = inputManager.GetSelectedMapPosition();
+        Vector3 mousePos = inputManager.GetSelectedMousePos();
         Vector3Int gridPos = grid.WorldToCell(mousePos);
 
        placementState.OnAction(gridPos);
 
     }
 
-    ///// <summary>
-    ///// Check if object can be placed on cell
-    ///// </summary>
-    ///// <param name="gridPos"></param>
-    ///// <param name="selectedObjectIndex"></param>
-    ///// <returns></returns>
-    //private bool CheckPlacementValidity(Vector3Int gridPos, int selectedObjectIndex)
-    //{
-    //    return gridData.CanPlaceObjectAt(gridPos, inventory.objectsData[selectedObjectIndex].Size);
-    //}
+    /// <summary>
+    /// Stops placement/removal, disables grid visualization, and clears state.
+    /// </summary>
     private void StopPlacement()
     {
         if (placementState == null) return;
@@ -142,36 +127,19 @@ public class PlacementSystem : MonoBehaviour
 
     private void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            StartSimulation();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            ResetObjects();
-        }
-
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            StartRemoving();
-        }
-
-
         if (placementState == null) { return; }
+
         // Get mouse postion and convert to grid position
-        Vector3 mousePos = inputManager.GetSelectedMapPosition();
+        Vector3 mousePos = inputManager.GetSelectedMousePos();
         Vector3Int gridPos = grid.WorldToCell(mousePos);
 
+        // check if mouse moved
         if (lastDetectedPos != gridPos)
         {
             placementState.UpdateState(gridPos);
             lastDetectedPos = gridPos;
         }
     }
-
-    //TODO Simulationsmethoden als State ?? Definitv PlaceSavedObjects
 
     /// <summary>
     /// Enables physics and starts simulation
@@ -182,7 +150,7 @@ public class PlacementSystem : MonoBehaviour
         hudManager.InDeleteMode(isRemoving);
         isSimulating = true;
         StopPlacement();
-        cargoPlacement.EnablePhysics();  
+        cargoManager.SimulatePhysics();
     }
 
     ///// <summary>
@@ -193,10 +161,9 @@ public class PlacementSystem : MonoBehaviour
         inventoryManager.SetButtonSelection(lastUsedIndex, false);
         isSimulating = false;
         StopPlacement();
-        cargoPlacement.DestroyAllCargo();
+        cargoManager.DestroyAllCargo();
         PlaceSavedObjects();
     }
-
 
     ///// <summary>
     ///// Places all objects saved in Griddata
@@ -210,18 +177,14 @@ public class PlacementSystem : MonoBehaviour
 
             // Find the prefab based on the ID in the inventory
             var prefabData = inventory.objectsData.Find(obj => obj.ID == data.ID);
-            if (prefabData == null)
-            {
-                Debug.LogWarning($"No prefab found for ID {data.ID}");
-                continue;
-            }
 
             // Instantiate and position the object
             GameObject newObject = Instantiate(prefabData.Prefab, grid.CellToWorld(position), Quaternion.identity);
-            cargoPlacement.AddCargoToList( newObject, data.PlacedObjectIndex);
+            cargoManager.AddItemToList(newObject, data.PlacedObjectIndex);
         }
     }
 
 
 }
+
 

@@ -5,31 +5,23 @@ using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class MenuScript : MonoBehaviour
+public class MenuController : MonoBehaviour
 {
     private GridData gridData;
     private GameManagement gameManagement;
     private GameObject startButtons;
-    public GameObject dropdownPanel;
+    public GameObject restartButtons;
     private bool toggleRestart = false;
 
     public void Awake()
     {
         gameManagement = GameObject.FindWithTag("GameManager").GetComponent<GameManagement>();
         gridData = GameObject.FindWithTag("CargoData").GetComponent<GridData>();
-
-    }
-
-    public static GameObject GetEventClickedButton()
-    {
-        EventSystem currentEvent = EventSystem.current;
-        return currentEvent.currentSelectedGameObject;
     }
 
     
     public void LoadLevel()
     {
-        Debug.Log("here");
         gameManagement.LoadLevelScene();
         Time.timeScale = 1.0f;
     }
@@ -51,20 +43,18 @@ public class MenuScript : MonoBehaviour
 
     public void ShowRestartButtons()
     {
-        dropdownPanel.SetActive(true);
+        restartButtons.SetActive(true);
     }
 
     public void HideRestartButtons()
     {
-        dropdownPanel.SetActive(false);
+        restartButtons.SetActive(false);
     }
 
     public void LoadStackingSystem()
     {
-        Debug.Log("here2");
         Destroy(gridData.gameObject);
         gameManagement.LoadPlacementScene();
-        //gameManagement.currentLevelIndex--;
     }
 
     public void Unpause()

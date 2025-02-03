@@ -8,7 +8,7 @@ public class PlacementSceneManager : MonoBehaviour
     DialogueSystemController dialogueController;
 
     [SerializeField]
-    MenuScript menuScript;
+    MenuController menuController;
 
     [SerializeField]
     PlacementHUDManager placementHUD;

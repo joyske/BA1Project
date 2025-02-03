@@ -56,6 +56,9 @@ public class GameManagement : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Increase Level when switching to next Level
+    /// </summary>
     public void IncreaseLevel()
     {
         DestroyCargo();

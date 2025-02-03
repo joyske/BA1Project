@@ -41,7 +41,6 @@ public class ReloadCargo : MonoBehaviour
     private IEnumerator InitializeBoatAndCargo()
     {
         Vector3 targetPos = new Vector3(0, 0, 0);
-        //GameObject newObject = Instantiate(boat, targetPos, Quaternion.identity);
         newObject.transform.eulerAngles = new Vector3(newObject.transform.eulerAngles.x, yRotation, newObject.transform.eulerAngles.z);
         grid = newObject.GetComponentInChildren<Grid>();
         newObject.GetComponent<ShipMovement>().enabled = false;
@@ -65,6 +64,7 @@ public class ReloadCargo : MonoBehaviour
     /// </summary>
     public void PlaceSavedObjects()
     {
+
         foreach (var entry in gridData.placedObjects)
         {
             Vector3Int position = entry.Key; // Grid position
@@ -72,45 +72,13 @@ public class ReloadCargo : MonoBehaviour
 
             // Find the prefab based on the ID in the inventory
             var prefabData = inventory.objectsData.Find(obj => obj.ID == data.ID);
-            if (prefabData == null)
-            {
-                Debug.LogWarning($"No prefab found for ID {data.ID}");
-                continue;
-            }
 
             // Instantiate and position the object
             GameObject obj = Instantiate(prefabData.Prefab, grid.CellToWorld(position), Quaternion.identity);
-            EnablePhysics(obj);
-            
+            PhysicsToggle.EnablePhysics(obj);
 
         }
     }
 
-    /// <summary>
-    /// Enables physics for the given object.
-    /// </summary>
-    /// <param name="obj"></param>
-    public void EnablePhysics(GameObject obj)
-    {
-        // enable physics simulation
-        Rigidbody rb = obj.GetComponent<Rigidbody>();
-        rb.isKinematic = false;
-
-        if (obj.GetComponent<SphereCollider>())
-        {
-            obj.GetComponent<BoxCollider>().enabled = false;
-            obj.GetComponent<SphereCollider>().enabled = true;
-        }
-
-        if (obj.GetComponent<MeshCollider>())
-        {
-
-            if (obj.GetComponent<BoxCollider>())
-            {
-                obj.GetComponent<BoxCollider>().enabled = false;
-                obj.GetComponent<MeshCollider>().enabled = true;
-            }
-
-        }
-    }
+   
 }

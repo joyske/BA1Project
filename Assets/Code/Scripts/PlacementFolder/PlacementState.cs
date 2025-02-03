@@ -10,16 +10,17 @@ public class PlacementState : IPlacementState
     PreviewSystem previewSystem;
     Inventory inventory;
     GridData gridData;
-    CargoPlacement cargoPlacement;
+    CargoManager cargoManager;
     InventoryUIManager inventoryManager;
-    public PlacementState(int iD, Grid grid, PreviewSystem previewSystem, Inventory inventory, GridData gridData, CargoPlacement cargoPlacement, InventoryUIManager inventoryManager)
+
+    public PlacementState(int iD, Grid grid, PreviewSystem previewSystem, Inventory inventory, GridData gridData, CargoManager cargoManager, InventoryUIManager inventoryManager)
     {
         ID = iD;
         this.grid = grid;
         this.previewSystem = previewSystem;
         this.inventory = inventory;
         this.gridData = gridData;
-        this.cargoPlacement = cargoPlacement;
+        this.cargoManager = cargoManager;
         this.inventoryManager = inventoryManager;
 
 
@@ -28,6 +29,7 @@ public class PlacementState : IPlacementState
         {
             Debug.LogError($"NO ID FOUND {ID}");
         }
+
         if (selectedObjectIndex > -1)
         {
 
@@ -45,25 +47,28 @@ public class PlacementState : IPlacementState
         previewSystem.StopShowingPreview();
     }
 
-
+    /// <summary>
+    /// Places an item if valid, updates grid data and inventory.
+    /// </summary>
+    /// <param name="gridPos">Target grid position.</param>
     public void OnAction(Vector3Int gridPos)
     {
-        if (inventoryManager.CanPlaceItem(ID))
+        if (inventoryManager.CheckIfItemsLeft(ID))
         {
             bool placementValid = CheckPlacementValidity(gridPos, selectedObjectIndex);
             if (!placementValid) return;
 
-            int index = cargoPlacement.Placement(inventory.objectsData[selectedObjectIndex].Prefab, grid.CellToWorld(gridPos));
+            int index = cargoManager.Placement(inventory.objectsData[selectedObjectIndex].Prefab, grid.CellToWorld(gridPos));
 
             gridData.AddObjectAt(gridPos, inventory.objectsData[selectedObjectIndex].Size, inventory.objectsData[selectedObjectIndex].ID, index);
             previewSystem.UpdatePosition(grid.CellToWorld(gridPos), false);
             inventoryManager.DecreasePlacedItem(inventory.objectsData[selectedObjectIndex].ID);
-            if (!inventoryManager.CanPlaceItem(ID))
+            if (!inventoryManager.CheckIfItemsLeft(ID))
             {
                 previewSystem.StopShowingPreview();
             }
-            //UpdatePlacementCount(ID);
-        } else
+        } 
+        else
         {
             previewSystem.StopShowingPreview();
         }

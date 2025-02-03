@@ -9,11 +9,17 @@ public class PreviewSystem : MonoBehaviour
     [SerializeField]
     private float previewYOffset = 0.06f;
 
-    private GameObject previewObject;
+    private GameObject previewItem;
 
     [SerializeField]
     private Material previewMaterialsPrefab;
     private Material previewMaterialInstance;
+    [SerializeField]
+
+    private Material previewMaterialDelete;
+
+    private GameObject lastHoveredObject;
+
 
 
     private void Start()
@@ -24,16 +30,21 @@ public class PreviewSystem : MonoBehaviour
 
     public void StartShowingPlacementPreview(GameObject prefab)
     {
-        previewObject = Instantiate(prefab);
-        PreparePreview(previewObject);
+        previewItem = Instantiate(prefab);
+        PreparePreview(previewItem);
     }
 
 
-    private void PreparePreview(GameObject previewObject)
+
+    /// <summary>
+    /// Set material of selected item for preview
+    /// </summary>
+    /// <param name="previewItem"></param>
+    private void PreparePreview(GameObject previewItem)
     {
-        Renderer[] renderers = previewObject.GetComponentsInChildren<Renderer>();
-        previewObject.layer = 0;
-        foreach (Transform child in previewObject.transform)
+        Renderer[] renderers = previewItem.GetComponentsInChildren<Renderer>();
+        previewItem.layer = 0;
+        foreach (Transform child in previewItem.transform)
         {
             child.gameObject.layer = 0;    
         }
@@ -48,10 +59,15 @@ public class PreviewSystem : MonoBehaviour
         }
     }
 
-
     public void StopShowingPreview()
     {
-        Destroy(previewObject);
+        Destroy(previewItem);
+
+        if (lastHoveredObject != null)
+        {
+            ResetMaterial(lastHoveredObject);
+            lastHoveredObject = null; // Clear reference
+        }
     }
 
     public void UpdatePosition(Vector3 pos, bool validity)
@@ -70,12 +86,71 @@ public class PreviewSystem : MonoBehaviour
 
     private void MovePreview(Vector3 pos)
     {
-        if (previewObject != null && pos.x < 1)
-        previewObject.transform.position = new Vector3(pos.x, pos.y + previewYOffset, pos.z);
+        if (previewItem != null && pos.x < 1)
+        previewItem.transform.position = new Vector3(pos.x, pos.y + previewYOffset, pos.z);
     }
+
+
+
+
+
+
+
+
+
+
+
 
     internal void StartShowingRemovePreview()
     {
-        //TODO set color of selected object
+        // Raycast to find the object under the cursor
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit))
+        {
+            GameObject hoveredObject = hit.collider.gameObject;
+            // Ensure we only highlight objects with the "Cargo" tag
+            if (!hoveredObject.CompareTag("Player"))
+            {
+                StopShowingPreview();
+                return;
+            }
+            Renderer renderer = hoveredObject.GetComponentInChildren<Renderer>();
+            previewMaterialsPrefab = renderer.material;
+            if (renderer == null) return;
+            // Reset the material of the last hovered object (if different)
+            if (lastHoveredObject != null && lastHoveredObject != hoveredObject)
+            {
+                ResetMaterial(lastHoveredObject);
+            }
+
+            // Store reference to the current hovered object
+            lastHoveredObject = hoveredObject;
+
+            // Set the material to preview
+            Material[] materials = renderer.materials;
+            for (int i = 0; i < materials.Length; i++)
+            {
+                materials[i] = previewMaterialDelete;
+            }
+            renderer.materials = materials;
+        }
+        else
+        {
+            // No object under the cursor  Reset last hovered object
+            StopShowingPreview();
+        }
+    }
+
+
+    // Function to reset the material of an object
+    private void ResetMaterial(GameObject obj)
+    {
+        Renderer[] renderers = obj.GetComponentsInChildren<Renderer>();
+        foreach (Renderer renderer in renderers)
+        {
+            renderer.material = previewMaterialsPrefab; // Reset to original
+        }
     }
 }
