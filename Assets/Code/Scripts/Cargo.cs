@@ -10,6 +10,9 @@ public class Cargo : MonoBehaviour
     private bool subtractedCargo;
     private bool leftBoat = false;
     private bool hitGround = false;
+    private AudioSource splashSound;
+    public List<AudioClip> audioClips;
+    private AudioClip currentClip;
 
     private BoxCollider boatColliderZone;
     private Transform player;
@@ -31,6 +34,9 @@ public class Cargo : MonoBehaviour
         playerHUD = GameObject.FindWithTag("HUD").GetComponent<PlayerHUD>();
         floater.enabled = true;
         GetComponent<Rigidbody>().useGravity = false;
+
+        splashSound = GetComponent<AudioSource>();
+        splashSound.pitch = Random.Range(0.85f, 1.15f);
 
         if (GetComponent<SphereCollider>())
         {
@@ -61,6 +67,11 @@ public class Cargo : MonoBehaviour
         {
             playerHUD.currentCargoAmount -= 1;
             subtractedCargo = true;
+
+            currentClip = audioClips[Random.Range(0, audioClips.Count)];
+            splashSound.clip = currentClip;
+            splashSound.Play();
+
         }
     }
 
