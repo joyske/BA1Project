@@ -93,7 +93,7 @@ public class InventoryUIManager : MonoBehaviour
 
 
     /// <summary>
-    ///  Initalize Dictionary with Items and the amount to place
+    ///  Initalize Dictionary with Items and Quantity
     /// </summary>
     private void InitItemCounts()
     {
@@ -109,6 +109,10 @@ public class InventoryUIManager : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Increment Quantity of item (when removing one)
+    /// </summary>
+    /// <param name="itemID"></param>
     public void IncrementPlacedItem(int itemID)
     {
         placedItemCounts[itemID]++;
@@ -116,6 +120,11 @@ public class InventoryUIManager : MonoBehaviour
         hudManager.UpdateStart(CanStartGame());
     }
 
+
+    /// <summary>
+    /// Decrease Quantity of item (when placing one)
+    /// </summary>
+    /// <param name="itemID"></param>
     public void DecreasePlacedItem(int itemID)
     {
         placedItemCounts[itemID]--;
@@ -128,7 +137,13 @@ public class InventoryUIManager : MonoBehaviour
         hudManager.UpdateStart(CanStartGame());
     }
 
-    public bool CanPlaceItem(int itemID)
+
+    /// <summary>
+    /// Checks if Items of type ID are left to place (Quantity > 0)
+    /// </summary>
+    /// <param name="itemID"></param>
+    /// <returns></returns>
+    public bool CheckIfItemsLeft(int itemID)
     {
         if (placedItemCounts[itemID] == 0)
         {
@@ -139,7 +154,11 @@ public class InventoryUIManager : MonoBehaviour
         return true;
     }
 
-    // Get the placed count for an item
+    /// <summary>
+    /// Return total pleaced items count
+    /// </summary>
+    /// <param name="itemID"></param>
+    /// <returns></returns>
     public int GetPlacedItemCount(int itemID)
     {
         if (placedItemCounts.ContainsKey(itemID))
@@ -149,6 +168,12 @@ public class InventoryUIManager : MonoBehaviour
         return 0;
     }
 
+    /// <summary>
+    /// Get count of item with ID itemID in given scene
+    /// </summary>
+    /// <param name="sceneID"></param>
+    /// <param name="itemID"></param>
+    /// <returns></returns>
     public int GetTotalItemCount(int sceneID, int itemID)
     {
         var sceneData = inventorySceneData.SceneData.Find(data => data.SceneID == sceneID);
@@ -157,7 +182,7 @@ public class InventoryUIManager : MonoBehaviour
     }
 
 
-    public void ResetPlacementData()
+    public void ResetCountData()
     {
         placedItemCounts.Clear();
     }

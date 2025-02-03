@@ -8,7 +8,7 @@ public class PlacementHUDManager : MonoBehaviour
 {
 
 
-    [SerializeField] PlacementSystem placementSystem;
+    [SerializeField] PlacementManager placementManager;
     private GridData gridData;
 
 
@@ -24,11 +24,6 @@ public class PlacementHUDManager : MonoBehaviour
     {
         gameManagement = GameObject.FindWithTag("GameManager").GetComponent<GameManagement>();
         gridData = GameObject.FindWithTag("CargoData").GetComponent<GridData>();
-        /*if (SceneManager.GetActiveScene().buildIndex == 0)
-        {
-            gridData.placedObjects.Clear();
-        }*/
-
     }
 
     public static GameObject GetEventClickedButton()
@@ -39,7 +34,6 @@ public class PlacementHUDManager : MonoBehaviour
 
     public void LoadLevel()
     {
-        Debug.Log("here");
         gameManagement.LoadLevelScene();
         Time.timeScale = 1.0f;
     }
@@ -71,7 +65,7 @@ public class PlacementHUDManager : MonoBehaviour
         transform.GetChild(0).transform.gameObject.SetActive(false);
         transform.GetChild(1).GetComponent<Button>().interactable = false;
         transform.GetChild(2).GetComponent<Button>().interactable = false;
-        placementSystem.StartSimulation();
+        placementManager.StartSimulation();
     }
 
     public void ResetSimulation()
@@ -80,20 +74,18 @@ public class PlacementHUDManager : MonoBehaviour
         transform.GetChild(1).GetComponent<Button>().interactable = true;
         transform.GetChild(2).GetComponent<Button>().interactable = true;
         EndToggle(simulateToggle, simulateSwitch);
-        placementSystem.ResetObjects();
+        placementManager.ResetObjects();
     }
 
     public void LoadStackingSystem()
     {
-        Debug.Log("here2");
         Destroy(gridData.gameObject);
         gameManagement.LoadPlacementScene();
-        //gameManagement.currentLevelIndex--;
     }
 
     public void Delete()
     {
-        placementSystem.StartRemoving();
+        placementManager.StartRemoving();
 
     }
 

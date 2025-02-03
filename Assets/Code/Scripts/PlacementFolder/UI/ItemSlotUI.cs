@@ -18,13 +18,20 @@ public class ItemSlotUI : MonoBehaviour
     Button slotButton;
 
     [SerializeField]
-    PlacementSystem placementSystem;
+    PlacementManager placementManager;
 
     private void Awake()
     {
         slotButton = gameObject.GetComponent<Button>();
     }
 
+
+    /// <summary>
+    /// Initializes Data 
+    /// </summary>
+    /// <param name="ID"></param>
+    /// <param name="itemSprite"></param>
+    /// <param name="itemQuantity"></param>
     public void SetData(int ID, Sprite itemSprite, int itemQuantity)
     {
         itemID = ID;
@@ -34,7 +41,7 @@ public class ItemSlotUI : MonoBehaviour
 
         // Add listener for onClick 
         slotButton.onClick.RemoveAllListeners();
-        slotButton.onClick.AddListener(() => placementSystem.StartPlacement(itemID));
+        slotButton.onClick.AddListener(() => placementManager.StartPlacement(itemID));
 
     }
 

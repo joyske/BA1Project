@@ -200,8 +200,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4705529148831234224}
-        m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
+      - m_Target: {fileID: 7309490047098233332}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
         m_MethodName: BackToMainMenu
         m_Mode: 1
         m_Arguments:
@@ -770,8 +770,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4705529148831234224}
-        m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
+      - m_Target: {fileID: 7309490047098233332}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
         m_MethodName: LoadStackingSystem
         m_Mode: 1
         m_Arguments:
@@ -903,8 +903,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4705529148831234224}
-        m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
+      - m_Target: {fileID: 7309490047098233332}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
         m_MethodName: LoadLevel
         m_Mode: 1
         m_Arguments:
@@ -927,7 +927,7 @@ GameObject:
   - component: {fileID: 7400506888647330566}
   - component: {fileID: 5417814273749879140}
   - component: {fileID: 8404619085997752046}
-  - component: {fileID: 4705529148831234224}
+  - component: {fileID: 7309490047098233332}
   m_Layer: 5
   m_Name: PauseMenu
   m_TagString: Untagged
@@ -951,7 +951,6 @@ RectTransform:
   - {fileID: 7867838503017462993}
   - {fileID: 7703239813198769769}
   - {fileID: 4082503365621362163}
-  - {fileID: 8807461947972649155}
   - {fileID: 6188711659547931828}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1023,7 +1022,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &4705529148831234224
+--- !u!114 &7309490047098233332
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1032,10 +1031,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5996663557785568117}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c9dd0119f84ec54b9dfecb569e1e10e, type: 3}
+  m_Script: {fileID: 11500000, guid: 49beba8fcf2687142997af2435396911, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropdownPanel: {fileID: 0}
+  restartButtons: {fileID: 6352882634794738173}
 --- !u!1 &6352882634794738173
 GameObject:
   m_ObjectHideFlags: 0
@@ -1126,28 +1125,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 4705529148831234224}
-          m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
-          m_MethodName: ShowRestartButtons
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
   - eventID: 1
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 4705529148831234224}
-          m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
+        - m_Target: {fileID: 7309490047098233332}
+          m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
           m_MethodName: HideRestartButtons
           m_Mode: 1
           m_Arguments:
@@ -1170,6 +1153,7 @@ GameObject:
   - component: {fileID: 8467177298670915262}
   - component: {fileID: 7390859053772046130}
   - component: {fileID: 6617926555094716697}
+  - component: {fileID: 3915308326936154722}
   m_Layer: 5
   m_Name: RestartButton
   m_TagString: Untagged
@@ -1280,6 +1264,35 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3915308326936154722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7027958556352930067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7309490047098233332}
+          m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
+          m_MethodName: ShowRestartButtons
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &7248252448068599963
 GameObject:
   m_ObjectHideFlags: 0
@@ -1401,8 +1414,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4705529148831234224}
-        m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
+      - m_Target: {fileID: 7309490047098233332}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
         m_MethodName: Unpause
         m_Mode: 1
         m_Arguments:
@@ -1413,127 +1426,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!1 &7749240478907491332
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8807461947972649155}
-  - component: {fileID: 8084172212532944397}
-  - component: {fileID: 1049510955106774446}
-  - component: {fileID: 1143086441240856914}
-  m_Layer: 5
-  m_Name: RestartButtonTrigger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &8807461947972649155
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7749240478907491332}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7111986265967697678}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -4.7019033, y: -35.251633}
-  m_SizeDelta: {x: -585.1838, y: -361.8583}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &8084172212532944397
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7749240478907491332}
-  m_CullTransparentMesh: 1
---- !u!114 &1049510955106774446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7749240478907491332}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!114 &1143086441240856914
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7749240478907491332}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 4705529148831234224}
-          m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
-          m_MethodName: ToggleRestart
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 1
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 4705529148831234224}
-          m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
-          m_MethodName: ToggleRestart
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &8994073498979913336
 GameObject:
   m_ObjectHideFlags: 0

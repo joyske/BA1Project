@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 public class SliderGradient : MonoBehaviour
 {
     [SerializeField] private Gradient gradient = null;

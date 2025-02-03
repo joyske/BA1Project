@@ -27,6 +27,10 @@ public class DialogueSystemController : MonoBehaviour
     Image[] stars;
 
 
+
+    /// <summary>
+    /// Initializes Dialogue for Scene
+    /// </summary>
     void InitDialogues()
     {
         gameManagement = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagement>();
@@ -43,7 +47,6 @@ public class DialogueSystemController : MonoBehaviour
         else
         {
             playerHUD = GameObject.FindGameObjectWithTag("HUD").GetComponent<PlayerHUD>();
-            //playerHUD.InGoal();
             int starLevel = CalculateStarLevel();
             dialogueText = GetFinishDialogue(starLevel);
             ShowStars(starLevel);
@@ -52,6 +55,11 @@ public class DialogueSystemController : MonoBehaviour
         SetNPCDialogue();
     }
 
+
+    /// <summary>
+    /// Calculates left cargo percentage and star level
+    /// </summary>
+    /// <returns></returns>
     private int CalculateStarLevel()
     {
         float currentCargo = (float) playerHUD.finalCargo;
@@ -69,6 +77,11 @@ public class DialogueSystemController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Return Dialogue based on star level
+    /// </summary>
+    /// <param name="starLevel"></param>
+    /// <returns></returns>
     private string GetFinishDialogue(int starLevel)
     {
         return starLevel switch
@@ -86,6 +99,9 @@ public class DialogueSystemController : MonoBehaviour
         return npcDialogueData.MissionText;
     }
 
+    /// <summary>
+    /// Sets sprite and dialogue text for scene
+    /// </summary>
     private void SetNPCDialogue()
     {
         dialogueUI.SetCharacterSprite(npcDialogueData.Sprite);
@@ -96,8 +112,8 @@ public class DialogueSystemController : MonoBehaviour
     {
         InitDialogues();
         dialogueUI.gameObject.SetActive(true);
-       // Time.timeScale = 0;
     }
+
 
     public void ShowStars(int starCount)
     {

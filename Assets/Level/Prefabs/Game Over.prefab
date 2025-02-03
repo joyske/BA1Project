@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 3134304622920119952}
   - component: {fileID: 3883911429008654696}
   - component: {fileID: 4053787115628486729}
-  - component: {fileID: 6345976297976961785}
+  - component: {fileID: 4949210215176008082}
   m_Layer: 5
   m_Name: Game Over
   m_TagString: Untagged
@@ -182,7 +182,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &6345976297976961785
+--- !u!114 &4949210215176008082
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -191,10 +191,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3056321180493961588}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c9dd0119f84ec54b9dfecb569e1e10e, type: 3}
+  m_Script: {fileID: 11500000, guid: 49beba8fcf2687142997af2435396911, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropdownPanel: {fileID: 0}
+  restartButtons: {fileID: 0}
 --- !u!1 &3058476774453986072
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,8 +395,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6345976297976961785}
-        m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
+      - m_Target: {fileID: 4949210215176008082}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
         m_MethodName: BackToMainMenu
         m_Mode: 1
         m_Arguments:
@@ -686,8 +686,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6345976297976961785}
-        m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
+      - m_Target: {fileID: 4949210215176008082}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
         m_MethodName: LoadStackingSystem
         m_Mode: 1
         m_Arguments:
@@ -819,8 +819,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6345976297976961785}
-        m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
+      - m_Target: {fileID: 4949210215176008082}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
         m_MethodName: LoadLevel
         m_Mode: 1
         m_Arguments:
