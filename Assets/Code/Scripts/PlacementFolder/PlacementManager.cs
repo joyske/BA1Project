@@ -47,12 +47,22 @@ public class PlacementManager : MonoBehaviour
 
     bool isSimulating, isRemoving;
 
+    private AudioSource audioSource;
+
+    [SerializeField]
+    private List<AudioClip> placementSounds;
+
+
+    [SerializeField]
+    private AudioClip removalSound;
+
     private void Start()
     {
         isSimulating = false;
         isRemoving = false; 
         StopPlacement();
         Cursor.visible = true;
+        audioSource = GetComponent<AudioSource>();
     }
 
     /// <summary>
@@ -69,7 +79,7 @@ public class PlacementManager : MonoBehaviour
             lastUsedIndex = ID;
             StopPlacement();
             gridVisualization.SetActive(true);
-            placementState = new PlacementState(ID, grid, previewSystem, inventory, gridData, cargoManager, inventoryManager);
+            placementState = new PlacementState(ID, grid, previewSystem, inventory, gridData, cargoManager, inventoryManager, placementSounds, audioSource);
             inputManager.OnClicked += PlaceItem;
             inputManager.OnExit += StopPlacement;
         }
@@ -87,7 +97,7 @@ public class PlacementManager : MonoBehaviour
             hudManager.InDeleteMode(isRemoving);
             StopPlacement();
             gridVisualization.SetActive(true);
-            placementState = new RemovingState(grid, previewSystem, gridData, cargoManager, inventoryManager);
+            placementState = new RemovingState(grid, previewSystem, gridData, cargoManager, inventoryManager, removalSound, audioSource);
             inputManager.OnClicked += PlaceItem;
             inputManager.OnExit += StopPlacement;
             isRemoving = false;

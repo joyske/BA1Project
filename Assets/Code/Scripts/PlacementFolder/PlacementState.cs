@@ -12,8 +12,10 @@ public class PlacementState : IPlacementState
     GridData gridData;
     CargoManager cargoManager;
     InventoryUIManager inventoryManager;
+    List<AudioClip> placementSounds;
+    AudioSource audioSource;
 
-    public PlacementState(int iD, Grid grid, PreviewSystem previewSystem, Inventory inventory, GridData gridData, CargoManager cargoManager, InventoryUIManager inventoryManager)
+    public PlacementState(int iD, Grid grid, PreviewSystem previewSystem, Inventory inventory, GridData gridData, CargoManager cargoManager, InventoryUIManager inventoryManager, List<AudioClip> placementSounds, AudioSource audioSource)
     {
         ID = iD;
         this.grid = grid;
@@ -22,7 +24,8 @@ public class PlacementState : IPlacementState
         this.gridData = gridData;
         this.cargoManager = cargoManager;
         this.inventoryManager = inventoryManager;
-
+        this.placementSounds = placementSounds;
+        this.audioSource = audioSource;
 
         selectedObjectIndex = inventory.objectsData.FindIndex(data => data.ID == ID);  
         if (selectedObjectIndex < 0)
@@ -67,6 +70,7 @@ public class PlacementState : IPlacementState
             {
                 previewSystem.StopShowingPreview();
             }
+            audioSource.PlayOneShot(placementSounds[Random.Range(0, placementSounds.Count)]);
         } 
         else
         {

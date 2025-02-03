@@ -11,14 +11,18 @@ public class RemovingState : IPlacementState
     GridData gridData;
     CargoManager cargoManager;
     InventoryUIManager inventoryManager;
+    AudioClip removalSound;
+    AudioSource audioSource;
 
-    public RemovingState(Grid grid, PreviewSystem previewSystem,  GridData gridData, CargoManager cargoManager, InventoryUIManager inventoryManager)
+    public RemovingState(Grid grid, PreviewSystem previewSystem,  GridData gridData, CargoManager cargoManager, InventoryUIManager inventoryManager, AudioClip removalSound, AudioSource audioSource)
     {
         this.grid = grid;
         this.previewSystem = previewSystem;
         this.gridData = gridData;
         this.cargoManager = cargoManager;
         this.inventoryManager = inventoryManager;
+        this.removalSound = removalSound;
+        this.audioSource = audioSource;
 
 
         previewSystem.StartShowingRemovePreview();
@@ -72,6 +76,7 @@ public class RemovingState : IPlacementState
             selectedData.RemoveObjectAt(gridPos);
             cargoManager.RemoveObjectAt(gameObjectindex);
             inventoryManager.IncrementPlacedItem(itemID);
+            audioSource.PlayOneShot(removalSound);
         }
 
         Vector3 cellPos = grid.CellToWorld(gridPos);
