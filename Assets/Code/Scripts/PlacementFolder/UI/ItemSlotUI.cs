@@ -20,6 +20,12 @@ public class ItemSlotUI : MonoBehaviour
     [SerializeField]
     PlacementManager placementManager;
 
+    [SerializeField]
+    Sprite normalBG;
+
+    [SerializeField]
+    Sprite highlightedBG;
+
     private void Awake()
     {
         slotButton = gameObject.GetComponent<Button>();
@@ -65,7 +71,7 @@ public class ItemSlotUI : MonoBehaviour
     public void IsSelected(bool selected)
     {
 
-        Color color = selected ? Color.green : Color.white;
-        slotButton.GetComponent<Image>().color = color;
+        GetComponent<Image>().sprite = selected ? highlightedBG : normalBG;
+        //slotButton.GetComponent<Image>().color = color;
     }
 }
