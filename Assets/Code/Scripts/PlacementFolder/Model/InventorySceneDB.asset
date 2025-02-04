@@ -22,11 +22,13 @@ MonoBehaviour:
   - <SceneID>k__BackingField: 1
     <CountData>k__BackingField:
     - <ItemID>k__BackingField: 0
-      <TotalItemCount>k__BackingField: 16
+      <TotalItemCount>k__BackingField: 12
     - <ItemID>k__BackingField: 4
       <TotalItemCount>k__BackingField: 4
     - <ItemID>k__BackingField: 2
       <TotalItemCount>k__BackingField: 2
+    - <ItemID>k__BackingField: 1
+      <TotalItemCount>k__BackingField: 4
   - <SceneID>k__BackingField: 2
     <CountData>k__BackingField:
     - <ItemID>k__BackingField: 0

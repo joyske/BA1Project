@@ -68,10 +68,7 @@ public class MenuController : MonoBehaviour
         gameManagement.LoadTitleScreen();
     }
 
-    public void ExitGame()
-    {
-        Application.Quit();
-    }
+
 
 
 

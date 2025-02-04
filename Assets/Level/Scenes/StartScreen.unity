@@ -5244,7 +5244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d566e31a550d8024e89131ae040afce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLevelIndex: 0
+  currentLevelIndex: 2
   levelScenes:
   - FirstLevel
   - SecondLevel
@@ -7843,8 +7843,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
+      - m_Target: {fileID: 193145453}
+        m_TargetAssemblyTypeName: StartScreenHUD, Assembly-CSharp
         m_MethodName: ExitGame
         m_Mode: 1
         m_Arguments:
@@ -10081,6 +10081,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1155885030263434791, guid: 559feae2801af25469140efa2bc110de,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.2763439
+      objectReference: {fileID: 0}
+    - target: {fileID: 1155885030263434791, guid: 559feae2801af25469140efa2bc110de,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.4339623
+      objectReference: {fileID: 0}
+    - target: {fileID: 1155885030263434791, guid: 559feae2801af25469140efa2bc110de,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.3185631
+      objectReference: {fileID: 0}
     - target: {fileID: 2172473808230136944, guid: 559feae2801af25469140efa2bc110de,
         type: 3}
       propertyPath: m_Pivot.x
@@ -10183,17 +10198,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2264373740571898731, guid: 559feae2801af25469140efa2bc110de,
         type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2264373740571898731, guid: 559feae2801af25469140efa2bc110de,
+        type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7918640877021590525, guid: 559feae2801af25469140efa2bc110de,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -66.2
+      value: -23.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8117631878277859990, guid: 559feae2801af25469140efa2bc110de,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8117631878277859990, guid: 559feae2801af25469140efa2bc110de,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8117631878277859990, guid: 559feae2801af25469140efa2bc110de,
+        type: 3}
+      propertyPath: m_AnchorMin.x
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
