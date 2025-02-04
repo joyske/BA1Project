@@ -28,6 +28,7 @@ public class DialogueSystemController : MonoBehaviour
 
 
 
+
     /// <summary>
     /// Initializes Dialogue for Scene
     /// </summary>
@@ -105,7 +106,8 @@ public class DialogueSystemController : MonoBehaviour
     private void SetNPCDialogue()
     {
         dialogueUI.SetCharacterSprite(npcDialogueData.Sprite);
-        dialogueUI.SetDialogueText(dialogueText);   
+        dialogueUI.SetDialogueText(dialogueText);  
+        dialogueUI.SetName(npcDialogueData.Name);
     }
 
     public void ShowDialogue()
