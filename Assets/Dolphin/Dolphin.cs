@@ -74,7 +74,7 @@ public class Dolphin : MonoBehaviour
             || Physics.Raycast(transform.position, new Vector3(transform.forward.x, transform.forward.y - 1f, transform.forward.z).normalized, out hit, distance, hitLayers))
         {
             Debug.DrawRay(transform.position, transform.forward * distance, Color.red);
-            transform.eulerAngles = new Vector3(0f, -transform.rotation.eulerAngles.y, 0f);
+            transform.eulerAngles = new Vector3(0f, transform.rotation.eulerAngles.y - 180f, 0f);
 
             moveDirection = transform.forward;
         }
@@ -148,7 +148,7 @@ public class Dolphin : MonoBehaviour
         if (col.transform.tag == "Boat")
         {
             StartCoroutine(DestroyDolphin());
-            Debug.Log("HIIIII");
+           // Debug.Log("HIIIII");
         }
     }
 
