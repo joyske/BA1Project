@@ -9,57 +9,32 @@ public class OptionsManager : MonoBehaviour
 {
 
     [Header("UI Elements")]
-    public TMP_Dropdown windowModeDropdown;
-    public TMP_Dropdown resolutionDropdown;
-    public TMP_InputField maxFpsInput;
-    public Slider sensitivitySlider;
-    public Toggle invertYAxisToggle;
+    public Toggle fullscreenToggle;
     public Slider volumeSlider;
-
-    private Resolution[] resolutions;
 
     void Start()
     {
         // Load available resolutions
-        resolutions = Screen.resolutions;
-        resolutionDropdown.ClearOptions();
-        foreach (Resolution res in resolutions)
-        {
-            resolutionDropdown.options.Add(new TMP_Dropdown.OptionData(res.width + "x" + res.height));
-        }
-
         LoadSettings();
+        fullscreenToggle.onValueChanged.AddListener(SetFullscreen);
     }
 
-    public void SetResolution(int index)
+    public void SetFullscreen(bool isFullscreen)
     {
-        if (index >= 0 && index < resolutions.Length)
-        {
-            Screen.SetResolution(resolutions[index].width, resolutions[index].height, Screen.fullScreenMode);
-        }
-        SaveSettings();
+        Screen.fullScreen = isFullscreen;
+        PlayerPrefs.SetInt("Fullscreen", isFullscreen ? 1 : 0);
+        PlayerPrefs.Save();
     }
 
-    public void SetMaxFPS(string fpsText)
+    public void SetVolume()
     {
-        if (int.TryParse(fpsText, out int fps))
-        {
-            Application.targetFrameRate = (fps > 0) ? fps : -1;
-        }
-        SaveSettings();
-    }
-
-    public void SetVolume(float volume)
-    {
-        AudioListener.volume = volume;
-        PlayerPrefs.SetFloat("Volume", volume);
+        AudioListener.volume = volumeSlider.value;
+        PlayerPrefs.SetFloat("Volume", volumeSlider.value);
         SaveSettings();
     }
 
     private void SaveSettings()
     {
-        PlayerPrefs.SetInt("Resolution", resolutionDropdown.value);
-        PlayerPrefs.SetInt("MaxFPS", int.Parse(maxFpsInput.text));
         PlayerPrefs.SetFloat("Volume", volumeSlider.value);
         PlayerPrefs.Save();
     }
@@ -67,14 +42,12 @@ public class OptionsManager : MonoBehaviour
     private void LoadSettings()
     {
         //// Load values from PlayerPrefs
-        resolutionDropdown.value = PlayerPrefs.GetInt("Resolution", resolutions.Length - 1);
-        maxFpsInput.text = PlayerPrefs.GetInt("MaxFPS", -1).ToString();
         volumeSlider.value = PlayerPrefs.GetFloat("Volume", 1.0f);
+        fullscreenToggle.isOn = PlayerPrefs.GetInt("Fullscreen", 1) == 1;
 
         // Apply loaded settings
-        SetResolution(resolutionDropdown.value);
-        SetMaxFPS(maxFpsInput.text);
-        SetVolume(volumeSlider.value);
+        SetFullscreen(fullscreenToggle.isOn);
+        SetVolume();
     }
 
 

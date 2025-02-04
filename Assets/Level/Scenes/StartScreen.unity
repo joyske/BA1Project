@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2285.927, g: 5844.1763, b: 12032.204, a: 1}
+  m_IndirectSpecularColor: {r: 2285.928, g: 5844.1763, b: 12032.204, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1158,8 +1158,9 @@ GameObject:
   - component: {fileID: 193145451}
   - component: {fileID: 193145450}
   - component: {fileID: 193145449}
+  - component: {fileID: 193145453}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: HUD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1254,6 +1255,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &193145453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193145448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04f02e8b7e41a564ea26688615f598df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  optionsMenu: {fileID: 5466819989922050200}
 --- !u!1 &235086775
 GameObject:
   m_ObjectHideFlags: 0
@@ -3186,7 +3200,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 615894188}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 193145453}
+        m_TargetAssemblyTypeName: StartScreenHUD, Assembly-CSharp
+        m_MethodName: OpenOptionsMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &615894188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10179,6 +10205,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 983887115}
   m_SourcePrefab: {fileID: 100100000, guid: 559feae2801af25469140efa2bc110de, type: 3}
+--- !u!224 &5466819989922050200 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2172473808230136944, guid: 559feae2801af25469140efa2bc110de,
+    type: 3}
+  m_PrefabInstance: {fileID: 5466819989922050199}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
