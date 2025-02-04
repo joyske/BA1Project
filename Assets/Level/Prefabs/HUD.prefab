@@ -131,6 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterImage: {fileID: 2713733193931329982}
   dialogueText: {fileID: 3574691986436775991}
+  nameText: {fileID: 2688627996338399627}
 --- !u!1 &91043444079371418
 GameObject:
   m_ObjectHideFlags: 0
