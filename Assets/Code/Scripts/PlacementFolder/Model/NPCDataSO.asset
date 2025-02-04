@@ -24,6 +24,7 @@ MonoBehaviour:
     <MissionText>k__BackingField: "\"Hello there friend! I\u2019ve got critical supplies
       that need delivering\u2014some for the reef\u2019s creatures and some to heal
       those in need on the island. Lives depend on it, so please be swift and careful!\" "
+    <Name>k__BackingField: Doc Coral
     <Sprite>k__BackingField: {fileID: 21300000, guid: ec109ccc116f668499644215d32a792e,
       type: 3}
   - <SceneID>k__BackingField: 1
@@ -37,6 +38,7 @@ MonoBehaviour:
       needs moving. Don\u2019t be lollygagging, get it done, and I\u2019ll owe you
       one! But watch out, some of those crates are heavy enough to send ye straight
       to Davy Jones if ye ain't careful!\""
+    <Name>k__BackingField: Captain Salty Sam
     <Sprite>k__BackingField: {fileID: 21300000, guid: f5063a5bfbdc9ab4a9baa2369f915cfd,
       type: 3}
   - <SceneID>k__BackingField: 2
@@ -49,6 +51,7 @@ MonoBehaviour:
     <MissionText>k__BackingField: "\"Darling, I have a tavern to run, and these ingredients
       are essential for my newest creations! Don\u2019t let the butter melt or the
       flour blow away!\""
+    <Name>k__BackingField: Chef Olivia
     <Sprite>k__BackingField: {fileID: 21300000, guid: 9efd1df00688e474f907836848204a09,
       type: 3}
   - <SceneID>k__BackingField: 3
@@ -61,5 +64,6 @@ MonoBehaviour:
     <MissionText>k__BackingField: "\"Oh, oh, oh! I need these parts pronto\u2014my
       latest invention depends on it! Tick-tock, my friend, I can\u2019t waste a
       second!\""
+    <Name>k__BackingField: Tink Gearlock
     <Sprite>k__BackingField: {fileID: 21300000, guid: d864548942a82ea489e8b1b9b8f9d2ee,
       type: 3}

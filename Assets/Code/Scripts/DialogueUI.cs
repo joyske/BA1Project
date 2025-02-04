@@ -11,7 +11,9 @@ public class DialogueUI : MonoBehaviour
 
     [SerializeField]
     TMP_Text dialogueText;
-    
+
+    [SerializeField]
+    TMP_Text nameText;
 
     public void SetCharacterSprite(Sprite characterSprite)
     {
@@ -21,5 +23,10 @@ public class DialogueUI : MonoBehaviour
     public void SetDialogueText(string dialogue)
     {
         dialogueText.text = dialogue;
+    }
+
+    public void SetName(string name)
+    {
+        nameText.text = name;   
     }
 }
