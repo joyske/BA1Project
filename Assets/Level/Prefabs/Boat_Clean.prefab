@@ -465,7 +465,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8469eeccfe5333042830dfdaaaad90a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidBodyRef: {fileID: 8025174803762529428}
   turningSpeed: 130
   maxForwardSpeed: 1000
   maxBackwardSpeed: -500
