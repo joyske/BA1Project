@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 1385455983469797700}
   - component: {fileID: 2259050152429239846}
   - component: {fileID: 5451927087372343548}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: H3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1385455983469797700
 Transform:
@@ -63,8 +63,8 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5445656259204522987, guid: 7a2690d06896d33459a8792c089a06f7, type: 3}
-  - {fileID: 8387924124698411189, guid: 7a2690d06896d33459a8792c089a06f7, type: 3}
+  - {fileID: 2100000, guid: 5953492f37e67204ebd1be7381f9fc96, type: 2}
+  - {fileID: 2100000, guid: f645769d9a82cc4468afa18be21a513b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
