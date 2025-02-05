@@ -5,6 +5,7 @@ using UnityEngine.Rendering.HighDefinition;
 
 public class Floater : MonoBehaviour
 {
+    //Adjustable buoyancy parameters
     public Rigidbody rigidBodyRef;
     public float depthBeforeSub;
     public float displacementAmount;
@@ -12,23 +13,23 @@ public class Floater : MonoBehaviour
     public float waterDrag;
     public float waterAngularDrag;
 
+    //Parameters used for calculation
     [HideInInspector]
     public bool isSubmerged;
     public bool hitWater = false;
-
     private WaterSurface water;
     WaterSearchParameters Search;
     WaterSearchResult SearchResult;
 
     private void Start()
     {
+        //Get references
+
         hitWater = false;
         if(rigidBodyRef == null)
         {
             rigidBodyRef = GetComponent<Rigidbody>();
         }
-        
-        //Get water ref
         water = GameObject.FindGameObjectWithTag("Ocean").GetComponent<WaterSurface>();
     }
 
@@ -48,7 +49,6 @@ public class Floater : MonoBehaviour
             hitWater = true;
 
             float displacementMulti = Mathf.Clamp01(SearchResult.projectedPositionWS.y - transform.position.y / depthBeforeSub) * displacementAmount;
-
 
             //Counteract gravity
             rigidBodyRef.AddForceAtPosition(new Vector3(0f, Mathf.Abs(Physics.gravity.y) * displacementMulti, 0f), transform.position, ForceMode.Acceleration);

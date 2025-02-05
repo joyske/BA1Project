@@ -8,46 +8,45 @@ using System.Runtime.CompilerServices;
 
 public class HarborComponent : MonoBehaviour
 {
+    //Adjustable harbor parameters
     public float fadeDistance = 200.0f;
     public float minWaveHeightAlpha = 0.0f;
     public float maxWaveHeightAlpha = 1.0f;
-
     public bool isTargetHarbor;
 
+    //Parameters used for water height calculation
     private float currentWaveHeightAlpha;
     private float currentDistance;
     private float defaultFirstBand;
     private float defaultSecondBand;
-
-    public GameObject goalCylinder;
-
-    private WaterSurface water;
-    private GameObject playerRef;
-
     private List<HarborComponent> harborComponents;
     private HarborComponent closestHarbor;
-
     private float waveHeightAlpha;
     private int harborsInRange;
     private float lowestWaveHeightAlpha;
 
+    //References needed for calculation
+    public GameObject goalCylinder;
+    private WaterSurface water;
+    private GameObject playerRef;
+
     void Start()
     {
+        //Get references, set default values
         closestHarbor = GetComponent<HarborComponent>();
-
         water = GameObject.FindGameObjectWithTag("Ocean").GetComponent<WaterSurface>();
-        
         playerRef = GameObject.FindGameObjectWithTag("Boat");
-
         defaultFirstBand = water.largeBand0Multiplier;
         defaultSecondBand = water.largeBand1Multiplier;
 
+        //Deactivate goal cylinder if not goal
         if (!isTargetHarbor) { Destroy(goalCylinder); }
         else { harborComponents = FindObjectsByType<HarborComponent>(FindObjectsSortMode.None).ToList(); }        
     }
 
     void Update()
     {
+        //Update currentDistance, run calculation off of target harbor
         currentDistance = Vector3.Distance(transform.position, playerRef.transform.position);
 
         if (isTargetHarbor)
@@ -57,9 +56,7 @@ public class HarborComponent : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
+    
     void calculateCurrentWaveHeightAlpha()
     {
         currentWaveHeightAlpha = 1;
