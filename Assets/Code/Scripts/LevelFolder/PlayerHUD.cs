@@ -39,6 +39,23 @@ public class PlayerHUD : MonoBehaviour
     LevelHUDManager levelHUDManager;
 
 
+    [SerializeField]
+    public Transform controls;
+
+
+    private void Start()
+    {
+        StartCoroutine(HideControls(8f));
+    }
+
+    IEnumerator HideControls(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        if (controls != null) {
+            controls.gameObject.SetActive(false);
+        }
+    }
+
     public void InitHUD()
     {
         player = GameObject.FindWithTag("Boat").transform;

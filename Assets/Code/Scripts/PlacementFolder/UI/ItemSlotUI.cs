@@ -70,8 +70,6 @@ public class ItemSlotUI : MonoBehaviour
 
     public void IsSelected(bool selected)
     {
-
         GetComponent<Image>().sprite = selected ? highlightedBG : normalBG;
-        //slotButton.GetComponent<Image>().color = color;
     }
 }

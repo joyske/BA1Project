@@ -23,15 +23,11 @@ public class RemovingState : IPlacementState
         this.inventoryManager = inventoryManager;
         this.removalSound = removalSound;
         this.audioSource = audioSource;
-
-
-        previewSystem.StartShowingRemovePreview();
         this.inventoryManager = inventoryManager;
     }
 
     public void EndState()
     {
-      // previewSystem.StopShowingPreview();
     }
 
 
@@ -62,11 +58,7 @@ public class RemovingState : IPlacementState
             selectedData = gridData;
         }
 
-        if (selectedData == null) 
-        {
-            // TODO sound
-        } 
-        else
+        if (selectedData != null) 
         {
             // delete from data and scene and update ui
             gameObjectindex = selectedData.GetIndex(gridPos);
@@ -80,7 +72,7 @@ public class RemovingState : IPlacementState
         }
 
         Vector3 cellPos = grid.CellToWorld(gridPos);
-        previewSystem.UpdatePosition(cellPos, CheckIfSelectionIsValid(gridPos));
+    
 
     }
 
@@ -93,7 +85,5 @@ public class RemovingState : IPlacementState
     public void UpdateState(Vector3Int gridPos)
     {
         bool validity = CheckIfSelectionIsValid(gridPos);
-        previewSystem.UpdatePosition(grid.CellToWorld(gridPos), validity);
-      //  previewSystem.StartShowingRemovePreview();
     }
 }

@@ -18,6 +18,9 @@ public class PlacementHUDManager : MonoBehaviour
     [SerializeField] Button deleteButton;
     private GameManagement gameManagement;
 
+    [SerializeField] Sprite normalDeleteButton;
+    [SerializeField] Sprite highlightDeleteButton;
+
 
 
     public void Awake()
@@ -91,8 +94,7 @@ public class PlacementHUDManager : MonoBehaviour
 
     public void InDeleteMode(bool inDelete)
     {
-        Color color = inDelete ? Color.red : Color.white;
-        deleteButton.GetComponent<Image>().color = color;
+        deleteButton.GetComponent<Image>().sprite = inDelete ? highlightDeleteButton : normalDeleteButton;
     }
 
     public void UpdateStart(bool CanStart) => startButton.interactable = CanStart;
